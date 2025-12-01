@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply min-h-screen bg-[#021514] font-body text-primary-700 antialiased;
+}
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' fill-opacity='0.2'%3E%3Cpath fill='%23A2F7B4' d='M0 0h10v10H0z'/%3E%3Cpath fill='%235C63D4' d='M10 10h10v10H10z'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.15;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.glass-panel {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-primary-100 via-secondary-100 to-primary-100 text-transparent bg-clip-text;
+}
+
+.hero-blob {
+  background: radial-gradient(circle at 20% 20%, rgba(162, 247, 180, 0.4), transparent 50%),
+    radial-gradient(circle at 80% 0%, rgba(92, 99, 212, 0.3), transparent 45%),
+    rgba(2, 21, 20, 0.95);
+}
+
+.grid-overlay {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at center, #000 60%, transparent 90%);
+}
+
+.hero-nav {
+  box-shadow: 0 20px 45px rgba(8, 17, 16, 0.08);
+}
+
+.hero-shell {
+  width: 100%;
+  max-width: 1360px;
+  height: auto;
+  min-height: 560px;
+  background-color: #021514;
+}
+
+.hero-logo-card {
+  animation: heroReveal 1s ease-out 0.001s forwards;
+  opacity: 0;
+}
+
+@keyframes heroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Background oversized outlined text for WhySection */
+.sprinten-bg-text {
+  font-family: "PolySans Trial", var(--font-sans);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 200.14px;
+  line-height: 224.72px;
+  letter-spacing: -0.88px;
+  color: #E5F9E0;
+  -webkit-text-stroke: 0.97px #A2F7B4;
+  -webkit-text-fill-color: #E5F9E0;
+  /* non-standard but included for completeness */
+  text-stroke: 0.97px #A2F7B4;
+  text-fill-color: #E5F9E0;
+  opacity: 1;
+  display: block;
+  white-space: nowrap;
+}
