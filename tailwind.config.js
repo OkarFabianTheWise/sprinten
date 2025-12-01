@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         display: ["var(--font-clash)"],
-        body: ["var(--font-inter)"],
+        body: ["var(--font-poly-sans)"],
         mono: ["var(--font-plex)"],
         'poly-sans': ["var(--font-poly-sans)", 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },

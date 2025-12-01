@@ -1,8 +1,0 @@
-  return (
-    <html lang="en" className={polySans.variable}>
-      <body className={`${inter.variable} ${clash.variable} ${plex.variable} bg-[#021514] overflow-x-hidden`}>
-        <Header />
-        {children}
-      </body>
-    </html>
-  );

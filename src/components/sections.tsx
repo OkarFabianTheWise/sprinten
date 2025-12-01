@@ -2,19 +2,18 @@
 
 import { motion } from "framer-motion";
 import {
-  audiences,
+  // audiences,
   heroCopy,
-  navLinks,
+  // navLinks,
   pillars,
-  projects,
-  testimonial,
+  // projects,
+  // testimonial,
   whySprinten
 } from "@/data/content";
 import { ServicesSection as ServicesSectionComponent } from "./services";
-import { useEffect, useState } from "react";
 
-const shimmer =
-  "before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-60%] before:animate-[shine_6s_linear_infinite]";
+// const shimmer =
+//   "before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-60%] before:animate-[shine_6s_linear_infinite]";
 
 export function HeroSection() {
   return (
@@ -358,7 +357,6 @@ export function WhySection() {
     </section>
   );
 }
-
 
 // /design.png
 // /development.png
