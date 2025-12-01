@@ -67,7 +67,7 @@ body {
 
 /* Background oversized outlined text for WhySection */
 .sprinten-bg-text {
-  font-family: "PolySans Trial", var(--font-sans);
+  font-family: var(--font-poly-sans), ui-sans-serif, system-ui, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 200.14px;

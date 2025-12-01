@@ -7,7 +7,7 @@ module.exports = {
         display: ["var(--font-clash)"],
         body: ["var(--font-inter)"],
         mono: ["var(--font-plex)"],
-        'poly-sans': ['"PolySans Trial"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'poly-sans': ["var(--font-poly-sans)", 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
         primary: {

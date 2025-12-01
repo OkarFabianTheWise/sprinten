@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   audiences,
   heroCopy,
@@ -19,24 +22,48 @@ export function HeroSection() {
 
       <div className="hero-shell w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[192px] overflow-hidden px-8 text-primary-100">
         <div className="flex h-full items-center justify-between gap-10">
-          <div className="w-[379px] h-[192px] space-y-2">
-            <h1 className="font-poly-sans text-5xl leading-tight text-[#A2F7B4]">
+          <motion.div 
+            className="w-[379px] h-[192px] space-y-2"
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
+            <motion.h1 
+              className="font-poly-sans text-5xl leading-tight text-[#A2F7B4]"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               Ship Faster.
               <br />
               Build Better.
               <br />
               Onchain.
-            </h1>
-          </div>
+            </motion.h1>
+          </motion.div>
 
           {/* right column — made relative so the arrow box can be absolutely positioned */}
-          <div className="w-[437px] relative flex flex-col items-start justify-center space-y-4 text-white">
-            <p className="text-lg text-[#DFFFE2]">
+          <motion.div 
+            className="w-[437px] relative flex flex-col items-start justify-center space-y-4 text-white"
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
+            <motion.p 
+              className="text-lg text-[#DFFFE2]"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               {heroCopy.body}
-            </p>
+            </motion.p>
 
             {/* positioned arrow box with text and hover animation */}
-            <button
+            <motion.button
               className="
                 relative flex items-center 
                 w-[200px] h-[40px]
@@ -49,6 +76,11 @@ export function HeroSection() {
                 hover:translate-y-[-1px]
               "
               aria-label="Start a Sprint"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              viewport={{ once: false, amount: 0.5 }}
+              whileHover={{ scale: 1.05 }}
             >
               {/* Left circular arrow container — use flex centering, remove padding */}
               <span
@@ -79,13 +111,19 @@ export function HeroSection() {
               <span className="text-white text-sm font-semibold whitespace-nowrap">
                 Start a Sprint
               </span>
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
 
-        <div className="mt-10 w-full">
+        <motion.div 
+          className="mt-10 w-full"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.9 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
           <HeroLogoCard />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -93,9 +131,21 @@ export function HeroSection() {
 
 function HeroLogoCard() {
   return (
-    <div className="hero-logo-card flex h-[312px] w-full items-center justify-center rounded-[16px] bg-[#E5F9E0] text-[#1F8E87] shadow-inner">
-      <span className="font-display text-[140px] leading-none tracking-tight">Sprinten</span>
-    </div>
+    <motion.div 
+      className="hero-logo-card flex h-[312px] w-full items-center justify-center rounded-[16px] bg-[#E5F9E0] text-[#1F8E87] shadow-inner"
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3 }}
+    >
+      <motion.span 
+        className="font-display text-[250px] leading-none tracking-tight"
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1, delay: 1.1 }}
+        viewport={{ once: false, amount: 0.5 }}
+      >
+        Sprinten
+      </motion.span>
+    </motion.div>
   );
 }
 
@@ -117,12 +167,18 @@ export function WhySection() {
         {/* LEFT COLUMN */}
         <div>
           {/* Label */}
-          <p className="text-sm tracking-[0.5em] text-[#5FA089] uppercase">
+          <motion.p 
+            className="text-sm tracking-[0.5em] text-[#5FA089] uppercase"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
             {whySprinten.label}
-          </p>
+          </motion.p>
 
           {/* MAIN HEADINGS */}
-          <h2
+          <motion.h2
             className="
               mt-6
               font-poly-sans 
@@ -133,14 +189,42 @@ export function WhySection() {
               text-[#021514]
               w-[603px]
             "
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.5 }}
           >
-            <span className="block">Built for Builders.</span>
-            <span className="block">Optimized for Speed.</span>
-            <span className="block">Trusted for Quality.</span>
-          </h2>
+            <motion.span 
+              className="block"
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
+              Built for Builders.
+            </motion.span>
+            <motion.span 
+              className="block"
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
+              Optimized for Speed.
+            </motion.span>
+            <motion.span 
+              className="block"
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
+              Trusted for Quality.
+            </motion.span>
+          </motion.h2>
 
           {/* BODY TEXT */}
-          <p
+          <motion.p
             className="
               mt-6 
               font-poly-sans 
@@ -151,15 +235,25 @@ export function WhySection() {
               text-[#8CA1A0]
               w-[603px]
             "
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            viewport={{ once: false, amount: 0.5 }}
           >
             Sprinten gives Solana founders and developers the perfect mix of speed,
             clarity, and execution. No long cycles. No agency fluff. Just fast,
             high-quality product design and frontend shipping built for real users.
-          </p>
+          </motion.p>
 
           {/* CTA */}
-          <div className="mt-8">
-            <button
+          <motion.div 
+            className="mt-8"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
+            <motion.button
               className="
                 relative flex items-center 
                 w-[220px] h-[46px] 
@@ -169,6 +263,7 @@ export function WhySection() {
                 ease-out 
                 hover:-translate-y-[1px]
               "
+              whileHover={{ scale: 1.05 }}
             >
               <span className="flex items-center justify-center w-[44px] h-[44px] rounded-full bg-[#1F7E77]">
                 <span className="text-white font-bold text-[18px]">→</span>
@@ -176,16 +271,22 @@ export function WhySection() {
               <span className="text-[15px] font-semibold text-[#00423d]">
                 Start a Sprint
               </span>
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
 
         {/* RIGHT COLUMN */}
         <div className="flex flex-col gap-12 pt-6">
-          {pillars.map((pillar) => (
-            <div key={pillar.title}>
+          {pillars.map((pillar, index) => (
+            <motion.div 
+              key={pillar.title}
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 + index * 0.2 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               {/* PILLAR TITLE */}
-              <h3
+              <motion.h3
                 className="
                   font-poly-sans 
                   font-normal
@@ -195,21 +296,37 @@ export function WhySection() {
                   text-[#021514]
                   w-[559px]
                 "
+                initial={{ y: 10, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
+                viewport={{ once: false, amount: 0.5 }}
               >
                 {pillar.title}
-              </h3>
+              </motion.h3>
 
               {/* PILLAR DESCRIPTION */}
-              <p className="mt-2 text-[16px] leading-[24px] text-[#6C837F] w-[559px]">
+              <motion.p 
+                className="mt-2 text-[16px] leading-[24px] text-[#6C837F] w-[559px]"
+                initial={{ y: 10, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.7 + index * 0.2 }}
+                viewport={{ once: false, amount: 0.5 }}
+              >
                 {pillar.description}
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* BACKGROUND OUTLINE TEXT */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center">
+      <motion.div 
+        className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center"
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1.2, delay: 1.4 }}
+        viewport={{ once: false, amount: 0.5 }}
+      >
         <div
           className="
             relative 
@@ -237,7 +354,7 @@ export function WhySection() {
             Sprinten&nbsp;Studio
           </span>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -249,7 +366,6 @@ export function WhySection() {
 export function ServicesSection() {
   return <ServicesSectionComponent />;
 }
-
 
 
 // /airbills.png
@@ -285,27 +401,50 @@ export function WorkSection() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-[#7b8fda] text-sm font-medium tracking-[0.2em] mb-4 uppercase">
+          <motion.p 
+            className="text-[#7b8fda] text-sm font-medium tracking-[0.2em] mb-4 uppercase"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
             OUR WORK
-          </p>
+          </motion.p>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <motion.h1 
+            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
             Products We've Shipped, Fast.
-          </h1>
+          </motion.h1>
 
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+          <motion.p 
+            className="text-gray-600 text-lg max-w-3xl mx-auto"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
             A look at the real products, MVPs, dashboards, and frontends we've
             delivered for founders and developers across the Solana ecosystem.
-          </p>
+          </motion.p>
         </div>
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
 
           {WORK_ITEMS.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="bg-white overflow-hidden shadow-sm h-[443px]"
+              className="bg-[#E5F9E0] overflow-hidden shadow-sm h-[443px]"
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 + idx * 0.1 }}
+              viewport={{ once: false, amount: 0.5 }}
+              whileHover={{ scale: 1.02 }}
             >
               {/* Image */}
               <img
@@ -316,11 +455,23 @@ export function WorkSection() {
 
               {/* Text block – 56px height */}
               <div className="p-0 py-2 h-[56px]">
-                <h3 className="text-[16px] leading-[24px] font-semibold tracking-[0.15px] text-[#021514] mb-[8px]">
+                <motion.h3 
+                  className="text-[16px] leading-[24px] font-semibold tracking-[0.15px] text-[#021514] mb-[8px]"
+                  initial={{ y: 10, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.4 + idx * 0.1 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                >
                   {item.title}
-                </h3>
+                </motion.h3>
 
-                <div className="flex items-center text-gray-500 text-[14px] leading-[24px]">
+                <motion.div 
+                  className="flex items-center text-gray-500 text-[14px] leading-[24px]"
+                  initial={{ y: 10, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.5 + idx * 0.1 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                >
                   <svg
                     className="w-4 h-4 mr-2 text-teal-500"
                     fill="none"
@@ -331,19 +482,29 @@ export function WorkSection() {
                     <path strokeWidth="2" d="M12 6v6l4 2" />
                   </svg>
                   <span>{item.duration}</span>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))}
 
         </div>
 
         {/* Button */}
-        <div className="text-center">
-          <button className="px-8 py-3 border-2 border-teal-500 text-teal-700 rounded-lg font-medium hover:bg-teal-50 transition-colors">
+        <motion.div 
+          className="text-center"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
+          <motion.button 
+            className="px-8 py-3 border-2 border-teal-500 text-teal-700 rounded-lg font-medium hover:bg-teal-50 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             See all work
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
       </div>
     </section>
@@ -351,38 +512,6 @@ export function WorkSection() {
 }
 
 export function AudienceSection() {
-  const [labelVariant, setLabelVariant] = useState<string>("default");
-  const [headingVariant, setHeadingVariant] = useState<string>("default");
-  const [cardVariants, setCardVariants] = useState<string[]>(["default", "default", "default"]);
-
-  useEffect(() => {
-    // After mount, trigger heading change to Variant3 after 800ms
-    const tHeading = setTimeout(() => {
-      setHeadingVariant("Variant3");
-    }, 800);
-    // Stagger the right-column cards after heading animation completes
-    const tCards = setTimeout(() => {
-      setCardVariants(["Variant3", "Variant3", "Variant3"]);
-    }, 1600);
-    return () => {
-      clearTimeout(tHeading);
-      clearTimeout(tCards);
-    };
-  }, []);
-
-  function animStyle(variant: string, delayMs = 0) {
-    const active = variant !== "default";
-    const transform = active ? "translateY(0)" : "translateY(20px)";
-    const opacity = active ? 1 : 0;
-    const transition = `transform 800ms ease-out ${delayMs}ms, opacity 800ms ease-out ${delayMs}ms`;
-    return {
-      transform,
-      opacity,
-      transition,
-      willChange: "transform, opacity",
-    } as React.CSSProperties;
-  }
-
   return (
     <div className="min-h-screen bg-[#DFE8D4] px-4 md:px-8 lg:px-12 py-16 mx-[calc(50%-50vw)]">
       <div className="max-w-[1400px] mx-auto">
@@ -390,68 +519,110 @@ export function AudienceSection() {
         <div className="flex gap-10 mb-32">
           {/* Left Column - Header */}
           <div className="flex-1">
-            <p
+            <motion.p
               className="text-[#5B9C96] text-sm font-medium tracking-wider mb-6"
-              onMouseEnter={() => setLabelVariant("Variant2")}
-              onMouseLeave={() => setLabelVariant("default")}
-              style={animStyle(labelVariant, 0)}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: false, amount: 0.5 }}
             >
-              {labelVariant === "Variant2" ? "Variant2" : "WHO WE SERVE"}
-            </p>
-            <h1
+              WHO WE SERVE
+            </motion.p>
+            <motion.h1
               className="text-[57px] leading-[72px] tracking-[-0.25px] font-normal text-[#021514] mb-8"
-              style={animStyle(headingVariant, 800)}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.5 }}
             >
-              {headingVariant === "Variant3"
-                ? "Variant3"
-                : "Built for Founders. Designed for Developers. Ready for Anyone Shipping Onchain."}
-            </h1>
-            <p className="text-[#7A9490] text-lg leading-[28px] mb-8">
+              Built for Founders. Designed for Developers. Ready for Anyone Shipping Onchain.
+            </motion.h1>
+            <motion.p 
+              className="text-[#7A9490] text-lg leading-[28px] mb-8"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               Sprinten supports the people building the next generation of Solana products — whether you're writing smart contracts, shaping a new startup, or taking an idea to market.
-            </p>
-            <button className="flex items-center gap-2 bg-[#5B9C96] text-white px-6 py-3 rounded-full hover:bg-[#4A8B85] transition-colors">
+            </motion.p>
+            <motion.button 
+              className="flex items-center gap-2 bg-[#5B9C96] text-white px-6 py-3 rounded-full hover:bg-[#4A8B85] transition-colors"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: false, amount: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+            >
               <span className="text-2xl">→</span>
               <span className="font-medium">Book a call</span>
-            </button>
+            </motion.button>
           </div>
 
           {/* Right Column - Audience Cards */}
           <div className="flex-1 grid gap-12">
-            <div>
-              <h3 className="text-2xl font-normal mb-3 text-[#021514]" style={animStyle(cardVariants[0], 1000)}>
-                For Developers
-              </h3>
-              <p className="text-[#7A9490] leading-[26px]" style={animStyle(cardVariants[0], 1200)}>
-                You build the logic, we handle the design and frontend. No more bottlenecks, no more waiting on UI. Plug us in and keep shipping.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-normal mb-3 text-[#021514]" style={animStyle(cardVariants[1], 1200)}>
-                For Founders & Startups
-              </h3>
-              <p className="text-[#7A9490] leading-[26px]" style={animStyle(cardVariants[1], 1400)}>
-                Turn your idea into a real, usable product in weeks. Fast design, fast frontend, clear strategy, all aligned with your vision.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-normal mb-3 text-[#021514]" style={animStyle(cardVariants[2], 1400)}>
-                For Teams Entering Blockchain
-              </h3>
-              <p className="text-[#7A9490] leading-[26px]" style={animStyle(cardVariants[2], 1600)}>
-                SMEs and enterprises looking to explore blockchain get a clear, guided path with clean UX, rapid prototyping, and confident execution.
-              </p>
-            </div>
+            {[
+              {
+                title: "For Developers",
+                text: "You build the logic, we handle the design and frontend. No more bottlenecks, no more waiting on UI. Plug us in and keep shipping."
+              },
+              {
+                title: "For Founders & Startups",
+                text: "Turn your idea into a real, usable product in weeks. Fast design, fast frontend, clear strategy, all aligned with your vision."
+              },
+              {
+                title: "For Teams Entering Blockchain",
+                text: "SMEs and enterprises looking to explore blockchain get a clear, guided path with clean UX, rapid prototyping, and confident execution."
+              }
+            ].map((card, i) => (
+              <motion.div 
+                key={i}
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 + i * 0.15 }}
+                viewport={{ once: false, amount: 0.5 }}
+              >
+                <motion.h3 
+                  className="text-2xl font-normal mb-3 text-[#021514]"
+                  initial={{ y: 10, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.6 + i * 0.15 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                >
+                  {card.title}
+                </motion.h3>
+                <motion.p 
+                  className="text-[#7A9490] leading-[26px]"
+                  initial={{ y: 10, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.7 + i * 0.15 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                >
+                  {card.text}
+                </motion.p>
+              </motion.div>
+            ))}
           </div>
         </div>
 
         {/* Giant Sprinten Text */}
-        <div className="flex items-center justify-center">
-          <h2 className="text-[#5B9C96] font-normal text-[12rem] md:text-[16rem] lg:text-[20rem] leading-none tracking-tight">
+        <motion.div 
+          className="flex items-center justify-center"
+          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2, delay: 1.2 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
+          <motion.h2 
+            className="text-[#5B9C96] font-normal text-[12rem] md:text-[16rem] lg:text-[20rem] leading-none tracking-tight opacity-40"
+            initial={{ scale: 0.8 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 1.2, delay: 1.2 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
             Sprinten
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
       </div>
     </div>
   );
@@ -469,7 +640,7 @@ export function TestimonialSection() {
     >
       <div className="max-w-[1200px] px-12 w-full">
         {/* Testimonial Label */}
-        <p 
+        <motion.p 
           className="uppercase tracking-widest mb-8"
           style={{
             color: '#8B9FFF',
@@ -477,13 +648,17 @@ export function TestimonialSection() {
             letterSpacing: '0.15em',
             fontWeight: 500
           }}
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.5 }}
         >
           TESTIMONIAL
-        </p>
+        </motion.p>
 
         {/* Main Quote */}
         <div className="flex items-start justify-between gap-8">
-          <blockquote 
+          <motion.blockquote 
             className="max-w-[901px]"
             style={{
               fontSize: '57px',
@@ -492,17 +667,25 @@ export function TestimonialSection() {
               color: '#FFFFFF',
               fontWeight: 400
             }}
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.5 }}
           >
             Sprinten delivered our MVP in record time. Clean UX, clean code, zero back-and-forth drama
-          </blockquote>
+          </motion.blockquote>
 
           {/* Quote Icon */}
-          <svg 
+          <motion.svg 
             width="60" 
             height="60" 
             viewBox="0 0 60 60" 
             fill="none"
             style={{ flexShrink: 0, marginTop: '8px' }}
+            initial={{ rotate: -90, opacity: 0 }}
+            whileInView={{ rotate: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.5 }}
           >
             <path 
               d="M15 25L15 15L25 15M45 25L45 15L35 15" 
@@ -510,11 +693,17 @@ export function TestimonialSection() {
               strokeWidth="3"
               strokeLinecap="round"
             />
-          </svg>
+          </motion.svg>
         </div>
 
         {/* Author Info */}
-        <div className="mt-10">
+        <motion.div 
+          className="mt-10"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
           <p 
             style={{
               fontSize: '18px',
@@ -534,13 +723,21 @@ export function TestimonialSection() {
           >
             Co-founder- Paykin
           </p>
-        </div>
+        </motion.div>
 
         {/* Navigation Arrows */}
-        <div className="absolute bottom-12 right-12 flex gap-8">
-          <button 
+        <motion.div 
+          className="absolute bottom-12 right-12 flex gap-8"
+          initial={{ x: 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
+          <motion.button 
             className="hover:opacity-70 transition-opacity"
             aria-label="Previous testimonial"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
               <path 
@@ -551,10 +748,12 @@ export function TestimonialSection() {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
-          <button 
+          </motion.button>
+          <motion.button 
             className="hover:opacity-70 transition-opacity"
             aria-label="Next testimonial"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
               <path 
@@ -565,8 +764,8 @@ export function TestimonialSection() {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
@@ -583,7 +782,7 @@ export function CTASection() {
       }}
     >
       {/* Inner green container */}
-      <div 
+      <motion.div 
         className="flex flex-col items-center justify-center text-center"
         style={{
           width: '1350px',
@@ -592,9 +791,13 @@ export function CTASection() {
           borderRadius: '16px',
           padding: '60px 80px'
         }}
+        initial={{ scale: 0.9, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.5 }}
       >
         {/* Heading */}
-        <h2 
+        <motion.h2 
           style={{
             fontSize: '56px',
             lineHeight: '64px',
@@ -603,12 +806,16 @@ export function CTASection() {
             marginBottom: '16px',
             letterSpacing: '-0.5px'
           }}
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.5 }}
         >
           Ready to Ship Faster?
-        </h2>
+        </motion.h2>
 
         {/* Subheading */}
-        <p 
+        <motion.p 
           style={{
             fontSize: '18px',
             lineHeight: '28px',
@@ -616,13 +823,23 @@ export function CTASection() {
             maxWidth: '700px',
             marginBottom: '32px'
           }}
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.5 }}
         >
           Let's turn your idea, prototype, or draft UI into a real product , designed, built, and ready for users.
-        </p>
+        </motion.p>
 
         {/* Buttons */}
-        <div className="flex gap-4">
-          <button 
+        <motion.div 
+          className="flex gap-4"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
+          <motion.button 
             className="transition-all hover:opacity-90"
             style={{
               backgroundColor: '#2E8B7D',
@@ -634,11 +851,13 @@ export function CTASection() {
               border: 'none',
               cursor: 'pointer'
             }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Book a call
-          </button>
+          </motion.button>
           
-          <button 
+          <motion.button 
             className="transition-all hover:bg-white/10"
             style={{
               backgroundColor: 'transparent',
@@ -650,11 +869,13 @@ export function CTASection() {
               border: '2px solid #2E8B7D',
               cursor: 'pointer'
             }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Start a sprint
-          </button>
-        </div>
-      </div>
+          </motion.button>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
@@ -680,8 +901,13 @@ export function Footer() {
         }}
       >
         {/* Left side - Logo and tagline */}
-        <div>
-          <img 
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
+          <motion.img 
             src="/logo.png" 
             alt="Sprinten" 
             style={{
@@ -689,20 +915,33 @@ export function Footer() {
               height: '90px',
               marginBottom: '16px'
             }}
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.5 }}
           />
-          <p 
+          <motion.p 
             style={{
               fontSize: '16px',
               color: '#8B9FFF',
               marginTop: '12px'
             }}
+            initial={{ y: 10, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.5 }}
           >
             Ship Faster. Build Better. Onchain.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Quick link */}
-        <div>
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
           <h3 
             style={{
               fontSize: '16px',
@@ -714,7 +953,13 @@ export function Footer() {
             Quick link
           </h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-            <li style={{ marginBottom: '12px' }}>
+            <motion.li 
+              style={{ marginBottom: '12px' }}
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="#home" 
                 style={{ 
@@ -726,8 +971,14 @@ export function Footer() {
               >
                 Home
               </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
+            </motion.li>
+            <motion.li 
+              style={{ marginBottom: '12px' }}
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="#services" 
                 style={{ 
@@ -739,8 +990,13 @@ export function Footer() {
               >
                 Services
               </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
+            </motion.li>
+            <motion.li 
+              style={{ marginBottom: '12px' }}
+              initial={{ x: -10, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
               <a 
                 href="#work" 
                 style={{ 
@@ -752,8 +1008,13 @@ export function Footer() {
               >
                 Work
               </a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="#contact" 
                 style={{ 
@@ -765,12 +1026,17 @@ export function Footer() {
               >
                 Contact
               </a>
-            </li>
+            </motion.li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Connect */}
-        <div>
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
           <h3 
             style={{
               fontSize: '16px',
@@ -782,7 +1048,13 @@ export function Footer() {
             Connect
           </h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-            <li style={{ marginBottom: '12px' }}>
+            <motion.li 
+              style={{ marginBottom: '12px' }}
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="https://twitter.com" 
                 style={{ 
@@ -794,8 +1066,14 @@ export function Footer() {
               >
                 Twitter
               </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
+            </motion.li>
+            <motion.li 
+              style={{ marginBottom: '12px' }}
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="https://linkedin.com" 
                 style={{ 
@@ -807,8 +1085,14 @@ export function Footer() {
               >
                 Linkidin
               </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
+            </motion.li>
+            <motion.li 
+              style={{ marginBottom: '12px' }}
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="https://instagram.com" 
                 style={{ 
@@ -820,8 +1104,13 @@ export function Footer() {
               >
                 Instagram
               </a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.65 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="mailto:contact@sprinten.com" 
                 style={{ 
@@ -833,12 +1122,17 @@ export function Footer() {
               >
                 Email
               </a>
-            </li>
+            </motion.li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Legal */}
-        <div>
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.5 }}
+        >
           <h3 
             style={{
               fontSize: '16px',
@@ -850,7 +1144,13 @@ export function Footer() {
             Legal
           </h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-            <li style={{ marginBottom: '12px' }}>
+            <motion.li 
+              style={{ marginBottom: '12px' }}
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="#terms" 
                 style={{ 
@@ -862,8 +1162,14 @@ export function Footer() {
               >
                 Terms
               </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
+            </motion.li>
+            <motion.li 
+              style={{ marginBottom: '12px' }}
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.65 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="#privacy" 
                 style={{ 
@@ -875,8 +1181,14 @@ export function Footer() {
               >
                 Privacy
               </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
+            </motion.li>
+            <motion.li 
+              style={{ marginBottom: '12px' }}
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="#work" 
                 style={{ 
@@ -888,8 +1200,13 @@ export function Footer() {
               >
                 Work
               </a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              initial={{ x: -10, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.75 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <a 
                 href="#contact" 
                 style={{ 
@@ -901,19 +1218,23 @@ export function Footer() {
               >
                 Contact
               </a>
-            </li>
+            </motion.li>
           </ul>
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom copyright with divider */}
-      <div 
+      <motion.div 
         className="absolute"
         style={{
           bottom: '40px',
           left: '60px',
           right: '60px'
         }}
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        viewport={{ once: false, amount: 0.5 }}
       >
         <div 
           style={{
@@ -933,8 +1254,7 @@ export function Footer() {
         >
           © 2025 Sprinten- All right reserved
         </p>
-      </div>
+      </motion.div>
     </footer>
   );
 }
-
