@@ -10,23 +10,50 @@ module.exports = {
         'poly-sans': ["var(--font-poly-sans)", 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
-        primary: {
-          50: "#E5F9E0",
-          100: "#C8F1D0",
-          300: "#A2F7B4",
-          500: "#2F9C96",
-          700: "#0D4C47",
-          900: "#021514"
+        green: {
+          DEFAULT: "var(--color-green)",
+          dark: "var(--color-green-dark)",
+          bg: "var(--color-green-bg)",
+          bg2: "var(--color-green-bg2)"
         },
-        secondary: {
-          100: "#D7DBFF",
-          300: "#858BE3",
-          500: "#5C63D4"
+        teal: {
+          DEFAULT: "var(--color-teal)",
+          dark: "var(--color-teal-dark)"
         },
-        surface: {
-          light: "#F9FBFA",
-          DEFAULT: "#081110",
-          dark: "#030908"
+        blue: {
+          DEFAULT: "var(--color-blue)",
+          dark: "var(--color-blue-dark)",
+          light: "var(--color-blue-light)"
+        },
+        navy: {
+          DEFAULT: "var(--color-navy)",
+          light: "var(--color-navy-light)"
+        },
+        gray: {
+          DEFAULT: "var(--color-gray)",
+          light: "var(--color-gray-light)",
+          dark: "var(--color-gray-dark)"
+        },
+        white: "var(--color-white)",
+        ...{
+          primary: {
+            50: "#E5F9E0",
+            100: "#C8F1D0",
+            300: "#A2F7B4",
+            500: "#2F9C96",
+            700: "#0D4C47",
+            900: "#021514"
+          },
+          secondary: {
+            100: "#D7DBFF",
+            300: "#858BE3",
+            500: "#5C63D4"
+          },
+          surface: {
+            light: "#F9FBFA",
+            DEFAULT: "#081110",
+            dark: "#030908"
+          }
         }
       },
       backgroundImage: {

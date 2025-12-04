@@ -31,13 +31,8 @@ const SERVICES: ServiceCardProps[] = [
 
 export function ServiceCard({ img, title, description }: ServiceCardProps) {
   return (
-    <motion.div 
+    <div 
       className="w-full border border-[#C9E8CC] bg-[#F5FFF2] overflow-hidden shadow-sm"
-      initial={{ y: 40, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: false, amount: 0.5 }}
-      whileHover={{ scale: 1.02 }}
     >
       {/* Image container with white outline */}
       <div className="relative h-[260px] w-full overflow-hidden m-4 rounded-[12px] border-4 border-white bg-white">
@@ -46,35 +41,23 @@ export function ServiceCard({ img, title, description }: ServiceCardProps) {
           alt={title}
           className="absolute inset-0 h-full w-[341px] object-cover rounded-[8px]"
         />
-        <div className="absolute bottom-0 left-0 right-0 h-[60%] bg-gradient-to-t from-[#F5FFF2] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[25%] bg-gradient-to-t from-[#F5FFF2] to-transparent" />
       </div>
-      <motion.div 
+      <div 
         className="px-6 py-6"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: false, amount: 0.5 }}
       >
-        <motion.h3 
+        <h3 
           className="font-poly-sans font-normal text-[26px] leading-[32px] text-[#021514]"
-          initial={{ y: 10, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.5 }}
         >
           {title}
-        </motion.h3>
-        <motion.p 
+        </h3>
+        <p 
           className="mt-2 font-poly-sans font-normal text-[15px] leading-[22px] tracking-[0.2px] text-[#365B59]"
-          initial={{ y: 10, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: false, amount: 0.5 }}
         >
           {description}
-        </motion.p>
-      </motion.div>
-    </motion.div>
+        </p>
+      </div>
+    </div>
   );
 }
 
@@ -126,21 +109,15 @@ export function ServicesSection() {
 
         <motion.div 
           className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.5 }}
         >
           {SERVICES.map((s, index) => (
-            <motion.div
-              key={s.title}
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
-              viewport={{ once: false, amount: 0.5 }}
-            >
-              <ServiceCard {...s} />
-            </motion.div>
+              <div key={s.title}>
+                <ServiceCard {...s} />
+              </div>
           ))}
         </motion.div>
       </motion.div>

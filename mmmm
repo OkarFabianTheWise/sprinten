@@ -1,0 +1,111 @@
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import Image from "next/image";
+import laptop from "./laptop.png";
+import airtime from "./airtime.png";
+
+const AnimationTwo: React.FC = () => {
+  const laptopControls = useAnimation();
+  const airtimeControls = useAnimation();
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function animate() {
+      while (mounted) {
+        // STAGE 1: Laptop starts at a zoomed-in scale
+        await laptopControls.start({
+          opacity: 1,
+          scale: 1.2
+        });
+
+        // STAGE 2: Laptop eases out (dont dissolve)
+        await new Promise((r) => setTimeout(r, 1000));
+        laptopControls.start({
+          opacity: 1,
+          scale: 1,
+          transition: { duration: 1, ease: "easeOut" },
+        });
+
+        // STAGE 3: Airtime comes in (no transition)
+        await new Promise((r) => setTimeout(r, 300));
+        airtimeControls.start({
+          opacity: 1,
+          width: 1360,
+          height: 560,
+          scale: 1,
+          x: 4477,
+          y: 660,
+          rotate: 0
+        });
+
+        // STAGE 4: Airtime eases out rotating slightly anti-clockwise
+        await new Promise((r) => setTimeout(r, 1000));
+        airtimeControls.start({
+            opacity: 1,
+            width: 1360,
+            height: 560,
+            scale: 1,
+            x: 5877,
+            y: 660,
+            rotate: -5,
+            transition: { duration: 1, ease: "easeOut" },
+        });
+
+        // Reset and loop
+        await new Promise((r) => setTimeout(r, 500));
+        laptopControls.set({ opacity: 0, scale: 1 });
+        // airtimeControls.set({ opacity: 0, scale: 1, x: 0, y: 0, rotate: 0 });
+      }
+    }
+
+    animate();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  return (
+    <motion.div
+      className="hero-logo-card relative flex h-[560px] w-[1360px] rounded-[16px] items-center justify-center bg-white text-[#1F8E87] shadow-inner overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        {/* Laptop */}
+        <motion.div
+          className="absolute"
+          animate={laptopControls}
+          initial={{ opacity: 0, scale: 1 }}
+        >
+          <Image
+            src={laptop}
+            alt="laptop"
+            width={1360}
+            height={560}
+            className="object-cover"
+          />
+        </motion.div>
+
+        {/* Airtime */}
+        <motion.div
+          className="absolute"
+          animate={airtimeControls}
+          initial={{ opacity: 0, scale: 1 }}
+        >
+          <Image
+            src={airtime}
+            alt="airtime"
+            width={1360}
+            height={560}
+            className="object-cover"
+          />
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default AnimationTwo;

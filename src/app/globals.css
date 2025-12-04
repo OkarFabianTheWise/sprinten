@@ -1,6 +1,26 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Color variables for easy reuse */
+:root {
+  --color-green: #A2F7B4;
+  --color-green-dark: #1F7E77;
+  --color-green-bg: #E5F9E0;
+  --color-green-bg2: #C8F1D0;
+  --color-teal: #2E8B7D;
+  --color-teal-dark: #034A3D;
+  --color-blue: #8B9FFF;
+  --color-blue-dark: #5C63D4;
+  --color-blue-light: #D7DBFF;
+  --color-navy: #021514;
+  --color-navy-light: #00423d;
+  --color-gray: #8CA1A0;
+  --color-gray-light: #DFFFE2;
+  --color-gray-dark: #6C837F;
+  --color-white: #FFFFFF;
+}
 
 body {
   @apply min-h-screen bg-[#021514] font-body text-primary-700 antialiased;
@@ -17,7 +37,9 @@ body {
 }
 
 .glass-panel {
-  @apply backdrop-blur-xl bg-white/5 border border-white/10;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .text-gradient {

@@ -32,8 +32,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={polySans.variable}>
-      <body className={`${polySans.className} ${inter.variable} ${clash.variable} ${plex.variable} bg-[#021514] overflow-x-hidden`}>
+    <html lang="en" className={`${polySans.variable} ${inter.variable} ${clash.variable} ${plex.variable}`}>
+      <body className={`${polySans.className} bg-[#021514] overflow-x-hidden`}>
         <Header />
         {children}
       </body>
