@@ -9,6 +9,7 @@ const AnimationTwo: React.FC = () => {
     const laptopControls = useAnimation();
     const phoneSingleControls = useAnimation();
     const phoneDoubleControls = useAnimation();
+    const textControls = useAnimation();
 
     useEffect(() => {
         let mounted = true;
@@ -19,6 +20,7 @@ const AnimationTwo: React.FC = () => {
                 laptopControls.set({ opacity: 0, scale: 1 });
                 phoneSingleControls.set({ opacity: 0 });
                 phoneDoubleControls.set({ opacity: 0, x: 0, rotate: 0 });
+                textControls.set({ opacity: 0, x: "124.44px", y: "116px", fontSize: "292.13px" });
 
                 // ---------------------------------
                 // STAGE 1: Laptop zoomed-in start
@@ -84,6 +86,33 @@ const AnimationTwo: React.FC = () => {
 
                 // Hold double phone longer before loop restarts
                 await new Promise((r) => setTimeout(r, 3000));
+
+                // ---------------------------------
+                // STAGE 1: Text fade-in (large)
+                // ---------------------------------
+                await textControls.start({
+                    opacity: 1,
+                    x: "124.44px",
+                    y: "116px",
+                    fontSize: "292.13px",
+                    transition: { duration: 0.2, ease: "easeOut" }
+                });
+
+                // Hold text at large size
+                await new Promise((r) => setTimeout(r, 1000));
+
+                // ---------------------------------
+                // STAGE 2: Text shrink and reposition
+                // ---------------------------------
+                await textControls.start({
+                    x: "521px",
+                    y: "233px",
+                    fontSize: "83.72px",
+                    transition: { duration: 1.5, ease: "easeOut" }
+                });
+
+                // Hold text at small size before loop restarts
+                await new Promise((r) => setTimeout(r, 1000));
             }
         }
 
@@ -129,6 +158,27 @@ const AnimationTwo: React.FC = () => {
                         height={560}
                         alt="double phone"
                     />
+                </motion.div>
+
+                {/* Sprintin Text */}
+                <motion.div
+                    className="absolute font-normal"
+                    animate={textControls}
+                    style={{
+                        position: "absolute",
+                        color: "#2F9C96",
+                        fontFamily: "PolySans Trial",
+                        fontWeight: 400,
+                        fontSize: "292.13px",
+                        letterSpacing: "-1.28px",
+                        lineHeight: "328px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        whiteSpace: "nowrap",
+                    }}
+                >
+                    Sprintin
                 </motion.div>
 
             </div>

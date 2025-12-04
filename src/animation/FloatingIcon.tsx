@@ -1,12 +1,13 @@
 import React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import type { StaticImageData } from "next/image";
+import type { MotionProps } from "framer-motion";
 
 type Props = {
   src: string | StaticImageData;
   alt?: string;
   className?: string;
-} & Record<string, any>;
+} & MotionProps;
 
 const FloatingIcon: React.FC<Props> = ({ src, alt = "icon", className = "", ...rest }) => {
   const x = useMotionValue(0);
