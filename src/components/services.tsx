@@ -114,7 +114,7 @@ export function ServicesSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.5 }}
         >
-          {SERVICES.map((s, _index) => (
+          {SERVICES.map((s) => (
               <div key={s.title}>
                 <ServiceCard {...s} />
               </div>
