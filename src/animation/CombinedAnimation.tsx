@@ -1,25 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AnimationTwo from "./AnimationTwo";
 import AnimationOne from "./AnimationOne";
 
 const CombinedAnimation: React.FC = () => {
-  const [showAnimationTwo, setShowAnimationTwo] = useState(false);
+  const [current, setCurrent] = useState<"one" | "two">("one");
 
-  useEffect(() => {
-    // AnimationOne plays first (roughly 4 seconds for one full cycle)
-    // Then show AnimationTwo
-    const timer = setInterval(() => {
-      setShowAnimationTwo((prev) => !prev);
-    }, 4000); // Adjust timing based on AnimationOne's cycle time
-    return () => clearInterval(timer);
-  }, []);
+  const handleFinished = () => {
+    // Switch to the other animation
+    setCurrent((prev) => (prev === "one" ? "two" : "one"));
+  };
 
   return (
-    <div>
-      {!showAnimationTwo ? (
-        <AnimationOne key="video" />
+    <div className="relative">
+      {current === "one" ? (
+        <AnimationOne key="anim1" onFinished={handleFinished} />
       ) : (
-        <AnimationTwo key="two" />
+        <AnimationTwo key="anim2" onFinished={handleFinished} />
       )}
     </div>
   );
