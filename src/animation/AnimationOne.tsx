@@ -1,3 +1,4 @@
+// src/animation/AnimatedVideo.tsx
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import FloatingIcon from "./FloatingIcon";
@@ -9,7 +10,7 @@ import referral from "./referral.png";
 import privatekey from "./privatekey.png";
 import recovery from "./recovery.png";
 
-const AnimatedVideo: React.FC = () => {
+const AnimationOne: React.FC = () => {
   const phoneControls = useAnimation();
   const recoveryControls = useAnimation();
   const creditControls = useAnimation();
@@ -38,6 +39,7 @@ const AnimatedVideo: React.FC = () => {
           transition: { duration: 1, ease: "easeOut" },
         });
         await new Promise((r) => setTimeout(r, 700));
+        if (!mounted) break;
 
         // STAGE 2 — straighten + OTHER ITEMS SLIDE IN (except privatekey)
         phoneControls.start({
@@ -75,6 +77,7 @@ const AnimatedVideo: React.FC = () => {
         });
 
         await new Promise((r) => setTimeout(r, 1000));
+        if (!mounted) break;
 
         // STAGE 3 — phone slides right + privatekey slides in from right
         phoneControls.start({
@@ -94,6 +97,7 @@ const AnimatedVideo: React.FC = () => {
         });
 
         await new Promise((r) => setTimeout(r, 2500));
+        if (!mounted) break;
 
         // RESET ALL
         creditControls.start({ y: -120, opacity: 0, transition: { duration: 0.6 } });
@@ -166,4 +170,4 @@ const AnimatedVideo: React.FC = () => {
   );
 };
 
-export default AnimatedVideo;
+export default AnimationOne;
