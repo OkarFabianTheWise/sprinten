@@ -24,12 +24,18 @@ export default function Header() {
 
         {/* CTA - keep as flex-none to avoid stretching */}
         <div className="flex-none pr-10">
-          <button
-            className="flex items-center justify-center rounded-[8px] text-white transition hover:bg-[#0b8b6c] bg-[#2F9C96] w-[158px] h-[52px] gap-[8px] px-[16px]"
-            aria-label="Book a call"
+          <a
+            href="https://cal.com/sprinten/introcall"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <span className="text-[14px] font-semibold">Book a call</span>
-          </button>
+            <button
+              className="flex items-center justify-center rounded-[8px] text-white transition hover:bg-[#0b8b6c] bg-[#2F9C96] w-[158px] h-[52px] gap-[8px] px-[16px]"
+              aria-label="Book a call"
+            >
+              <span className="text-[14px] font-semibold">Book a call</span>
+            </button>
+          </a>
         </div>
       </div>
     </header>

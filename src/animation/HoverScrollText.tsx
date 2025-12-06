@@ -25,8 +25,7 @@ export function HoverScrollText() {
   }, []);
 
   return (
-    <div 
-    className="flex items-center gap-[10px]">
+    <div className="flex items-center gap-[10px]">
       {/* Circle Arrow */}
       <div
         className="
@@ -53,9 +52,12 @@ export function HoverScrollText() {
       </div>
 
       {/* Text Scroll Area */}
-      <div
+      <a
+        href="https://nifty-possum-71c.notion.site/6650f5b8165e431a9926bec2eaf3bed7"
+        target="_blank"
+        rel="noopener noreferrer"
         onMouseEnter={trigger}
-        className="relative overflow-hidden h-[16px] w-[99px]"
+        className="relative overflow-hidden h-[16px] w-[99px] cursor-pointer"
       >
         {/* Top text */}
         <motion.span
@@ -84,7 +86,7 @@ export function HoverScrollText() {
         >
           Start a Sprint
         </motion.span>
-      </div>
+      </a>
     </div>
   );
 }
