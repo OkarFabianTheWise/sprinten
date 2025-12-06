@@ -102,7 +102,7 @@ export function HeroSection() {
             </motion.div>
         </div>
         <motion.div 
-          className="mt-10 w-full"
+          className="mt-10 w-full flex justify-center"
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.9 }}

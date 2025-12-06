@@ -8,6 +8,7 @@ import phone from "./phone.png";
 import referral from "./referral.png";
 import privatekey from "./privatekey.png";
 import recovery from "./recovery.png";
+import { TargetAndTransition } from "framer-motion";
 
 interface AnimationOneProps {
   onFinished?: () => void;
@@ -24,7 +25,7 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
   useEffect(() => {
     let mounted = true;
 
-    const safeStart = async (controls: any, props: any) => {
+    const safeStart = async (controls: ReturnType<typeof useAnimation>, props: TargetAndTransition) => {
       if (!mounted) return;
       await controls.start(props);
     };
@@ -69,7 +70,7 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
       await new Promise((r) => setTimeout(r, 1000));
 
       // STAGE 3 — PHONE SLIDES RIGHT + PRIVATE KEY IN
-      await safeStart(phoneControls, {
+      safeStart(phoneControls, {
         rotate: 0,
         width: 482.13,
         height: 452,
@@ -79,7 +80,7 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
         transition: { duration: 1, ease: "easeOut" }
       });
 
-      await safeStart(privateKeyControls, {
+      safeStart(privateKeyControls, {
         x: 0,
         opacity: 1,
         transition: { duration: 1, ease: "easeOut" }

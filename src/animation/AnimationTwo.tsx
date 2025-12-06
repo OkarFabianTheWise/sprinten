@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, TargetAndTransition, useAnimation } from "framer-motion";
 import Image from "next/image";
 import laptop from "./laptop.png";
 import phoneDouble from "./phoneDouble.png";
@@ -16,7 +16,7 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
   useEffect(() => {
     let mounted = true;
 
-    const safeStart = async (controls: any, props: any) => {
+    const safeStart = async (controls: ReturnType<typeof useAnimation>, props: TargetAndTransition) => {
       if (!mounted) return;
       await controls.start(props);
     };
@@ -91,7 +91,7 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
 
         {/* TEXT */}
         <motion.div
-          className="absolute font-normal"
+          className="absolute font-poly-sans"
           animate={textControls}
           style={{
             position: "absolute",
