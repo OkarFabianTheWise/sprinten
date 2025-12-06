@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export interface ServiceCardProps {
   img: string;
   title: string;
