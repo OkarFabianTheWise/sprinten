@@ -34,6 +34,7 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
       await new Promise((r) => setTimeout(r, 1000));
 
       await safeStart(laptopControls, { opacity: 1, scale: 1, transition: { duration: 1, ease: "easeOut" } });
+      if (!mounted) return;
       laptopControls.start({ opacity: 0, transition: { duration: 0.6, ease: "easeOut" } });
       await new Promise((r) => setTimeout(r, 350));
 
@@ -96,7 +97,6 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
           style={{
             position: "absolute",
             color: "#2F9C96",
-            fontFamily: "PolySans Trial",
             fontWeight: 400,
             fontSize: "292.13px",
             letterSpacing: "-1.28px",
