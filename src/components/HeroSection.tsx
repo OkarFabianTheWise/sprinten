@@ -11,32 +11,32 @@ export function HeroSection() {
       <div className="hero-shell w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[192px] overflow-hidden px-8 text-primary-100">
         <div className="flex h-full items-center justify-between gap-10">
             <motion.div 
-                className="w-[379px] h-[192px] space-y-2 mt-24"
+                className="w-[379px] h-[192px] space-y-2"
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: false, amount: 0.5 }}
             >
                 <motion.h1 
-                className="font-poly-sans text-5xl leading-tight text-[#A2F7B4]"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: false, amount: 0.5 }}
-                >
-                Ship Faster.
-                <br />
-                Build Better.
-                <br />
-                Onchain.
+                  className="font-poly-sans text-5xl leading-tight text-[#A2F7B4]"
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                  >
+                    Ship Faster.
+                    <br />
+                    Build Better.
+                    <br />
+                    Onchain.
                 </motion.h1>
             </motion.div>
             <motion.div 
-            className="flex flex-col gap-8"
-            initial={{ y: 40, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: false, amount: 0.5 }}
+              className="flex flex-col gap-8"
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.5 }}
             >
               <motion.div 
                   className="w-[437px] relative flex flex-col items-start justify-center space-y-4 text-white"
@@ -45,16 +45,16 @@ export function HeroSection() {
                   transition={{ duration: 0.8, delay: 0.3 }}
                   viewport={{ once: false, amount: 0.5 }}
               >
-                  <motion.p 
-                    className="text-lg text-[#DFFFE2]"
-                    initial={{ y: 20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
-                    viewport={{ once: false, amount: 0.5 }}
-                    >
-                    {heroCopy.body}
-                  </motion.p>
-                  <motion.button
+                <motion.p 
+                  className="text-lg text-[#DFFFE2] font-poly-sans font-normal [&_*]:font-normal"
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                >
+                  {heroCopy.body}
+                </motion.p>
+                <motion.button
                   className="
                       relative flex items-center 
                       w-[200px] h-[40px]
@@ -72,14 +72,14 @@ export function HeroSection() {
                   transition={{ duration: 0.8, delay: 0.7 }}
                   viewport={{ once: false, amount: 0.5 }}
                   whileHover={{ scale: 1.05 }}
-                  >
-                    <HoverScrollText />
-                  </motion.button>
+                >
+                  <HoverScrollText />
+                </motion.button>
               </motion.div>
             </motion.div>
         </div>
         <motion.div 
-          className="mt-10 w-full flex justify-center"
+          className="mt-32 w-full flex justify-center"
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.9 }}

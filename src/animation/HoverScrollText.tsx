@@ -64,7 +64,7 @@ export function HoverScrollText() {
           animate={topText}
           className="
             absolute left-0 top-0
-            font-poly-sans font-semibold
+            font-poly-sans font-normal
             text-[12px] leading-[16px] tracking-[0.5px]
             text-[#2F9C96]
             flex items-center

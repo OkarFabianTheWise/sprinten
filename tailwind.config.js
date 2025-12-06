@@ -65,16 +65,26 @@ module.exports = {
         "glow-purple": "0 20px 120px rgba(133, 139, 227, 0.18)"
       },
       keyframes: {
+        slideUpFade: {
+          "0%": { transform: "translateY(100%)", opacity: 0 },
+          "100%": { transform: "translateY(0%)", opacity: 1 },
+        },
+        slideDownFade: {
+          "0%": { transform: "translateY(-100%)", opacity: 0 },
+          "100%": { transform: "translateY(0%)", opacity: 1 },
+        },
         shine: {
           "0%": { transform: "translateX(-60%)" },
           "50%": { transform: "translateX(120%)" },
-          "100%": { transform: "translateX(120%)" }
-        }
+          "100%": { transform: "translateX(120%)" },
+        },
       },
       animation: {
-        shine: "shine 6s linear infinite"
-      }
-    }
+        slideUpFade: "slideUpFade 0.6s ease-out forwards",
+        slideDownFade: "slideDownFade 0.6s ease-out forwards",
+        shine: "shine 6s linear infinite",
+      },
+    },
   },
   plugins: []
 };
