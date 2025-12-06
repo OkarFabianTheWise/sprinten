@@ -1,5 +1,6 @@
 "use client";
 
+import { HoverScrollCall } from "@/animation/HoverScrollCall";
 import { motion } from "framer-motion";
 
 export function AudienceSection() {
@@ -37,16 +38,26 @@ export function AudienceSection() {
             >
               Sprinten supports the people building the next generation of Solana products — whether you're writing smart contracts, shaping a new startup, or taking an idea to market.
             </motion.p>
-            <motion.button 
-              className="flex items-center gap-2 bg-[#5B9C96] text-white px-6 py-3 rounded-full hover:bg-[#4A8B85] transition-colors"
+            <motion.button
+              className="
+                  relative flex items-center 
+                  w-[200px] h-[40px]
+                  rounded-[8px]
+                  gap-[24px]
+                  px-[12px]
+                  transition-all 
+                  duration-500 
+                  ease-out 
+                  hover:translate-y-[-1px]
+              "
+              aria-label="Start a Sprint"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
               viewport={{ once: false, amount: 0.5 }}
               whileHover={{ scale: 1.05 }}
             >
-              <span className="text-2xl">→</span>
-              <span className="font-medium">Book a call</span>
+              <HoverScrollCall />
             </motion.button>
           </div>
           {/* Right Column - Audience Cards */}
