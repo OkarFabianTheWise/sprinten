@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { motion, TargetAndTransition, useAnimation } from "framer-motion";
+import { motion, useAnimation, TargetAndTransition } from "framer-motion";
 import Image from "next/image";
 import laptop from "./laptop.png";
 import phoneDouble from "./phoneDouble.png";
@@ -10,7 +10,7 @@ interface AnimationTwoProps {
 
 const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
   const laptopControls = useAnimation();
-  const phoneDoubleControls = useAnimation();
+  const phoneControls = useAnimation();
   const textControls = useAnimation();
   const cardControls = useAnimation();
 
@@ -23,32 +23,30 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
     };
 
     const run = async () => {
-      // RESET EVERYTHING
-      cardControls.set({ backgroundColor: "#FFFFFF", opacity: 1 });
-      laptopControls.set({ opacity: 0, scale: 1.2 });
-      phoneDoubleControls.set({ opacity: 0, x: -450, y: -160, scale: 2.1, rotate: 50 });
+      // RESET
+      laptopControls.set({ opacity: 0, scale: 1 });
+      phoneControls.set({ opacity: 0, x: -450, y: -160, scale: 2.1, rotate: 50 });
       textControls.set({ opacity: 0, fontSize: "292.13px" });
+      cardControls.set({ backgroundColor: "#FFFFFF" });
 
       // -------------------------
       // STAGE 1 — LAPTOP
       // -------------------------
-      await safeStart(laptopControls, { opacity: 1, scale: 1.2, transition: { duration: 0.8, ease: "easeOut" } });
+      await safeStart(laptopControls, { opacity: 1, scale: 1.2, transition: { duration: 0 } });
       await new Promise((r) => setTimeout(r, 1000));
 
       await safeStart(laptopControls, { opacity: 1, scale: 1, transition: { duration: 1, ease: "easeOut" } });
-      await new Promise((r) => setTimeout(r, 800));
-      
       if (!mounted) return;
-      await safeStart(laptopControls, { opacity: 0, transition: { duration: 0.6, ease: "easeOut" } });
-      await new Promise((r) => setTimeout(r, 200));
+      laptopControls.start({ opacity: 0, transition: { duration: 0.6, ease: "easeOut" } });
+      await new Promise((r) => setTimeout(r, 350));
 
       // -------------------------
       // STAGE 2 — PHONE ENTRY
       // -------------------------
-      await safeStart(phoneDoubleControls, { opacity: 1, x: -50, scale: 1.2 });
+      await safeStart(phoneControls, { opacity: 1, x: -50, scale: 1.2 });
       await new Promise((r) => setTimeout(r, 500));
 
-      await safeStart(phoneDoubleControls, {
+      await safeStart(phoneControls, {
         opacity: 1,
         x: 0,
         y: 0,
@@ -58,20 +56,15 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
       });
       await new Promise((r) => setTimeout(r, 300));
 
-      await safeStart(phoneDoubleControls, {
+      await safeStart(phoneControls, {
         opacity: 0,
         transition: { duration: 0.3, ease: "easeOut" },
       });
 
       // -------------------------
-      // STAGE 3 — TEXT (Sprinten)
+      // STAGE 3 — TEXT
       // -------------------------
-
-      // CHANGE BACKGROUND HERE
-      await safeStart(cardControls, {
-        backgroundColor: "#E5F9E0",
-        transition: { duration: 0.4, ease: "easeOut" }
-      });
+      await safeStart(cardControls, { backgroundColor: "#E5F9E0", transition: { duration: 0.4, ease: "easeOut" } });
 
       await safeStart(textControls, {
         opacity: 1,
@@ -80,20 +73,14 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
       });
       await new Promise((r) => setTimeout(r, 1000));
 
-      await safeStart(textControls, {
-        fontSize: "83.72px",
-        transition: { duration: 1.5, ease: "easeOut" },
-      });
+      await safeStart(textControls, { fontSize: "83.72px", transition: { duration: 1.5, ease: "easeOut" } });
       await new Promise((r) => setTimeout(r, 1000));
 
       // Hold final state
       await new Promise((r) => setTimeout(r, 1900));
 
-      // RETURN BACKGROUND TO WHITE
-      await safeStart(cardControls, {
-        backgroundColor: "#FFFFFF",
-        transition: { duration: 0.4, ease: "easeOut" }
-      });
+      // OPTIONAL: RETURN BACKGROUND TO WHITE
+      await safeStart(cardControls, { backgroundColor: "#FFFFFF", transition: { duration: 0.4, ease: "easeOut" } });
 
       if (onFinished) onFinished();
     };
@@ -103,36 +90,35 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
     return () => {
       mounted = false;
     };
-  }, [laptopControls, phoneDoubleControls, textControls, cardControls, onFinished]);
+  }, [laptopControls, phoneControls, textControls, cardControls, onFinished]);
 
   return (
     <motion.div
       animate={cardControls}
-      className="hero-logo-card relative flex h-[560px] w-[1360px] rounded-[16px] items-center justify-center text-[#1F8E87] shadow-inner overflow-hidden"
       initial={{ opacity: 0, backgroundColor: "#FFFFFF" }}
-      transition={{ duration: 0.6 }}
+      className="hero-logo-card relative flex h-[560px] w-[1360px] rounded-[16px] items-center justify-center text-[#1F8E87] shadow-inner overflow-hidden"
     >
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-
+      {/* All content masked by rounded container */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         {/* LAPTOP */}
         <motion.div className="absolute" animate={laptopControls}>
-          <Image src={laptop} alt="laptop" width={1360} height={560} className="object-cover" />
+          <Image src={laptop} alt="laptop" fill className="object-cover" />
         </motion.div>
 
-        {/* PHONE */}
-        <motion.div className="absolute" animate={phoneDoubleControls}>
-          <Image src={phoneDouble} width={1360} height={560} alt="double phone" />
-        </motion.div>
+        {/* PHONE - wrapped in overflow-hidden to preserve mask */}
+        <div className="absolute inset-0 overflow-hidden rounded-[16px]">
+          <motion.div animate={phoneControls}>
+            <Image src={phoneDouble} fill className="object-cover" alt="double phone" />
+          </motion.div>
+        </div>
 
         {/* TEXT */}
         <motion.div
           className="absolute font-poly-sans"
           animate={textControls}
           style={{
-            position: "absolute",
             color: "#2F9C96",
             fontWeight: 400,
-            fontSize: "292.13px",
             letterSpacing: "-1.28px",
             lineHeight: "328px",
             whiteSpace: "nowrap",
