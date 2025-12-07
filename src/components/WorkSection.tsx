@@ -36,7 +36,7 @@ const imageVariants: Variants = {
 
 export function WorkSection() {
   return (
-    <section className="min-h-screen bg-[#E5F9E0] py-16 px-8 mx-[calc(50%-50vw)]">
+    <section id="work" className="min-h-screen bg-[#E5F9E0] py-16 px-8 mx-[calc(50%-50vw)]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

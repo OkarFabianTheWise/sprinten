@@ -21,7 +21,9 @@
   --color-gray-dark: #6C837F;
   --color-white: #FFFFFF;
 }
-
+section {
+  scroll-margin-top: 80px;
+}
 body {
   @apply min-h-screen bg-[#021514] font-body text-primary-700 antialiased;
 }
@@ -68,12 +70,7 @@ body {
   max-width: 1360px;
   height: auto;
   min-height: 560px;
-  background-color: #021514;
-}
-
-.hero-logo-card {
-  animation: heroReveal 1s ease-out 0.001s forwards;
-  opacity: 0;
+  background-color: transparent;
 }
 
 @keyframes heroReveal {

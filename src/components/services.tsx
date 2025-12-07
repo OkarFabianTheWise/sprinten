@@ -61,7 +61,7 @@ export function ServiceCard({ img, title, description }: ServiceCardProps) {
 
 export function ServicesSection() {
   return (
-    <section className="relative bg-[#E5F9E0] px-0 mx-[calc(50%-50vw)] overflow-hidden">
+    <section id="services" className="relative bg-[#E5F9E0] px-0 mx-[calc(50%-50vw)] overflow-hidden">
       <div 
         className="service-card-shell mt-8 mb-8 bg-[#A2F7B4] rounded-[16px] px-12 py-16 w-full max-w-[1300px] mx-auto font-poly-sans"
       >

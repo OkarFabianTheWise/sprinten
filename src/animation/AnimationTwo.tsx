@@ -85,7 +85,7 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
       await new Promise((r) => setTimeout(r, 1000));
 
       // Hold final state
-      await new Promise((r) => setTimeout(r, 3500));
+      await new Promise((r) => setTimeout(r, 1900));
 
       // OPTIONAL: RETURN BACKGROUND TO WHITE
       await safeStart(cardControls, {

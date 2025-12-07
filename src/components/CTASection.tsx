@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 export function CTASection() {
   return (
     <section 
+      id="contact"
       className="relative flex items-center justify-center w-full"
       style={{
         height: '510px',

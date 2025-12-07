@@ -7,7 +7,7 @@ import { HoverScrollText } from "@/animation/HoverScrollText";
 
 export function HeroSection() {
   return (
-    <section className="space-y-6 px-0 h-[932px] mx-[calc(50%-50vw)]">
+    <section id="home" className="space-y-6 px-0 h-[932px] mx-[calc(50%-50vw)]">
       <div className="hero-shell w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[192px] overflow-hidden px-8 text-primary-100">
         <div className="flex h-full items-center justify-between gap-10">
             <motion.div 

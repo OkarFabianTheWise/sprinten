@@ -106,15 +106,11 @@ export function AudienceSection() {
             ))}
           </div>
         </div>
-        <motion.div 
+        <div 
           className="mt-32 w-full flex justify-center"
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.9 }}
-          viewport={{ once: false, amount: 0.5 }}
         >
           <CombinedAnimation />
-        </motion.div>
+        </div>
       </div>
     </div>
   );

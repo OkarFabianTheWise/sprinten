@@ -3,40 +3,38 @@
 export function Footer() {
   return (
     <footer
-      className="w-full"
-      style={{
-        backgroundColor: "#021C1A",
-        margin: 0,
-        position: "relative",
-        display: "flex",
-        flexDirection: "column",
-        padding: "60px 0 0 0",
-      }}
+      className="w-screen mx-[calc(50%-50vw)] bg-[#021C1A]"
     >
       {/* MAIN CONTENT */}
       <div
         style={{
-          width: "100%",
-          maxWidth: "1320px",
-          margin: "0 auto",
-          padding: "0 60px",
           display: "flex",
           justifyContent: "space-between",
+          alignItems: "flex-start",
+          maxWidth: "1320px",
+          width: "100%",
+          margin: "0 auto",
+          gap: "60px",
           marginBottom: "80px",
+          padding: "0 20px", // optional: keeps content from touching edges on small screens
         }}
       >
         {/* LEFT SECTION — LOGO + TAGLINE */}
-        <div style={{ flex: "0 0 auto" }}>
+        <div
+          style={{
+            flex: "0 0 auto",
+            minWidth: "178px", // ensures logo section doesn't shrink
+          }}
+        >
           <img
             src="/logo.png"
             alt="Sprinten"
             style={{
-              width: "178.35px",
+              width: "178px",
               height: "198px",
               marginBottom: "16px",
             }}
           />
-
           <p
             style={{
               fontSize: "16px",
@@ -48,12 +46,15 @@ export function Footer() {
           </p>
         </div>
 
-        {/* RIGHT SECTION - THREE COLUMNS */}
+        {/* RIGHT SECTION — THREE COLUMNS */}
         <div
           style={{
             display: "flex",
             gap: "120px",
             alignItems: "flex-start",
+            flex: 1,
+            justifyContent: "flex-end",
+            paddingTop: "80px"
           }}
         >
           {/* QUICK LINK */}
@@ -141,7 +142,7 @@ export function Footer() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               <li style={{ marginBottom: "12px" }}>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/Sprint3n"
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
@@ -154,7 +155,7 @@ export function Footer() {
               </li>
               <li style={{ marginBottom: "12px" }}>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/sprinten"
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
@@ -162,12 +163,12 @@ export function Footer() {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Linkidin
+                  LinkedIn
                 </a>
               </li>
               <li style={{ marginBottom: "12px" }}>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/sprint3n"
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
@@ -180,7 +181,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:contact@sprinten.com"
+                  href="mailto:sprintenagency@gmail.com"
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
@@ -249,7 +250,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="mailto:sprintenagency@gmail.com"
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
@@ -284,7 +285,7 @@ export function Footer() {
             margin: 0,
           }}
         >
-          © 2025 Sprinten- All right reserved
+          © 2025 Sprinten - All rights reserved
         </p>
       </div>
     </footer>
