@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import arrowleft from "../icons/arrowleft.png";
+import arrowright from "../icons/arrowright.png";
 
 export function TestimonialSection() {
   return (
@@ -134,15 +136,7 @@ export function TestimonialSection() {
                 padding: 0
               }}
             >
-              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-                <path 
-                  d="M35 14L21 28L35 42" 
-                  stroke="#FFFFFF" 
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <img src={arrowleft.src} alt="Previous" width={56} height={56} />
             </motion.button>
             <motion.button 
               className="hover:opacity-70 transition-opacity"
@@ -161,15 +155,7 @@ export function TestimonialSection() {
                 padding: 0
               }}
             >
-              <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-                <path 
-                  d="M21 14L35 28L21 42" 
-                  stroke="#FFFFFF" 
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <img src={arrowright.src} alt="Next" width={52} height={52} />
             </motion.button>
           </motion.div>
         </div>
