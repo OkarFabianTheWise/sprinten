@@ -53,37 +53,50 @@ export function CTASection() {
 
         {/* Buttons */}
         <div className="flex gap-4">
-          <button 
-            className="transition-all hover:opacity-90"
-            style={{
-              backgroundColor: '#2E8B7D',
-              color: '#FFFFFF',
-              padding: '14px 32px',
-              borderRadius: '8px',
-              fontSize: '16px',
-              fontWeight: 600,
-              border: 'none',
-              cursor: 'pointer'
-            }}
+
+          {/* BOOK A CALL */}
+          <a 
+            href="https://cal.com/sprinten/introcall" 
+            target="_blank" 
+            rel="noopener noreferrer"
           >
-            Book a call
-          </button>
-          <button 
-            className="transition-all hover:bg-white/10"
-            style={{
-              backgroundColor: 'transparent',
-              color: '#2E8B7D',
-              padding: '14px 32px',
-              borderRadius: '8px',
-              fontSize: '16px',
-              fontWeight: 600,
-              border: '2px solid #2E8B7D',
-              cursor: 'pointer'
-            }}
+            <button 
+              className="transition-all hover:opacity-90 font-poly-sans font-normal"
+              style={{
+                backgroundColor: '#2E8B7D',
+                color: '#FFFFFF',
+                padding: '14px 32px',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              Book a call
+            </button>
+          </a>
+
+          {/* START A SPRINT */}
+          <a 
+            href="https://nifty-possum-71c.notion.site/6650f5b8165e431a9926bec2eaf3bed7"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Start a sprint
-          </button>
+            <button 
+              className="transition-all hover:bg-white/10 font-poly-sans font-normal"
+              style={{
+                backgroundColor: 'transparent',
+                color: '#2E8B7D',
+                padding: '14px 32px',
+                borderRadius: '8px',
+                border: '2px solid #2E8B7D',
+                cursor: 'pointer'
+              }}
+            >
+              Start a sprint
+            </button>
+          </a>
         </div>
+
       </div>
     </section>
   );

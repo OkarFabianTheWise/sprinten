@@ -1,5 +1,6 @@
 "use client";
 
+import CombinedAnimation from "@/animation/CombinedAnimation";
 import { HoverScrollCall } from "@/animation/HoverScrollCall";
 import { motion } from "framer-motion";
 
@@ -50,7 +51,7 @@ export function AudienceSection() {
                   ease-out 
                   hover:translate-y-[-1px]
               "
-              aria-label="Start a Sprint"
+              aria-label="Book a Call"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
@@ -105,23 +106,14 @@ export function AudienceSection() {
             ))}
           </div>
         </div>
-        {/* Giant Sprinten Text */}
         <motion.div 
-          className="flex items-center justify-center"
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, delay: 1.2 }}
+          className="mt-32 w-full flex justify-center"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.9 }}
           viewport={{ once: false, amount: 0.5 }}
         >
-          <motion.h2 
-            className="text-[#5B9C96] font-normal text-[12rem] md:text-[16rem] lg:text-[20rem] leading-none tracking-tight opacity-40"
-            initial={{ scale: 0.8 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 1.2, delay: 1.2 }}
-            viewport={{ once: false, amount: 0.5 }}
-          >
-            Sprinten
-          </motion.h2>
+          <CombinedAnimation />
         </motion.div>
       </div>
     </div>

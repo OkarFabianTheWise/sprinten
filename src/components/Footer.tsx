@@ -2,226 +2,286 @@
 
 export function Footer() {
   return (
-    <footer 
-      className="relative"
+    <footer
+      className="w-full"
       style={{
-        width: '1440px',
-        height: '384px',
-        backgroundColor: '#021514'
+        backgroundColor: "#021C1A",
+        margin: 0,
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        padding: "60px 0 0 0",
       }}
     >
-      {/* Main footer content */}
-      <div 
-        className="absolute flex justify-between"
+      {/* MAIN CONTENT */}
+      <div
         style={{
-          width: '1320px',
-          height: '148px',
-          top: '80px',
-          left: '60px'
+          width: "100%",
+          maxWidth: "1320px",
+          margin: "0 auto",
+          padding: "0 60px",
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: "80px",
         }}
       >
-        {/* Left side - Logo and tagline */}
-        <div>
-          <img 
-            src="/logo.png" 
-            alt="Sprinten" 
+        {/* LEFT SECTION — LOGO + TAGLINE */}
+        <div style={{ flex: "0 0 auto" }}>
+          <img
+            src="/logo.png"
+            alt="Sprinten"
             style={{
-              width: '175.35px',
-              height: '90px',
-              marginBottom: '16px'
+              width: "178.35px",
+              height: "198px",
+              marginBottom: "16px",
             }}
           />
-          <p 
+
+          <p
             style={{
-              fontSize: '16px',
-              color: '#8B9FFF',
-              marginTop: '12px'
+              fontSize: "16px",
+              color: "#A8B5B3",
+              margin: 0,
             }}
           >
             Ship Faster. Build Better. Onchain.
           </p>
         </div>
 
-        {/* Quick link */}
-        <div>
-          <h3 
-            style={{
-              fontSize: '16px',
-              fontWeight: 600,
-              color: '#FFFFFF',
-              marginBottom: '16px'
-            }}
-          >
-            Quick link
-          </h3>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-            <li style={{ marginBottom: '12px' }}>
-              <a 
-                href="#home" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Home
-              </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
-              <a 
-                href="#services" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Services
-              </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
-              <a 
-                href="#work" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Work
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#contact" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+        {/* RIGHT SECTION - THREE COLUMNS */}
+        <div
+          style={{
+            display: "flex",
+            gap: "120px",
+            alignItems: "flex-start",
+          }}
+        >
+          {/* QUICK LINK */}
+          <div>
+            <h3
+              style={{
+                fontSize: "16px",
+                fontWeight: 600,
+                color: "#FFFFFF",
+                marginBottom: "20px",
+                marginTop: 0,
+              }}
+            >
+              Quick link
+            </h3>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              <li style={{ marginBottom: "12px" }}>
+                <a
+                  href="#home"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Home
+                </a>
+              </li>
+              <li style={{ marginBottom: "12px" }}>
+                <a
+                  href="#services"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Services
+                </a>
+              </li>
+              <li style={{ marginBottom: "12px" }}>
+                <a
+                  href="#work"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Work
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        {/* Connect */}
-        <div>
-          <h3 
-            style={{
-              fontSize: '16px',
-              fontWeight: 600,
-              color: '#FFFFFF',
-              marginBottom: '16px'
-            }}
-          >
-            Connect
-          </h3>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-            <li style={{ marginBottom: '12px' }}>
-              <a 
-                href="https://twitter.com" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Twitter
-              </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
-              <a 
-                href="https://linkedin.com" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Linkidin
-              </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
-              <a 
-                href="https://instagram.com" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a 
-                href="mailto:contact@sprinten.com" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Email
-              </a>
-            </li>
-          </ul>
-        </div>
+          {/* CONNECT */}
+          <div>
+            <h3
+              style={{
+                fontSize: "16px",
+                fontWeight: 600,
+                color: "#FFFFFF",
+                marginBottom: "20px",
+                marginTop: 0,
+              }}
+            >
+              Connect
+            </h3>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              <li style={{ marginBottom: "12px" }}>
+                <a
+                  href="https://twitter.com"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Twitter
+                </a>
+              </li>
+              <li style={{ marginBottom: "12px" }}>
+                <a
+                  href="https://linkedin.com"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Linkidin
+                </a>
+              </li>
+              <li style={{ marginBottom: "12px" }}>
+                <a
+                  href="https://instagram.com"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:contact@sprinten.com"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Email
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        {/* Legal */}
-        <div>
-          <h3 
-            style={{
-              fontSize: '16px',
-              fontWeight: 600,
-              color: '#FFFFFF',
-              marginBottom: '16px'
-            }}
-          >
-            Legal
-          </h3>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-            <li style={{ marginBottom: '12px' }}>
-              <a 
-                href="#terms" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Terms
-              </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
-              <a 
-                href="#privacy" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Privacy
-              </a>
-            </li>
-            <li style={{ marginBottom: '12px' }}>
-              <a 
-                href="#work" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Work
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#contact" 
-                style={{ fontSize: '14px', color: '#8B9FFF', textDecoration: 'none' }}
-                className="hover:text-white transition-colors"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
+          {/* LEGAL */}
+          <div>
+            <h3
+              style={{
+                fontSize: "16px",
+                fontWeight: 600,
+                color: "#FFFFFF",
+                marginBottom: "20px",
+                marginTop: 0,
+              }}
+            >
+              Legal
+            </h3>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              <li style={{ marginBottom: "12px" }}>
+                <a
+                  href="#terms"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Terms
+                </a>
+              </li>
+              <li style={{ marginBottom: "12px" }}>
+                <a
+                  href="#privacy"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Privacy
+                </a>
+              </li>
+              <li style={{ marginBottom: "12px" }}>
+                <a
+                  href="#work"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Work
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  style={{
+                    fontSize: "14px",
+                    color: "#A8B5B3",
+                    textDecoration: "none",
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      {/* Bottom copyright with divider */}
-      <div 
-        className="absolute"
+      {/* BOTTOM BAR */}
+      <div
         style={{
-          bottom: '40px',
-          left: '60px',
-          right: '60px'
+          width: "100%",
+          padding: "20px 0",
+          borderTop: "1px solid rgba(255,255,255,0.1)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <div 
+        <p
           style={{
-            width: '100%',
-            height: '1px',
-            backgroundColor: '#8B9FFF',
-            opacity: 0.2,
-            marginBottom: '24px'
-          }}
-        />
-        <p 
-          style={{
-            fontSize: '14px',
-            color: '#8B9FFF',
-            textAlign: 'center'
+            fontSize: "14px",
+            color: "#A8B5B3",
+            textAlign: "center",
+            margin: 0,
           }}
         >
           © 2025 Sprinten- All right reserved
