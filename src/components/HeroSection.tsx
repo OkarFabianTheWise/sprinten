@@ -49,7 +49,7 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: false, amount: 0.5 }}
               >
-                Sprinten helps Solana founders and developers launch market-ready products in weeks, not months.
+                {heroCopy.body}
               </motion.p>
               <motion.div
                 className="w-fit"
