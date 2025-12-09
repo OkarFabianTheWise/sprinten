@@ -12,30 +12,35 @@ export function AudienceSection() {
         <div className="flex gap-10 mb-32">
           {/* Left Column - Header */}
           <div className="flex-1">
+            <motion.div 
+            className="flex-1 overflow-hidden"
+            initial={{ opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
             <motion.p
               className="text-[#5B9C96] text-sm font-medium tracking-wider mb-6"
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               WHO WE SERVE
             </motion.p>
             <motion.h1
               className="text-[57px] leading-[72px] tracking-[-0.25px] font-normal text-[#021514] mb-8"
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               Built for Founders. Designed for Developers. Ready for Anyone Shipping Onchain.
             </motion.h1>
             <motion.p 
               className="text-[#7A9490] text-lg leading-[28px] mb-8"
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               Sprinten supports the people building the next generation of Solana products — whether you're writing smart contracts, shaping a new startup, or taking an idea to market.
             </motion.p>
@@ -52,14 +57,15 @@ export function AudienceSection() {
                   hover:translate-y-[-1px]
               "
               aria-label="Book a Call"
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: false, amount: 0.3 }}
               whileHover={{ scale: 1.05 }}
             >
               <HoverScrollCall />
             </motion.button>
+          </motion.div>
           </div>
           {/* Right Column - Audience Cards */}
           <div className="flex-1 grid gap-12">

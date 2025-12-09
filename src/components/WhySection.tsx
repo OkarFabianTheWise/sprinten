@@ -63,25 +63,13 @@ export function WhySection() {
 
           {/* CTA */}
           <motion.div
-            className="mt-8 overflow-hidden"
+            className="w-fit mt-6"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.4 }}
             viewport={{ once: false, amount: 0.5 }}
           >
-            <a
-              href="https://nifty-possum-71c.notion.site/6650f5b8165e431a9926bec2eaf3bed7"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <motion.button
-                className="relative flex items-center w-[200px] h-[40px] rounded-[8px] gap-[24px] px-[12px] transition-all duration-500 ease-out hover:translate-y-[-1px]"
-                aria-label="Start a Sprint"
-                whileHover={{ scale: 1.05 }}
-              >
-                <HoverScrollText />
-              </motion.button>
-            </a>
+            <HoverScrollText />
           </motion.div>
         </div>
 
