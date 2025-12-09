@@ -25,7 +25,10 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
   useEffect(() => {
     let mounted = true;
 
-    const safeStart = async (controls: ReturnType<typeof useAnimation>, props: TargetAndTransition) => {
+    const safeStart = async (
+      controls: ReturnType<typeof useAnimation>,
+      props: TargetAndTransition
+    ) => {
       if (!mounted) return;
       await controls.start(props);
     };
@@ -47,7 +50,7 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
         rotate: -15,
         x: -55,
         y: 27,
-        transition: { duration: 1, ease: "easeOut" }
+        transition: { duration: 1, ease: "easeOut" },
       });
 
       await new Promise((r) => setTimeout(r, 700));
@@ -59,13 +62,29 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
         y: 38,
         width: 482.13,
         height: 452,
-        transition: { duration: 1, ease: "easeOut" }
+        transition: { duration: 1, ease: "easeOut" },
       });
 
-      creditControls.start({ y: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } });
-      referralControls.start({ y: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } });
-      menuControls.start({ y: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } });
-      recoveryControls.start({ y: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } });
+      creditControls.start({
+        y: 0,
+        opacity: 1,
+        transition: { duration: 1, ease: "easeOut" },
+      });
+      referralControls.start({
+        y: 0,
+        opacity: 1,
+        transition: { duration: 1, ease: "easeOut" },
+      });
+      menuControls.start({
+        y: 0,
+        opacity: 1,
+        transition: { duration: 1, ease: "easeOut" },
+      });
+      recoveryControls.start({
+        y: 0,
+        opacity: 1,
+        transition: { duration: 1, ease: "easeOut" },
+      });
 
       await new Promise((r) => setTimeout(r, 1000));
 
@@ -77,25 +96,28 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
         opacity: 1,
         x: -18,
         y: 93,
-        transition: { duration: 1, ease: "easeOut" }
+        transition: { duration: 1, ease: "easeOut" },
       });
 
       safeStart(privateKeyControls, {
         x: 0,
         opacity: 1,
-        transition: { duration: 1, ease: "easeOut" }
+        transition: { duration: 1, ease: "easeOut" },
       });
 
-      await new Promise((r) => setTimeout(r, 2500));
+      await new Promise((r) => setTimeout(r, 1500));
 
-      // RESET ALL
-      creditControls.start({ y: -120, opacity: 0, transition: { duration: 0.6 } });
-      referralControls.start({ y: 120, opacity: 0, transition: { duration: 0.6 } });
-      menuControls.start({ y: 120, opacity: 0, transition: { duration: 0.6 } });
-      recoveryControls.start({ y: -80, opacity: 0, transition: { duration: 0.6 } });
-      privateKeyControls.start({ x: 200, opacity: 0, transition: { duration: 0.6 } });
+      // ⭐ FINAL — FADE EVERYTHING OUT IN PLACE (NO REVERSE)
+      const fade = { opacity: 0, transition: { duration: 0.4 } };
 
-      await new Promise((r) => setTimeout(r, 800));
+      creditControls.start(fade);
+      referralControls.start(fade);
+      menuControls.start(fade);
+      recoveryControls.start(fade);
+      privateKeyControls.start(fade);
+      phoneControls.start(fade);
+
+      await new Promise((r) => setTimeout(r, 700));
 
       if (onFinished) onFinished();
     };
@@ -105,7 +127,15 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
     return () => {
       mounted = false;
     };
-  }, [phoneControls, creditControls, referralControls, menuControls, recoveryControls, privateKeyControls, onFinished]);
+  }, [
+    phoneControls,
+    creditControls,
+    referralControls,
+    menuControls,
+    recoveryControls,
+    privateKeyControls,
+    onFinished,
+  ]);
 
   return (
     <motion.div
@@ -143,17 +173,29 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
 
         {/* Credit */}
         <div className="absolute left-[40px] top-[31px]">
-          <FloatingIcon src={credit} className="w-[413px] h-[331px]" animate={creditControls} />
+          <FloatingIcon
+            src={credit}
+            className="w-[413px] h-[331px]"
+            animate={creditControls}
+          />
         </div>
 
         {/* Referral */}
         <div className="absolute top-[385px] left-[40px] w-[500px] h-[158px]">
-          <FloatingIcon src={referral} className="w-[413px] h-[140px]" animate={referralControls} />
+          <FloatingIcon
+            src={referral}
+            className="w-[413px] h-[140px]"
+            animate={referralControls}
+          />
         </div>
 
         {/* Menu */}
         <div className="absolute left-[907px] top-[232px]">
-          <FloatingIcon src={menu} className="w-[413px] h-[311px]" animate={menuControls} />
+          <FloatingIcon
+            src={menu}
+            className="w-[413px] h-[311px]"
+            animate={menuControls}
+          />
         </div>
       </div>
     </motion.div>

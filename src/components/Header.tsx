@@ -11,16 +11,28 @@ export default function Header() {
 
         {/* center nav - use flex-1 + justify-center to center items */}
         <nav className="hidden sm:flex flex-1 items-center justify-center gap-[40px]">
-          <button className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold">
+          <a 
+            href="#work"
+            className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold cursor-pointer"
+          >
             Work
-          </button>
-          <button className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold">
+          </a>
+
+          <a 
+            href="#services"
+            className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold cursor-pointer"
+          >
             Services
-          </button>
-          <button className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold">
+          </a>
+
+          <a 
+            href="#about"
+            className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold cursor-pointer"
+          >
             About
-          </button>
+          </a>
         </nav>
+
 
         {/* CTA - keep as flex-none to avoid stretching */}
         <div className="flex-none pr-10">
