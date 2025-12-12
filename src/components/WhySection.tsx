@@ -22,15 +22,11 @@ export function WhySection() {
         <div className="overflow-hidden">
 
           {/* Label */}
-          <motion.p
-            className="text-sm tracking-[0.5em] text-[#5FA089] uppercase overflow-hidden"
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: false, amount: 0.5 }}
+          <p
+            className="text-sm text-[#858BE3] uppercase overflow-hidden space-x-[0.1px] font-[14px]"
           >
             {whySprinten.label}
-          </motion.p>
+          </p>
 
           {/* Main Headings */}
           <motion.h2 className="mt-6 font-poly-sans font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#021514] w-[603px]">
@@ -88,7 +84,7 @@ export function WhySection() {
               </motion.h3>
 
               <motion.p
-                className="mt-2 font-poly-sans font-normal text-[16px] leading-[24px] text-[#6C837F] w-[559px] overflow-hidden"
+                className="mt-2 font-poly-sans font-neutral text-[16px] leading-[24px] text-[#6C837F] w-[559px] overflow-hidden spacing-x-[0.25px]"
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.4 }}

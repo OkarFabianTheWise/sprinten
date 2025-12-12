@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export interface ServiceCardProps {
   img: string;
   title: string;
@@ -67,20 +69,41 @@ export function ServicesSection() {
       >
         <div className="flex justify-between w-full">
           <div className="w-[703px]">
-            <p className="text-sm tracking-[0.5em] text-[#5FA089] uppercase">
+            <p className="text-sm text-[#858BE3] uppercase font-[14px]">
               OUR SERVICES
             </p>
 
-            <h2 className="mt-4 font-poly-sans font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#021514] w-[703px]">
-              Everything You Need to
-              <br />
-              Launch. Nothing You Don't.
-            </h2>
+            <motion.h2 className="mt-4 font-poly-sans font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#021514] w-[703px]">
+              <motion.span
+                className="block overflow-hidden"
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: false, amount: 0.5 }}
+              >
+                Everything You Need to
+              </motion.span>
+              <motion.span
+                className="block overflow-hidden"
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                viewport={{ once: false, amount: 0.5 }}
+              >
+                Launch. Nothing You Don't.
+              </motion.span>
+            </motion.h2>
           </div>
 
-          <p className="w-[447px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] pt-10 text-[#365B59]">
+          <motion.p
+            className="w-[447px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] pt-10 text-[#365B59] overflow-hidden"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
             Sprinten delivers the core design, frontend, and strategy you need to ship a real product—fast. No bloated packages. No slow handoffs. Just focused execution built for founders and developers.
-          </p>
+          </motion.p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3">

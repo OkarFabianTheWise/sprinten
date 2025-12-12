@@ -40,17 +40,13 @@ export function WorkSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <motion.p 
-            className="text-[#7b8fda] text-sm font-medium tracking-[0.2em] mb-4 uppercase"
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: false, amount: 0.5 }}
+          <p
+            className="text-[#858BE3] text-sm font-medium tracking-[0.2em] mb-4 uppercase"
           >
             OUR WORK
-          </motion.p>
+          </p>
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+            className="font-[400] text-[57px] leading-[64px] tracking-[-0.25px] text-center text-[#021514] overflow-hidden"
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -59,10 +55,10 @@ export function WorkSection() {
             Products We've Shipped, Fast.
           </motion.h1>
           <motion.p 
-            className="text-gray-600 text-lg max-w-3xl mx-auto"
+            className="font-[400] text-[16px] leading-[24px] tracking-[0.5px] text-center text-[#8CA1A0] max-w-3xl mx-auto overflow-hidden"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: false, amount: 0.5 }}
           >
             A look at the real products, MVPs, dashboards, and frontends we've
@@ -112,11 +108,11 @@ export function WorkSection() {
           ))}
         </div>
         {/* Button */}
-        <motion.button 
-          className="px-8 py-3 border-2 border-teal-500 text-teal-700 rounded-lg font-medium hover:bg-teal-50 transition-colors"
+        <div 
+          className="px-8 py-3 border-2 border-teal-500 text-teal-700 rounded-lg font-medium hover:bg-teal-50 transition-colors mx-auto w-fit"
         >
           See all work
-        </motion.button>
+        </div>
       </div>
     </section>
   );

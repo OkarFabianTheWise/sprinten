@@ -7,25 +7,21 @@ import { motion } from "framer-motion";
 export function AudienceSection() {
   return (
     <div className="min-h-screen bg-[#E5F9E0] px-4 md:px-8 lg:px-12 py-16 mx-[calc(50%-50vw)]">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1440px] mx-auto">
         {/* Main Content - Side by Side */}
-        <div className="flex gap-10 mb-32">
+        <div className="flex justify-between mb-32 w-[1360px] h-[348px]">
           {/* Left Column - Header */}
-          <div className="flex-1">
+          <div className="w-[740px] h-[348px] flex flex-col gap-4">
             <motion.div 
               className="flex-1 overflow-hidden"
               initial={{ opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <motion.p
-                className="text-[#5B9C96] text-sm font-medium tracking-wider mb-6"
-                initial={{ y: 40, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                viewport={{ once: false, amount: 0.3 }}
+              <p
+                className="text-[#858BE3] text-sm font-medium tracking-wider mb-6"
               >
                 WHO WE SERVE
-              </motion.p>
+              </p>
 
               <motion.h1
                 className="text-[57px] leading-[72px] tracking-[-0.25px] font-normal text-[#021514] mb-8"
@@ -34,7 +30,9 @@ export function AudienceSection() {
                 transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                Built for Founders. Designed<br /> for Developers. Ready for<br /> Anyone Shipping Onchain.
+                Built for Founders. Designed<br />
+                for Developers. Ready for<br />
+                Anyone Shipping Onchain.
               </motion.h1>
 
               <motion.p 
@@ -47,13 +45,17 @@ export function AudienceSection() {
                 Sprinten supports the people building the next generation of Solana products — whether you're writing smart contracts, shaping a new startup, or taking an idea to market.
               </motion.p>
 
-              <motion.button
+              
+            </motion.div>
+            <motion.button
                 className="
                   relative flex items-center 
-                  w=[200px] h=[40px]
+                  w-[200px] h-[40px]
                   rounded-[8px]
                   gap-[24px]
                   px-[12px]
+                  text-white
+                  font-medium
                   transition-all 
                   duration-500 
                   ease-out 
@@ -68,11 +70,10 @@ export function AudienceSection() {
               >
                 <HoverScrollCall />
               </motion.button>
-            </motion.div>
           </div>
 
           {/* Right Column - Audience Cards */}
-          <div className="flex-1 grid gap-12">
+          <div className="w-[559px] h-[332px] grid gap-10">
             {[
               {
                 title: "For Developers",
