@@ -13,41 +13,44 @@ export function AudienceSection() {
           {/* Left Column - Header */}
           <div className="flex-1">
             <motion.div 
-            className="flex-1 overflow-hidden"
-            initial={{ opacity: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-          >
-            <motion.p
-              className="text-[#5B9C96] text-sm font-medium tracking-wider mb-6"
-              initial={{ y: 40, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="flex-1 overflow-hidden"
+              initial={{ opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              WHO WE SERVE
-            </motion.p>
-            <motion.h1
-              className="text-[57px] leading-[72px] tracking-[-0.25px] font-normal text-[#021514] mb-8"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              Built for Founders. Designed for Developers. Ready for Anyone Shipping Onchain.
-            </motion.h1>
-            <motion.p 
-              className="text-[#7A9490] text-lg leading-[28px] mb-8"
-              initial={{ y: 40, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              Sprinten supports the people building the next generation of Solana products — whether you're writing smart contracts, shaping a new startup, or taking an idea to market.
-            </motion.p>
-            <motion.button
-              className="
+              <motion.p
+                className="text-[#5B9C96] text-sm font-medium tracking-wider mb-6"
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                WHO WE SERVE
+              </motion.p>
+
+              <motion.h1
+                className="text-[57px] leading-[72px] tracking-[-0.25px] font-normal text-[#021514] mb-8"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                Built for Founders. Designed<br /> for Developers. Ready for<br /> Anyone Shipping Onchain.
+              </motion.h1>
+
+              <motion.p 
+                className="text-[#7A9490] text-lg leading-[28px] mb-8"
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                Sprinten supports the people building the next generation of Solana products — whether you're writing smart contracts, shaping a new startup, or taking an idea to market.
+              </motion.p>
+
+              <motion.button
+                className="
                   relative flex items-center 
-                  w-[200px] h-[40px]
+                  w=[200px] h=[40px]
                   rounded-[8px]
                   gap-[24px]
                   px-[12px]
@@ -55,18 +58,19 @@ export function AudienceSection() {
                   duration-500 
                   ease-out 
                   hover:translate-y-[-1px]
-              "
-              aria-label="Book a Call"
-              initial={{ y: 40, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              viewport={{ once: false, amount: 0.3 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <HoverScrollCall />
-            </motion.button>
-          </motion.div>
+                "
+                aria-label="Book a Call"
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: false, amount: 0.3 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <HoverScrollCall />
+              </motion.button>
+            </motion.div>
           </div>
+
           {/* Right Column - Audience Cards */}
           <div className="flex-1 grid gap-12">
             {[
@@ -85,25 +89,26 @@ export function AudienceSection() {
             ].map((card, i) => (
               <motion.div 
                 key={i}
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 + i * 0.15 }}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.9 + i * 0.12 }}
                 viewport={{ once: false, amount: 0.5 }}
               >
                 <motion.h3 
                   className="text-2xl font-normal mb-3 text-[#021514]"
-                  initial={{ y: 10, opacity: 0 }}
+                  initial={{ y: 8, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 + i * 0.15 }}
+                  transition={{ duration: 0.6, delay: 0.95 + i * 0.12 }}
                   viewport={{ once: false, amount: 0.5 }}
                 >
                   {card.title}
                 </motion.h3>
+
                 <motion.p 
                   className="text-[#7A9490] leading-[26px]"
-                  initial={{ y: 10, opacity: 0 }}
+                  initial={{ y: 6, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.7 + i * 0.15 }}
+                  transition={{ duration: 0.6, delay: 1.0 + i * 0.12 }}
                   viewport={{ once: false, amount: 0.5 }}
                 >
                   {card.text}
@@ -112,9 +117,8 @@ export function AudienceSection() {
             ))}
           </div>
         </div>
-        <div 
-          className="mt-32 w-full flex justify-center"
-        >
+
+        <div className="mt-32 w-full flex justify-center">
           <CombinedAnimation />
         </div>
       </div>

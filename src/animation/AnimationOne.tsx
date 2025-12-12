@@ -107,8 +107,8 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
 
       await new Promise((r) => setTimeout(r, 1500));
 
-      // ⭐ FINAL — FADE EVERYTHING OUT IN PLACE (NO REVERSE)
-      const fade = { opacity: 0, transition: { duration: 0.4 } };
+      // ⭐ FINAL — FADE EVERYTHING OUT SMOOTHLY + TRIGGER NEXT ANIMATION
+      const fade = { opacity: 0, transition: { duration: 0.8 } };
 
       creditControls.start(fade);
       referralControls.start(fade);
@@ -117,8 +117,7 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
       privateKeyControls.start(fade);
       phoneControls.start(fade);
 
-      await new Promise((r) => setTimeout(r, 700));
-
+      // Trigger next animation immediately for smooth cross-fade
       if (onFinished) onFinished();
     };
 

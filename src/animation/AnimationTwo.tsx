@@ -78,16 +78,16 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
         fontSize: "292.13px",
         transition: { duration: 0.2, ease: "easeOut" },
       });
-      await new Promise((r) => setTimeout(r, 1000));
+        await new Promise((r) => setTimeout(r, 400));
 
       await safeStart(textControls, {
         fontSize: "83.72px",
-        transition: { duration: 1.5, ease: "easeOut" },
+          transition: { duration: 1, ease: "easeOut" },
       });
-      await new Promise((r) => setTimeout(r, 1000));
+        await new Promise((r) => setTimeout(r, 300));
 
       // Hold final state
-      await new Promise((r) => setTimeout(r, 1900));
+        await new Promise((r) => setTimeout(r, 800));
 
       // RETURN BACKGROUND TO WHITE
       await safeStart(cardControls, {

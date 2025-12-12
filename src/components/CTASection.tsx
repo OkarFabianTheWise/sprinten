@@ -42,14 +42,14 @@ export function CTASection() {
         <motion.p 
           className="font-poly-sans font-normal"
           style={{
-            fontSize: '18px',
+            fontSize: '16px',
             lineHeight: '28px',
             color: '#034A3D',
             maxWidth: '700px',
             marginBottom: '32px'
           }}
         >
-          Let's turn your idea, prototype, or draft UI into a real product, designed, built, and ready for users.
+          Let's turn your idea, prototype, or draft UI into a real<br /> product, designed, built, and ready for users.
         </motion.p>
 
         {/* Buttons */}
@@ -62,11 +62,11 @@ export function CTASection() {
             rel="noopener noreferrer"
           >
             <button 
-              className="transition-all hover:opacity-90 font-poly-sans font-normal"
+              className="transition-all hover:opacity-90 font-poly-sans font-normal h-[52px] w-[175px]"
               style={{
                 backgroundColor: '#2E8B7D',
                 color: '#FFFFFF',
-                padding: '14px 32px',
+                // padding: '14px 32px',
                 borderRadius: '8px',
                 border: 'none',
                 cursor: 'pointer'
@@ -83,11 +83,11 @@ export function CTASection() {
             rel="noopener noreferrer"
           >
             <button 
-              className="transition-all hover:bg-white/10 font-poly-sans font-normal"
+              className="transition-all hover:bg-white/10 font-poly-sans font-normal h-[52px] w-[175px]"
               style={{
                 backgroundColor: 'transparent',
                 color: '#2E8B7D',
-                padding: '14px 32px',
+                // padding: '14px 32px',
                 borderRadius: '8px',
                 border: '2px solid #2E8B7D',
                 cursor: 'pointer'

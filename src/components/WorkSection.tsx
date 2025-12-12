@@ -112,21 +112,11 @@ export function WorkSection() {
           ))}
         </div>
         {/* Button */}
-        <motion.div 
-          className="text-center"
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: false, amount: 0.5 }}
+        <motion.button 
+          className="px-8 py-3 border-2 border-teal-500 text-teal-700 rounded-lg font-medium hover:bg-teal-50 transition-colors"
         >
-          <motion.button 
-            className="px-8 py-3 border-2 border-teal-500 text-teal-700 rounded-lg font-medium hover:bg-teal-50 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            See all work
-          </motion.button>
-        </motion.div>
+          See all work
+        </motion.button>
       </div>
     </section>
   );
