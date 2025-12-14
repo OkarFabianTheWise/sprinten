@@ -1,3 +1,4 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import { polySans } from "./fonts";
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${polySans.variable} ${inter.variable} ${clash.variable} ${plex.variable}`}>
-      <body className={`${polySans.className} bg-[#021514] overflow-x-hidden`}>
+      <body className={`${polySans.className} bg-[#E5F9E0] overflow-x-hidden`}>
         <Header />
         {children}
       </body>

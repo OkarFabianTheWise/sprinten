@@ -1,55 +1,116 @@
+// ============================================================
+// src/components/Header.tsx
+// ============================================================
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <header className="w-full bg-white h-[86px] flex items-center">
-      <div className="mx-auto flex items-center justify-between px-6 max-w-[1360px] w-full">
-        {/* logo - keep as flex-none so it doesn't stretch */}
-        <div className="flex items-center gap-4 text-[#021514] flex-none pl-10 h-[42px]">
-          <Image src="/headerlogo.png" alt="Sprinten" width={172} height={42} />
+    <header className="w-full bg-white h-[86px] flex items-center sticky top-0 z-50">
+      <div className="mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 max-w-[1360px] w-full">
+        {/* Logo */}
+        <div className="flex items-center gap-4 text-[#021514] flex-none h-[42px] pl-2 sm:pl-10">
+          <Image 
+            src="/headerlogo.png" 
+            alt="Sprinten" 
+            width={172} 
+            height={42}
+            className="w-auto h-[32px] sm:h-[42px]"
+          />
         </div>
 
-        {/* center nav - use flex-1 + justify-center to center items */}
-        <nav className="hidden sm:flex flex-1 items-center justify-center gap-[40px]">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex flex-1 items-center justify-center gap-[40px]">
           <a 
             href="#work"
-            className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold cursor-pointer"
+            className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold cursor-pointer hover:text-[#2F9C96] transition"
           >
             Work
           </a>
-
           <a 
             href="#services"
-            className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold cursor-pointer"
+            className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold cursor-pointer hover:text-[#2F9C96] transition"
           >
             Services
           </a>
-
           <a 
             href="#about"
-            className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold cursor-pointer"
+            className="text-[12px] leading-[16px] tracking-[0.5px] text-center font-semibold cursor-pointer hover:text-[#2F9C96] transition"
           >
             About
           </a>
         </nav>
 
-
-        {/* CTA - keep as flex-none to avoid stretching */}
-        <div className="flex-none pr-10">
+        {/* Desktop CTA */}
+        <div className="hidden md:flex flex-none pr-2 sm:pr-10">
           <a
             href="https://cal.com/sprinten/introcall"
             target="_blank"
             rel="noopener noreferrer"
           >
             <button
-              className="flex items-center justify-center rounded-[8px] text-white transition hover:bg-[#0b8b6c] bg-[#2F9C96] w-[158px] h-[52px] gap-[8px] px-[16px]"
+              className="flex items-center justify-center rounded-[8px] text-white transition hover:bg-[#0b8b6c] bg-[#2F9C96] w-[140px] lg:w-[158px] h-[48px] lg:h-[52px] gap-[8px] px-[16px]"
               aria-label="Book a call"
             >
-              <span className="text-[14px] font-semibold">Book a call</span>
+              <span className="text-[13px] lg:text-[14px] font-semibold">Book a call</span>
             </button>
           </a>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden flex flex-col gap-1.5 p-2"
+          aria-label="Toggle menu"
+        >
+          <span className={`w-6 h-0.5 bg-[#021514] transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`w-6 h-0.5 bg-[#021514] transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
+          <span className={`w-6 h-0.5 bg-[#021514] transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="absolute top-[86px] left-0 right-0 bg-white shadow-lg md:hidden border-t">
+          <nav className="flex flex-col p-6 gap-4">
+            <a 
+              href="#work"
+              className="text-[14px] font-semibold py-2 hover:text-[#2F9C96] transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Work
+            </a>
+            <a 
+              href="#services"
+              className="text-[14px] font-semibold py-2 hover:text-[#2F9C96] transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </a>
+            <a 
+              href="#about"
+              className="text-[14px] font-semibold py-2 hover:text-[#2F9C96] transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </a>
+            <a
+              href="https://cal.com/sprinten/introcall"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2"
+            >
+              <button className="w-full flex items-center justify-center rounded-[8px] text-white bg-[#2F9C96] h-[48px] font-semibold">
+                Book a call
+              </button>
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

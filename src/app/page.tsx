@@ -1,3 +1,4 @@
+// src/app/page.tsx
 import {
   AudienceSection,
   CTASection,
@@ -11,7 +12,7 @@ import {
 
 export default function Page() {
   return (
-    <main className="mx-auto my-8 max-w-[1360px] space-y-0 px-4 sm:px-6 lg:px-8">
+    <main className="w-full overflow-x-hidden">
       <HeroSection />
       <WhySection />
       <ServicesSection />
@@ -23,4 +24,3 @@ export default function Page() {
     </main>
   );
 }
-

@@ -7,43 +7,84 @@ import { HoverScrollText } from "@/animation/HoverScrollText";
 
 export function HeroSection() {
   return (
-    <section id="home" className="px-0 mx-[calc(50%-50vw)]">
-      <div className="hero-shell w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden px-8 text-primary-100 flex flex-col justify-start pt-32">
-        {/* Centered Container */}
-        <div className="max-w-7xl mx-auto w-full">
-          {/* Hero Content */}
-          <div className="flex h-auto items-start md:items-center justify-between gap-10 mb-8">
-            <motion.div 
-                className="w-[379px] space-y-2"
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: false, amount: 0.5 }}
+    <section
+      id="home"
+      className="relative left-1/2 -translate-x-1/2 w-[100vw] max-w-none overflow-x-clip bg-[#021514]"
+    >
+      {/* Full-bleed wrapper (SAFE on iOS) */}
+      <div
+        className="
+          hero-shell
+          relative
+          overflow-visible
+          px-4 sm:px-6 md:px-8 xl:px-12
+          text-primary-100
+          flex flex-col
+          pt-24 sm:pt-28 md:pt-32
+        "
+      >
+        {/* Centered content container */}
+        <div className="mx-auto max-w-[1440px] w-full">
+          <div className="
+            flex flex-col
+            lg:flex-row
+            items-start lg:items-center
+            justify-between
+            gap-10 xl:gap-16
+            mb-10
+          ">
+            {/* LEFT */}
+            <motion.div
+              className="w-full lg:max-w-[420px] space-y-2 text-center lg:text-left"
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              viewport={{ once: false, amount: 0.5 }}
             >
-                <motion.h1 
-                  className="font-poly-sans text-5xl leading-tight text-[#A2F7B4]"
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: false, amount: 0.5 }}
-                >
-                    Ship Faster.
-                    <br />
-                    Build Better.
-                    <br />
-                    Onchain.
-                </motion.h1>
+              <motion.h1
+                className="
+                  font-poly-sans
+                  text-[clamp(2.25rem,5vw,3.5rem)]
+                  leading-tight
+                  text-[#A2F7B4]
+                "
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.5 }}
+              >
+                Ship Faster.
+                <br />
+                Build Better.
+                <br />
+                Onchain.
+              </motion.h1>
             </motion.div>
 
-            <motion.div 
-              className="w-[437px] relative flex flex-col items-start justify-start gap-4 text-white"
+            {/* RIGHT */}
+            <motion.div
+              className="
+                w-full
+                lg:max-w-[480px]
+                flex flex-col
+                items-center lg:items-start
+                gap-4
+                text-white
+                text-center lg:text-left
+              "
               initial={{ x: 50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: false, amount: 0.5 }}
             >
-              <motion.p 
-                className="text-lg text-[#DFFFE2] font-poly-sans font-normal [&_*]:font-normal"
+              <motion.p
+                className="
+                  text-base sm:text-lg
+                  text-[#DFFFE2]
+                  font-poly-sans
+                  max-w-prose
+                  [&_*]:font-normal
+                "
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -51,6 +92,7 @@ export function HeroSection() {
               >
                 {heroCopy.body}
               </motion.p>
+
               <motion.div
                 className="w-fit"
                 initial={{ y: 20, opacity: 0 }}
@@ -63,8 +105,8 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Animation Section with 32px bottom spacing */}
-          <div className="w-full flex justify-center mb-8">
+          {/* Animation */}
+          <div className="w-full flex justify-center mb-10 rounded-[16px]">
             <CombinedAnimation />
           </div>
         </div>
