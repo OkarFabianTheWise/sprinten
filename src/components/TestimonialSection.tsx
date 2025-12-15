@@ -7,13 +7,22 @@ import arrowright from "../icons/arrowright.png";
 export function TestimonialSection() {
   return (
     <section 
-      className="relative"
+      className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden"
       style={{
-        width: '1440px',
-        height: '598px',
         backgroundColor: '#021514'
       }}
     >
+      {/* Centered content container */}
+      <div 
+        style={{
+          maxWidth: '1440px',
+          margin: '0 auto',
+          position: 'relative',
+          minHeight: '598px',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
       {/* Text Section Container */}
       <div 
         style={{
@@ -180,6 +189,7 @@ export function TestimonialSection() {
       >
         TESTIMONIAL
       </motion.p>
+      </div>
     </section>
   );
 }

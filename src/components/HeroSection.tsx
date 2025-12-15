@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative left-1/2 -translate-x-1/2 w-[100vw] max-w-none overflow-x-clip bg-[#021514]"
+      className="relative overflow-hidden bg-[#021514]"
     >
       {/* Full-bleed wrapper (SAFE on iOS) */}
       <div
@@ -17,6 +17,7 @@ export function HeroSection() {
           hero-shell
           relative
           overflow-visible
+          w-screen left-1/2 -translate-x-1/2
           px-4 sm:px-6 md:px-8 xl:px-12
           text-primary-100
           flex flex-col
@@ -106,7 +107,7 @@ export function HeroSection() {
           </div>
 
           {/* Animation */}
-          <div className="w-full flex justify-center mb-10 rounded-[16px]">
+          <div className="w-screen left-1/2 -translate-x-1/2 relative flex justify-center mb-10">
             <CombinedAnimation />
           </div>
         </div>
