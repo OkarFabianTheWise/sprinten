@@ -107,17 +107,13 @@ export function TestimonialSection() {
           </motion.div>
 
           {/* Navigation Arrows */}
-          <motion.div 
+          <div 
             className="flex"
             style={{
               width: '160px',
               height: '56px',
               gap: '48px'
             }}
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: false, amount: 0.5 }}
           >
             <motion.button 
               className="hover:opacity-70 transition-opacity"
@@ -157,7 +153,7 @@ export function TestimonialSection() {
             >
               <img src={arrowright.src} alt="Next" width={52} height={52} />
             </motion.button>
-          </motion.div>
+          </div>
         </div>
       </div>
 

@@ -1,3 +1,4 @@
+// HeroSection
 "use client";
 
 import { motion } from "framer-motion";
@@ -9,29 +10,35 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative left-1/2 -translate-x-1/2 w-[100vw] max-w-none overflow-x-clip bg-[#021514]"
+      className="relative w-full bg-[#021514]"
+      style={{
+        minHeight: '932px',
+        paddingTop: '92px' // top: 92px from Figma
+      }}
     >
-      {/* Full-bleed wrapper (SAFE on iOS) */}
+      {/* Content wrapper matching Figma: width 1360, left 40px, top 196px */}
       <div
         className="
-          hero-shell
           relative
-          overflow-visible
-          px-4 sm:px-6 md:px-8 xl:px-12
+          mx-auto
           text-primary-100
           flex flex-col
-          pt-24 sm:pt-28 md:pt-32
         "
+        style={{
+          width: '1360px',
+          maxWidth: 'calc(100vw - 80px)', // Maintains 40px on each side on smaller screens
+          gap: '36px',
+          paddingTop: '104px' // 196px - 92px (section's paddingTop) = 104px
+        }}
       >
-        {/* Centered content container */}
-        <div className="mx-auto max-w-[1440px] w-full">
+        {/* Text content area */}
+        <div className="w-full">
           <div className="
             flex flex-col
             lg:flex-row
             items-start lg:items-center
             justify-between
             gap-10 xl:gap-16
-            mb-10
           ">
             {/* LEFT */}
             <motion.div
@@ -104,11 +111,11 @@ export function HeroSection() {
               </motion.div>
             </motion.div>
           </div>
+        </div>
 
-          {/* Animation */}
-          <div className="w-full flex justify-center mb-10 rounded-[16px]">
-            <CombinedAnimation />
-          </div>
+        {/* Animation card */}
+        <div className="w-full flex justify-center rounded-[16px]">
+          <CombinedAnimation />
         </div>
       </div>
     </section>
