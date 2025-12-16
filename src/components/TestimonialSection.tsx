@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import arrowleft from "../icons/arrowleft.png";
 import arrowright from "../icons/arrowright.png";
+import usericon from "../icons/usericon.png";
 
 export function TestimonialSection() {
   return (
@@ -59,16 +60,19 @@ export function TestimonialSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: false, amount: 0.5 }}
           >
-            <p 
-              style={{
-                fontSize: '18px',
-                color: '#FFFFFF',
-                fontWeight: 500,
-                marginBottom: '4px'
-              }}
-            >
-              Edem vee
-            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <img src={usericon.src} alt="Edem vee" style={{ width: '23px', height: '24px', opacity: 1, borderRadius: '50%' }} />
+              <p 
+                style={{
+                  fontSize: '18px',
+                  color: '#FFFFFF',
+                  fontWeight: 500,
+                  marginBottom: '4px'
+                }}
+              >
+                Edem vee
+              </p>
+            </div>
             <p 
               style={{
                 fontSize: '14px',
