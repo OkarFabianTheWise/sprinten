@@ -138,7 +138,7 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
 
   return (
     <motion.div
-      className="hero-logo-card relative flex h-[560px] w-[1360px] rounded-[16px] items-center justify-center bg-white text-[#1F8E87] shadow-inner overflow-hidden"
+      className="w-full h-full flex items-center justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}

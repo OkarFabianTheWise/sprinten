@@ -10,7 +10,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative w-full bg-[#021514]"
+      className="relative w-full bg-[#021514] px-4 sm:px-6 lg:px-0"
       style={{
         minHeight: '932px',
         paddingTop: '92px' // top: 92px from Figma
@@ -18,17 +18,18 @@ export function HeroSection() {
     >
       {/* Content wrapper matching Figma: width 1360, left 40px, top 196px */}
       <div
+        id="main-content"
         className="
           relative
-          mx-auto
           text-primary-100
           flex flex-col
+          max-w-[1300px] sm:mx-auto
+          lg:max-w-none lg:mx-0 lg:ml-[40px] lg:mr-[40px]
+          pb-8
         "
         style={{
-          width: '1360px',
-          maxWidth: 'calc(100vw - 80px)', // Maintains 40px on each side on smaller screens
           gap: '36px',
-          paddingTop: '104px' // 196px - 92px (section's paddingTop) = 104px
+          paddingTop: '104px'
         }}
       >
         {/* Text content area */}
@@ -114,9 +115,7 @@ export function HeroSection() {
         </div>
 
         {/* Animation card */}
-        <div className="w-full flex justify-center rounded-[16px]">
-          <CombinedAnimation />
-        </div>
+        <CombinedAnimation />
       </div>
     </section>
   );

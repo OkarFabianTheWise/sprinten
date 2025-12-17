@@ -108,7 +108,7 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
   return (
     <motion.div
       animate={cardControls}
-      className="hero-logo-card relative flex h-[560px] w-[1360px] rounded-[16px] items-center justify-center text-[#1F8E87] shadow-inner overflow-hidden"
+      className="w-full h-full flex items-center justify-center"
       initial={{ opacity: 0, backgroundColor: "#FFFFFF" }}
       transition={{ duration: 0.6 }}
     >

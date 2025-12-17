@@ -65,95 +65,92 @@ export function ServicesSection() {
         overflow-x-hidden
       "
     >
-      {/* Outer constraint — NO transforms on mobile */}
-      <div className="w-full">
-        {/* Enable full-bleed only on large screens */}
-        <div className="lg:relative lg:left-1/2 lg:-translate-x-1/2 lg:w-[100vw] lg:max-w-none">
-          {/* Visual shell */}
-          <div
-            className="
-              service-card-shell
-              mt-8 mb-8
-              bg-[#A2F7B4]
-              rounded-[24px] sm:rounded-[20px] lg:rounded-[16px]
-              px-4 sm:px-6 md:px-10 xl:px-12
-              py-12 sm:py-14 md:py-16
-              max-w-[1300px]
-              mx-auto
-              font-poly-sans
-            "
-          >
-            {/* Header */}
-            <div className="flex flex-col lg:flex-row justify-between gap-8">
-              {/* Left */}
-              <div className="w-full lg:max-w-[44rem]">
-                <p className="text-sm text-[#858BE3] uppercase font-[14px]">
-                  OUR SERVICES
-                </p>
+      {/* Outer constraint */}
+      <div className="w-full px-4 sm:px-6 lg:px-0">
+        {/* Visual shell - stretches to edges on desktop */}
+        <div
+          className="
+            service-card-shell
+            mt-8 mb-8 lg:mt-[54px] lg:mb-8
+            bg-[#A2F7B4]
+            rounded-[24px] sm:rounded-[20px] lg:rounded-[16px]
+            px-4 sm:px-6 md:px-10 xl:px-12
+            py-12 sm:py-14 md:py-16
+            max-w-[1300px] sm:mx-auto
+            lg:max-w-none lg:mx-0 lg:ml-[45px] lg:mr-[45px]
+            font-poly-sans
+          "
+        >
+          {/* Header */}
+          <div className="flex flex-col lg:flex-row justify-between gap-8">
+            {/* Left */}
+            <div className="w-full lg:max-w-[44rem]">
+              <p className="text-sm text-[#858BE3] uppercase font-[14px]">
+                OUR SERVICES
+              </p>
 
-                <motion.h2
-                  className="
-                    mt-4
-                    font-poly-sans
-                    font-normal
-                    text-[clamp(2.25rem,5vw,3.5rem)]
-                    leading-[1.15]
-                    tracking-[-0.25px]
-                    text-[#021514]
-                  "
-                >
-                  <motion.span
-                    className="block"
-                    initial={{ y: 30, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                    viewport={{ once: false, amount: 0.5 }}
-                  >
-                    Everything You Need to
-                  </motion.span>
-                  <motion.span
-                    className="block"
-                    initial={{ y: 30, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                    viewport={{ once: false, amount: 0.5 }}
-                  >
-                    Launch. Nothing You Don't.
-                  </motion.span>
-                </motion.h2>
-              </div>
-
-              {/* Right */}
-              <motion.p
+              <motion.h2
                 className="
-                  w-full
-                  lg:max-w-[28rem]
+                  mt-4
                   font-poly-sans
                   font-normal
-                  text-base
-                  leading-6
-                  tracking-[0.5px]
-                  text-[#365B59]
-                  pt-0 lg:pt-10
+                  text-[clamp(2.25rem,5vw,3.5rem)]
+                  leading-[1.15]
+                  tracking-[-0.25px]
+                  text-[#021514]
                 "
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                viewport={{ once: false, amount: 0.5 }}
               >
-                Sprinten delivers the core design, frontend, and strategy you need
-                to ship a real product—fast. No bloated packages. No slow
-                handoffs. Just focused execution built for founders and
-                developers.
-              </motion.p>
+                <motion.span
+                  className="block"
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                >
+                  Everything You Need to
+                </motion.span>
+                <motion.span
+                  className="block"
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  viewport={{ once: false, amount: 0.5 }}
+                >
+                  Launch. Nothing You Don't.
+                </motion.span>
+              </motion.h2>
             </div>
 
-            {/* Cards */}
-            <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {SERVICES.map((s) => (
-                <ServiceCard key={s.title} {...s} />
-              ))}
-            </div>
+            {/* Right */}
+            <motion.p
+              className="
+                w-full
+                lg:max-w-[28rem]
+                font-poly-sans
+                font-normal
+                text-base
+                leading-6
+                tracking-[0.5px]
+                text-[#365B59]
+                pt-0 lg:pt-10
+              "
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
+              Sprinten delivers the core design, frontend, and strategy you need
+              to ship a real product—fast. No bloated packages. No slow
+              handoffs. Just focused execution built for founders and
+              developers.
+            </motion.p>
+          </div>
+
+          {/* Cards */}
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((s) => (
+              <ServiceCard key={s.title} {...s} />
+            ))}
           </div>
         </div>
       </div>
