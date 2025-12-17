@@ -112,7 +112,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="https://t.me/Callme_TOC"
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
@@ -120,7 +120,7 @@ export function Footer() {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Contact
+                  Telegram
                 </a>
               </li>
             </ul>
