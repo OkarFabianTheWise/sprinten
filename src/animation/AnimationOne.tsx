@@ -151,7 +151,7 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
         </div>
 
         {/* Recovery + PrivateKey */}
-        <div className="absolute top-[31px] left-[907px] bg-[#E5F9E0] w-[413px] h-[189px] rounded-[16px]">
+        <div className="absolute top-[31px] left-[907px] bg-[#E5F9E0] w-[413px] h-[189px] rounded-[16px] overflow-hidden">
           <motion.div
             className="absolute top-[14px] left-[34.5px]"
             animate={recoveryControls}
