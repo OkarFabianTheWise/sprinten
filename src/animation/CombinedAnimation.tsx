@@ -1,11 +1,12 @@
 // src/animation/CombinedAnimation.tsx
 import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import AnimationTwo from "./AnimationTwo";
 import AnimationOne from "./AnimationOne";
 
 const CombinedAnimation: React.FC = () => {
   const [current, setCurrent] = useState<"one" | "two">("one");
-  const [scale, setScale] = useState(1);
+  const [scale, setScale] = useState({ x: 1, y: 1 });
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleFinished = () => {
@@ -20,9 +21,8 @@ const CombinedAnimation: React.FC = () => {
         
         const scaleX = containerWidth / 1360;
         const scaleY = containerHeight / 560;
-        const newScale = Math.min(scaleX, scaleY, 1);
         
-        setScale(newScale);
+        setScale({ x: scaleX, y: scaleY });
       }
     };
 
@@ -48,15 +48,37 @@ const CombinedAnimation: React.FC = () => {
           style={{
             width: '1360px',
             height: '560px',
-            transform: `scale(${scale})`,
+            transform: `scaleX(${scale.x}) scaleY(${scale.y})`,
             transformOrigin: 'center center',
           }}
         >
-          {current === "one" ? (
-            <AnimationOne key="anim1" onFinished={handleFinished} />
-          ) : (
-            <AnimationTwo key="anim2" onFinished={handleFinished} />
-          )}
+          <AnimatePresence>
+            {current === "one" && (
+              <motion.div
+                key="one"
+                className="absolute inset-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <AnimationOne onFinished={handleFinished} />
+              </motion.div>
+            )}
+
+            {current === "two" && (
+              <motion.div
+                key="two"
+                className="absolute inset-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <AnimationTwo onFinished={handleFinished} />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </div>

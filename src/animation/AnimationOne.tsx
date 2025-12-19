@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import FloatingIcon from "./FloatingIcon";
+import PrivateKeyCard from "./PrivateKeyCard";
+import RecoveryPhraseCard from "./RecoveryPhraseCard";
 
 import menu from "./menu.png";
 import credit from "./credit.png";
 import phone from "./phone.png";
 import referral from "./referral.png";
-import privatekey from "./privatekey.png";
-import recovery from "./recovery.png";
 import { TargetAndTransition } from "framer-motion";
 
 interface AnimationOneProps {
@@ -15,7 +15,7 @@ interface AnimationOneProps {
 }
 
 const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
-  const phoneControls = useAnimation();
+  const phoneControls = useAnimation(); // line 18
   const recoveryControls = useAnimation();
   const creditControls = useAnimation();
   const referralControls = useAnimation();
@@ -39,7 +39,7 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
       creditControls.set({ y: -120, opacity: 0 });
       referralControls.set({ y: 120, opacity: 0 });
       menuControls.set({ y: 120, opacity: 0 });
-      recoveryControls.set({ y: -80, opacity: 0 });
+      recoveryControls.set({ y: 0, opacity: 1 });
       privateKeyControls.set({ x: 200, opacity: 0 });
 
       // STAGE 1 — PHONE SLANTS LEFT
@@ -80,11 +80,6 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
         opacity: 1,
         transition: { duration: 1, ease: "easeOut" },
       });
-      recoveryControls.start({
-        y: 0,
-        opacity: 1,
-        transition: { duration: 1, ease: "easeOut" },
-      });
 
       await new Promise((r) => setTimeout(r, 1000));
 
@@ -118,6 +113,7 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
       phoneControls.start(fade);
 
       // Trigger next animation immediately for smooth cross-fade
+      await new Promise((r) => setTimeout(r, 300)); // line 116
       if (onFinished) onFinished();
     };
 
@@ -133,7 +129,7 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
     menuControls,
     recoveryControls,
     privateKeyControls,
-    onFinished,
+    onFinished, // line 131
   ]);
 
   return (
@@ -143,31 +139,31 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="relative w-[1360px] h-[560px] pointer-events-none">
         {/* PHONE */}
         <div className="absolute w-[413px] h-[512px] left-[473px] top-[31px] rounded-[16px] bg-[#E5F9E0] overflow-hidden">
           <FloatingIcon
             src={phone}
             alt="phone"
-            className="w-[413px] h-[513px] relative left-[50px]"
+            className="w-[413px] h-[512px] relative left-[50px]"
             animate={phoneControls}
           />
         </div>
 
         {/* Recovery + PrivateKey */}
         <div className="absolute top-[31px] left-[907px] bg-[#E5F9E0] w-[413px] h-[189px] rounded-[16px]">
-          <div className="absolute top-[14px] left-[34.5px] w-[344px] h-[162px] gap-[16px]">
-            <FloatingIcon
-              src={recovery}
-              className="w-[344px] h-[77px] rounded-[16px] border-[8px] gap-[16px]"
-              animate={recoveryControls}
-            />
-            <FloatingIcon
-              src={privatekey}
-              className="w-[344px] h-[77px] rounded-[16px] border-[8px] gap-[16px]"
-              animate={privateKeyControls}
-            />
-          </div>
+          <motion.div
+            className="absolute top-[14px] left-[34.5px]"
+            animate={recoveryControls}
+          >
+            <RecoveryPhraseCard />
+          </motion.div>
+          <motion.div
+            className="absolute top-[103px] left-[34.5px]"
+            animate={privateKeyControls}
+          >
+            <PrivateKeyCard /> 
+          </motion.div>
         </div>
 
         {/* Credit */}
@@ -180,10 +176,10 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
         </div>
 
         {/* Referral */}
-        <div className="absolute top-[385px] left-[40px] w-[500px] h-[158px]">
+        <div className="absolute top-[385px] left-[40px] w-[413px] h-[158px]">
           <FloatingIcon
             src={referral}
-            className="w-[413px] h-[140px]"
+            className="w-[413px] h-[158px]"
             animate={referralControls}
           />
         </div>
@@ -192,13 +188,13 @@ const AnimationOne: React.FC<AnimationOneProps> = ({ onFinished }) => {
         <div className="absolute left-[907px] top-[232px]">
           <FloatingIcon
             src={menu}
-            className="w-[413px] h-[311px]"
+            className="w-[413px] h-[311px] rounded-[16px]"
             animate={menuControls}
           />
         </div>
       </div>
     </motion.div>
   );
-};
+}; // line 197
 
 export default AnimationOne;
