@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import { motion, TargetAndTransition, useAnimation } from "framer-motion";
 import Image from "next/image";
@@ -16,90 +18,99 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
 
   useEffect(() => {
     let mounted = true;
+    const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-    const safeStart = async (controls: ReturnType<typeof useAnimation>, props: TargetAndTransition) => {
+    const safeStart = async (
+      controls: ReturnType<typeof useAnimation>,
+      props: TargetAndTransition
+    ) => {
       if (!mounted) return;
       await controls.start(props);
     };
 
     const run = async () => {
-      // RESET EVERYTHING
+      /* ---------------- RESET ---------------- */
       cardControls.set({ backgroundColor: "#FFFFFF", opacity: 1 });
       laptopControls.set({ opacity: 0, scale: 1.2 });
-      phoneDoubleControls.set({ opacity: 0, x: -450, y: -160, scale: 2.1, rotate: 50 });
+      phoneDoubleControls.set({ opacity: 0, x: 0, y: -310, scale: 1.8, rotate: 50 });
       textControls.set({ opacity: 0, fontSize: "292.13px" });
 
-      // -------------------------
-      // STAGE 1 — LAPTOP
-      // -------------------------
-      await safeStart(laptopControls, { opacity: 1, scale: 1.2, transition: { duration: 0.8, ease: "easeOut" } });
-      await new Promise((r) => setTimeout(r, 1000));
-
-      await safeStart(laptopControls, { opacity: 1, scale: 1, transition: { duration: 1, ease: "easeOut" } });
-      await new Promise((r) => setTimeout(r, 800));
-      
-      if (!mounted) return;
-      await safeStart(laptopControls, { opacity: 0, transition: { duration: 0.6, ease: "easeOut" } });
-      await new Promise((r) => setTimeout(r, 200));
-
-      // -------------------------
-      // STAGE 2 — PHONE ENTRY
-      // -------------------------
-      await safeStart(phoneDoubleControls, { opacity: 1, x: -50, scale: 1.2 });
-      await new Promise((r) => setTimeout(r, 500));
-
-      await safeStart(phoneDoubleControls, {
+      /* ---------------- STAGE 1 — LAPTOP ---------------- */
+      await safeStart(laptopControls, {
         opacity: 1,
+        scale: 1.2,
+        transition: { duration: 0.8, ease: "easeOut" },
+      });
+
+      await wait(1000);
+
+      await safeStart(laptopControls, {
+        scale: 1,
+        transition: { duration: 1, ease: "easeOut" },
+      });
+
+      /* ---------------- STAGE 2 — CROSSFADE LAPTOP → PHONE ---------------- */
+      phoneDoubleControls.start({
+        opacity: 1,
+        x: -50,
+        scale: 1.5,
+        rotate: 20,
+        transition: { duration: 0.6, ease: "easeOut" },
+      });
+
+      await wait(1000);
+
+      laptopControls.start({
+        opacity: 0,
+        transition: { duration: 0.6, ease: "easeOut" },
+      });
+
+      /* ---------------- STAGE 3 — PHONE RESOLVE ---------------- */
+      await safeStart(phoneDoubleControls, {
         x: 0,
         y: 0,
         scale: 1,
         rotate: 0,
         transition: { duration: 1, ease: "easeOut" },
       });
-      await new Promise((r) => setTimeout(r, 300));
 
-      await safeStart(phoneDoubleControls, {
+      await wait(1500);
+
+      /* ---------------- STAGE 4 — CROSSFADE PHONE → TEXT ---------------- */
+      cardControls.start({
+        backgroundColor: "#E5F9E0",
+        transition: { duration: 0.4, ease: "easeOut" },
+      });
+
+      textControls.start({
+        opacity: 1,
+        fontSize: "292.13px",
+        transition: { duration: 0 },
+      });
+
+      phoneDoubleControls.start({
         opacity: 0,
         transition: { duration: 0.3, ease: "easeOut" },
       });
 
-      // -------------------------
-      // STAGE 3 — TEXT (Sprinten)
-      // -------------------------
-
-      // CHANGE BACKGROUND HERE
-      await safeStart(cardControls, {
-        backgroundColor: "#E5F9E0",
-        transition: { duration: 0.4, ease: "easeOut" }
-      });
-
-      await safeStart(textControls, {
-        opacity: 1,
-        fontSize: "292.13px",
-        transition: { duration: 0.2, ease: "easeOut" },
-      });
-        await new Promise((r) => setTimeout(r, 400));
+      /* ---------------- STAGE 5 — TEXT RESOLUTION ---------------- */
+      await wait(1000);
 
       await safeStart(textControls, {
         fontSize: "83.72px",
-          transition: { duration: 1, ease: "easeOut" },
+        transition: { duration: 1, ease: "easeOut" },
       });
-        await new Promise((r) => setTimeout(r, 300));
 
-      // Hold final state
-        await new Promise((r) => setTimeout(r, 800));
-
-      // RETURN BACKGROUND TO WHITE
+      /* ---------------- FINAL — RESET BACKGROUND (NO VOID) ---------------- */
       await safeStart(cardControls, {
         backgroundColor: "#FFFFFF",
-        transition: { duration: 0.4, ease: "easeOut" }
+        transition: { duration: 0.4, ease: "easeOut" },
       });
 
-      if (onFinished) onFinished();
+      if (mounted && onFinished) onFinished();
     };
 
     run();
-
     return () => {
       mounted = false;
     };
@@ -108,20 +119,31 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
   return (
     <motion.div
       animate={cardControls}
-      className="hero-logo-card relative flex h-[560px] w-[1360px] rounded-[16px] items-center justify-center text-[#1F8E87] shadow-inner overflow-hidden"
-      initial={{ opacity: 0, backgroundColor: "#FFFFFF" }}
-      transition={{ duration: 0.6 }}
+      className="w-full h-full flex items-center justify-center"
+      initial={{ backgroundColor: "#FFFFFF" }}
     >
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
 
         {/* LAPTOP */}
         <motion.div className="absolute" animate={laptopControls}>
-          <Image src={laptop} alt="laptop" width={1360} height={560} className="object-cover" />
+          <Image
+            src={laptop}
+            alt="laptop"
+            width={1360}
+            height={560}
+            priority
+          />
         </motion.div>
 
         {/* PHONE */}
         <motion.div className="absolute" animate={phoneDoubleControls}>
-          <Image src={phoneDouble} width={1360} height={560} alt="double phone" />
+          <Image
+            src={phoneDouble}
+            alt="double phone"
+            width={1360}
+            height={560}
+            priority
+          />
         </motion.div>
 
         {/* TEXT */}
@@ -129,7 +151,6 @@ const AnimationTwo: React.FC<AnimationTwoProps> = ({ onFinished }) => {
           className="absolute font-poly-sans"
           animate={textControls}
           style={{
-            position: "absolute",
             color: "#2F9C96",
             fontWeight: 400,
             fontSize: "292.13px",

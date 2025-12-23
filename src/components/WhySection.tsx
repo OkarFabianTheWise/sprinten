@@ -18,9 +18,9 @@ export function WhySection() {
       {/* Content */}
       <div
         className="
-          mx-auto
-          max-w-[1440px]
-          px-4 sm:px-6 md:px-8 xl:px-12
+          max-w-[1300px] mx-auto
+          px-4 sm:px-6
+          lg:max-w-none lg:mx-0 lg:ml-[40px] lg:mr-[40px] lg:px-0
           py-16
           grid
           gap-12

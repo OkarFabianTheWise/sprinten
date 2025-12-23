@@ -17,20 +17,20 @@ export function HeroSection() {
       }}
     >
       {/* Content wrapper matching Figma: width 1360, left 40px, top 196px */}
+      {/* move to the top */}
       <div
         id="main-content"
         className="
-          relative
           text-primary-100
           flex flex-col
           max-w-[1300px] sm:mx-auto
           lg:max-w-none lg:mx-0 lg:ml-[40px] lg:mr-[40px]
+          gap-8
+          2xl:gap-12
+          top-[196px]
+          height-[788px]
           pb-8
         "
-        style={{
-          gap: '36px',
-          paddingTop: '104px'
-        }}
       >
         {/* Text content area */}
         <div className="w-full">

@@ -112,7 +112,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="https://t.me/Callme_TOC"
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
@@ -120,7 +120,7 @@ export function Footer() {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Contact
+                  Telegram
                 </a>
               </li>
             </ul>
@@ -211,19 +211,6 @@ export function Footer() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               <li style={{ marginBottom: "12px" }}>
                 <a
-                  href="#terms"
-                  style={{
-                    fontSize: "14px",
-                    color: "#A8B5B3",
-                    textDecoration: "none",
-                  }}
-                  className="hover:text-white transition-colors"
-                >
-                  Terms
-                </a>
-              </li>
-              <li style={{ marginBottom: "12px" }}>
-                <a
                   href="#privacy"
                   style={{
                     fontSize: "14px",
@@ -246,19 +233,6 @@ export function Footer() {
                   className="hover:text-white transition-colors"
                 >
                   Work
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:sprintenagency@gmail.com"
-                  style={{
-                    fontSize: "14px",
-                    color: "#A8B5B3",
-                    textDecoration: "none",
-                  }}
-                  className="hover:text-white transition-colors"
-                >
-                  Contact
                 </a>
               </li>
             </ul>
