@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import Link from "next/link";
 
 const WORK_ITEMS = [
   { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks" },
@@ -130,9 +131,11 @@ export function WorkSection() {
 
         {/* Button */}
         <div className="flex justify-center">
-          <div className="px-8 py-3 border-2 border-teal-500 text-teal-700 rounded-lg font-medium hover:bg-teal-50 transition-colors">
-            See all work
-          </div>
+          <Link href="/allwork">
+            <div className="px-8 py-3 border-2 border-teal-500 text-teal-700 rounded-lg font-medium hover:bg-teal-50 transition-colors">
+              See all work
+            </div>
+          </Link>
         </div>
       </div>
     </section>
