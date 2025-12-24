@@ -198,6 +198,7 @@ export function Footer() {
           {/* LEGAL */}
           <div>
             <h3
+            // go to route /privacy
               style={{
                 fontSize: "16px",
                 fontWeight: 600,
@@ -211,7 +212,7 @@ export function Footer() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               <li style={{ marginBottom: "12px" }}>
                 <a
-                  href="#privacy"
+                  href="/privacy"
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
