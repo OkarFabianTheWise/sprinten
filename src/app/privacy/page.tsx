@@ -37,6 +37,7 @@ export default function PrivacyPage() {
                 />
             </div>
       </div>
+      
       {/* Next Section */}
       <div className="w-[1440px] h-[2879px] relative px-0 max-w-full">
         {/* Left sidebar */}

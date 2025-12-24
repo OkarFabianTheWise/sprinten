@@ -7,31 +7,23 @@ export function Footer() {
     >
       {/* MAIN CONTENT */}
       <div
+        className="flex flex-col md:flex-row justify-between items-start max-w-[1320px] w-full mx-auto gap-10 md:gap-[60px] mb-20 px-5"
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "flex-start",
-          maxWidth: "1320px",
-          width: "100%",
-          margin: "0 auto",
-          gap: "60px",
-          marginBottom: "80px",
           padding: "0 20px", // optional: keeps content from touching edges on small screens
         }}
       >
         {/* LEFT SECTION — LOGO + TAGLINE */}
         <div
+          className="flex-none w-full md:w-auto min-w-0 md:min-w-[178px]"
           style={{
-            flex: "0 0 auto",
             minWidth: "178px", // ensures logo section doesn't shrink
           }}
         >
           <img
             src="/logo.png"
             alt="Sprinten"
+            className="w-[175px] h-[56px] md:w-[178px] md:h-[198px]"
             style={{
-              width: "178px",
-              height: "198px",
               marginBottom: "16px",
             }}
           />
@@ -48,17 +40,14 @@ export function Footer() {
 
         {/* RIGHT SECTION — THREE COLUMNS */}
         <div
+          className="flex flex-row md:flex-row gap-10 md:gap-[120px] items-start flex-1 justify-center md:justify-end pt-10 md:pt-20"
           style={{
-            display: "flex",
-            gap: "120px",
             alignItems: "flex-start",
-            flex: 1,
-            justifyContent: "flex-end",
             paddingTop: "80px"
           }}
         >
           {/* QUICK LINK */}
-          <div>
+          <div className="w-[65px] md:w-auto">
             <h3
               style={{
                 fontSize: "16px",
@@ -127,7 +116,7 @@ export function Footer() {
           </div>
 
           {/* CONNECT */}
-          <div>
+          <div className="w-[61px] md:w-auto">
             <h3
               style={{
                 fontSize: "16px",
@@ -196,7 +185,7 @@ export function Footer() {
           </div>
 
           {/* LEGAL */}
-          <div>
+          <div className="w-[45px] md:w-auto">
             <h3
             // go to route /privacy
               style={{
@@ -243,8 +232,8 @@ export function Footer() {
 
       {/* BOTTOM BAR */}
       <div
+        className="w-[416px] md:w-full mx-auto"
         style={{
-          width: "100%",
           padding: "20px 0",
           borderTop: "1px solid rgba(255,255,255,0.1)",
           display: "flex",
@@ -255,7 +244,8 @@ export function Footer() {
         <p
           style={{
             fontSize: "14px",
-            color: "#A8B5B3",
+            fontWeight: 600,
+            color: "#8CA1A0",
             textAlign: "center",
             margin: 0,
           }}
