@@ -9,7 +9,7 @@ export default function CaseStudy() {
   return (
     <section className="bg-[#021514] relative overflow-x-hidden">
         {/* Section 1 */}
-        <div className="flex flex-col flex-start w-full h-[986px] bg-[#021514] items-start gap-[80px] px-[40px] relative">
+        <div className="flex flex-col flex-start w-full h-[986px] bg-[#021514] items-start gap-[80px] px-[40px] relative mb-16">
             <div className="flex flex-col justify-center items-start p-0 gap-6 w-full h-[346px]">
                 {/* Changed from items-end to items-start ↑ */}
                 
@@ -42,557 +42,182 @@ export default function CaseStudy() {
         </div>
 
         {/* Section 2 */}
-        <div className="w-full h-[637px] bg-[#E5F9E0] relative">
-            {/* Text and image side by side */}
-            <div className="w-full h-[477px] gap-[55px] px-[58px] py-[80px] flex flex-col md:flex-row items-center">
-                {/* left */}
-                <div className="w-full md:w-[624px] h-[392px] flex flex-col gap-[40px]">
-                    {/* Frame 366 */}
-                    <div className="flex flex-col gap-[16px] w-[624px] h-[128px]">
-                        {/* Frame 370 */}
-                        <div className="flex flex-col gap-[24px] w-[624px] h-[64px]">
-                            <h1 className="w-[624px] h-[64px] text-[#021514] font-poly-sans font-normal text-[57px] leading-[64px] tracking-[-0.25px]">Client Overview</h1>
-                        </div>
-                        <p className="w-[624px] h-[48px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#8CA1A0]">
+        <div className="w-full min-h-[637px] bg-[#E5F9E0] relative py-20 px-6 md:px-12 lg:px-[45px]">
+            {/* Content Container */}
+            <div className="w-full mx-auto flex flex-col lg:flex-row gap-8 lg:gap-[55px] items-start">
+                {/* Left Column - Text Content */}
+                <div className="w-full lg:w-[46%] self-start flex flex-col gap-8 lg:gap-10">
+                    {/* Header Section */}
+                    <div className="flex flex-col gap-3 lg:gap-4">
+                        <h1 className="font-['PolySans_Trial'] font-normal text-4xl md:text-5xl lg:text-[57px] leading-tight lg:leading-[64px] tracking-[-0.25px] text-[#021514]">
+                            Client Overview
+                        </h1>
+                        <p className="font-['PolySans_Trial'] font-normal text-sm md:text-base leading-relaxed tracking-[0.5px] text-[#8CA1A0]">
                             [Client Name] is a [short description: e.g., fintech startup helping SMEs manage cashflow]. They approached Sprinten to solve [core problem].
                         </p>
                     </div>
-                    {/* Frame 376 */}
-                    <div className="flex flex-col gap-[40px] w-[424px] h-[224px]">
+
+                    {/* Info Cards */}
+                    <div className="flex flex-col gap-8 lg:gap-10">
                         {/* Industry */}
-                        <div className="flex flex-row gap-[16px] w-[269px] h-[48px]">
-                            <div className="flex flex-col justify-center items-center p-[8px] gap-[8px] w-[40px] h-[40px] bg-[#FDFDFD] rounded-[800px]">
-                                <div className="w-[24px] h-[24px] relative">
-                                    <div className="absolute left-[6.25%] right-[6.25%] top-[9.38%] bottom-[18.75%] bg-[#2F9C96]"></div>
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-6 h-6 relative">
+                                    <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+                                        <rect x="1.5" y="2.25" width="21" height="17.25" fill="#2F9C96"/>
+                                    </svg>
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-[8px] w-[213px] h-[48px]">
-                                <div className="w-[213px] h-[24px] font-poly-sans font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">Industry</div>
-                                <div className="w-[213px] h-[16px] font-poly-sans font-normal text-[12px] leading-[16px] text-[#8CA1A0]">Fintech</div>
+                            <div className="flex flex-col gap-1 lg:gap-2">
+                                <div className="font-['PolySans_Trial'] font-semibold text-base leading-6 tracking-[0.15px] text-[#021514]">
+                                    Industry
+                                </div>
+                                <div className="font-['PolySans_Trial'] font-normal text-xs leading-4 text-[#8CA1A0]">
+                                    Fintech
+                                </div>
                             </div>
                         </div>
+
                         {/* Location */}
-                        <div className="flex flex-row gap-[16px] w-[424px] h-[48px]">
-                            <div className="flex flex-col justify-center items-center p-[8px] gap-[8px] w-[40px] h-[40px] bg-[#FDFDFD] rounded-[800px]">
-                                <div className="w-[24px] h-[24px] relative">
-                                    <div className="absolute left-[15.62%] right-[15.62%] top-[6.25%] bottom-[6.25%] bg-[#858BE3]"></div>
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-6 h-6 relative">
+                                    <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+                                        <circle cx="12" cy="12" r="9" fill="#858BE3"/>
+                                    </svg>
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-[8px] w-[368px] h-[48px]">
-                                <div className="w-[368px] h-[24px] font-poly-sans font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">Location</div>
-                                <div className="w-[368px] h-[16px] font-poly-sans font-normal text-[12px] leading-[16px] text-[#8CA1A0]">Germany</div>
+                            <div className="flex flex-col gap-1 lg:gap-2">
+                                <div className="font-['PolySans_Trial'] font-semibold text-base leading-6 tracking-[0.15px] text-[#021514]">
+                                    Location
+                                </div>
+                                <div className="font-['PolySans_Trial'] font-normal text-xs leading-4 text-[#8CA1A0]">
+                                    Germany
+                                </div>
                             </div>
                         </div>
+
                         {/* Company size */}
-                        <div className="flex flex-row gap-[16px] w-[424px] h-[48px]">
-                            <div className="flex flex-col justify-center items-center p-[8px] gap-[8px] w-[40px] h-[40px] bg-[#FDFDFD] rounded-[800px]">
-                                <div className="w-[24px] h-[24px] relative">
-                                    <div className="absolute left-[3.13%] right-[3.13%] top-[18.73%] bottom-[12.5%] bg-[#A2F7B4]"></div>
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-6 h-6 relative">
+                                    <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+                                        <path d="M0.75 4.5h22.5v16.5H0.75z" fill="#A2F7B4"/>
+                                    </svg>
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-[8px] w-[368px] h-[48px]">
-                                <div className="w-[368px] h-[24px] font-poly-sans font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">Company size</div>
-                                <div className="w-[368px] h-[16px] font-poly-sans font-normal text-[12px] leading-[16px] text-[#8CA1A0]">1-5 Employee</div>
+                            <div className="flex flex-col gap-1 lg:gap-2">
+                                <div className="font-['PolySans_Trial'] font-semibold text-base leading-6 tracking-[0.15px] text-[#021514]">
+                                    Company size
+                                </div>
+                                <div className="font-['PolySans_Trial'] font-normal text-xs leading-4 text-[#8CA1A0]">
+                                    1-5 Employee
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* right */}
-                <Image 
-                    src="/client-handshake.jpg" 
-                    alt="Satisfied client shaking hands" 
-                    width={663} 
-                    height={477} 
-                    className="w-full md:w-[663px] h-auto rounded-[16px]"
-                />
+
+                {/* Right Column - Image */}
+                <div className="w-full lg:w-[54%] lg:flex-1 self-end">
+                    <img 
+                        src="/client-handshake.jpg" 
+                        alt="Satisfied client shaking hands" 
+                        className="w-full h-auto aspect-[663/477] object-cover rounded-2xl"
+                    />
+                </div>
             </div>
         </div>
  
         {/* Section 3 */}
-        <div className="w-full h-[637px] bg-[#E5F9E0] relative">
-            {/* Sprinten Primary logo (green) */}
+        <div className="w-full h-[637px] bg-[#E5F9E0] relative overflow-hidden">
+            {/* Sprinten Primary logo (green) - Background */}
             <div
+                className="absolute right-0"
                 style={{
-                    position: 'absolute',
                     width: '667.67px',
                     height: '539.62px',
-                    right: '0.38px',
                     top: 'calc(50% - 539.62px/2 + 31.31px)',
-                    backgroundImage: 'url(/Sprinten Primary logo (green).png)'
+                    backgroundImage: 'url(/headerlogo.png)',
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center'
                 }}
             ></div>
 
-            {/* Frame 1618868445 */}
-            <div
-                style={{
-                    position: 'absolute',
-                    width: '792px',
-                    height: '472px',
-                    left: '58px',
-                    top: 'calc(50% - 472px/2 + 0.5px)',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    padding: '0px',
-                    gap: '55px'
-                }}
-            >
-                {/* Frame 378 */}
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        padding: '0px',
-                        gap: '40px',
-                        width: '792px',
-                        height: '472px'
-                    }}
-                >
-                    {/* Frame 366 */}
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            padding: '0px',
-                            gap: '16px',
-                            width: '792px',
-                            height: '176px'
-                        }}
-                    >
-                        {/* Frame 370 */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                padding: '0px',
-                                gap: '24px',
-                                width: '792px',
-                                height: '64px'
-                            }}
-                        >
-                            <h1
-                                style={{
-                                    width: '792px',
-                                    height: '64px',
-                                    fontFamily: 'PolySans Trial',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    fontSize: '57px',
-                                    lineHeight: '64px',
-                                    letterSpacing: '-0.25px',
-                                    color: '#021514'
-                                }}
-                            >
-                                The Challenge
-                            </h1>
-                        </div>
+            {/* Content Container */}
+            <div className="absolute left-[58px] w-[792px]" style={{ top: 'calc(50% - 472px/2 + 0.5px)' }}>
+                <div className="flex flex-col gap-10">
+                    {/* Header Section */}
+                    <div className="flex flex-col gap-4">
+                        <h1 className="font-['PolySans_Trial'] font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#021514]">
+                            The Challenge
+                        </h1>
 
-                        <p
-                            style={{
-                                width: '792px',
-                                height: '96px',
-                                fontFamily: 'PolySans Trial',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                fontSize: '16px',
-                                lineHeight: '24px',
-                                letterSpacing: '0.5px',
-                                color: '#8CA1A0'
-                            }}
-                        >
-                            Sprintin AI was building a fast, on-chain AI platform, but their product experience didn’t reflect the speed and intelligence of what was happening under the hood. Their existing interface felt fragmented, unclear, and inconsistent across pages, which made onboarding slow and confused new users.
+                        <p className="font-['PolySans_Trial'] font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#8CA1A0]">
+                            Sprintin AI was building a fast, on-chain AI platform, but their product experience didn't reflect the speed and intelligence of what was happening under the hood. Their existing interface felt fragmented, unclear, and inconsistent across pages, which made onboarding slow and confused new users.
                         </p>
                     </div>
 
-                    {/* Frame 377 */}
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            padding: '0px',
-                            gap: '24px',
-                            width: '792px',
-                            height: '256px'
-                        }}
-                    >
+                    {/* Challenges List */}
+                    <div className="flex flex-col gap-6">
                         {/* Challenge 1 */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                padding: '0px',
-                                gap: '16px',
-                                width: '792px',
-                                height: '32px'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    padding: '8px',
-                                    gap: '8px',
-                                    width: '32px',
-                                    height: '32px',
-                                    background: '#FDFDFD',
-                                    borderRadius: '800px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '16px',
-                                        height: '16px',
-                                        position: 'relative'
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            left: '6.25%',
-                                            right: '3.11%',
-                                            top: '17.18%',
-                                            bottom: '12.5%',
-                                            background: '#41C9A5'
-                                        }}
-                                    ></div>
+                        <div className="flex items-center gap-4">
+                            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-4 h-4 relative">
+                                    <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                 </div>
                             </div>
-
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '8px',
-                                    width: '744px',
-                                    height: '24px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '744px',
-                                        height: '24px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '16px',
-                                        lineHeight: '24px',
-                                        letterSpacing: '0.15px',
-                                        color: '#021514'
-                                    }}
-                                >
-                                    Users didn’t understand the core value immediately
-                                </div>
+                            <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                Users didn't understand the core value immediately
                             </div>
                         </div>
 
                         {/* Challenge 2 */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                padding: '0px',
-                                gap: '16px',
-                                width: '792px',
-                                height: '32px'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    padding: '8px',
-                                    gap: '8px',
-                                    width: '32px',
-                                    height: '32px',
-                                    background: '#FDFDFD',
-                                    borderRadius: '800px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '16px',
-                                        height: '16px',
-                                        position: 'relative'
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            left: '6.25%',
-                                            right: '3.11%',
-                                            top: '17.18%',
-                                            bottom: '12.5%',
-                                            background: '#41C9A5'
-                                        }}
-                                    ></div>
+                        <div className="flex items-center gap-4">
+                            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-4 h-4 relative">
+                                    <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                 </div>
                             </div>
-
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '8px',
-                                    width: '744px',
-                                    height: '24px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '744px',
-                                        height: '24px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '16px',
-                                        lineHeight: '24px',
-                                        letterSpacing: '0.15px',
-                                        color: '#021514'
-                                    }}
-                                >
-                                    Navigation felt heavy and technical
-                                </div>
+                            <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                Navigation felt heavy and technical
                             </div>
                         </div>
 
                         {/* Challenge 3 */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                padding: '0px',
-                                gap: '16px',
-                                width: '792px',
-                                height: '32px'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    padding: '8px',
-                                    gap: '8px',
-                                    width: '32px',
-                                    height: '32px',
-                                    background: '#FDFDFD',
-                                    borderRadius: '800px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '16px',
-                                        height: '16px',
-                                        position: 'relative'
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            left: '6.25%',
-                                            right: '3.11%',
-                                            top: '17.18%',
-                                            bottom: '12.5%',
-                                            background: '#41C9A5'
-                                        }}
-                                    ></div>
+                        <div className="flex items-center gap-4">
+                            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-4 h-4 relative">
+                                    <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                 </div>
                             </div>
-
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '8px',
-                                    width: '744px',
-                                    height: '24px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '744px',
-                                        height: '24px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '16px',
-                                        lineHeight: '24px',
-                                        letterSpacing: '0.15px',
-                                        color: '#021514'
-                                    }}
-                                >
-                                    The brand looked early-stage and didn’t build trust
-                                </div>
+                            <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                The brand looked early-stage and didn't build trust
                             </div>
                         </div>
 
                         {/* Challenge 4 */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                padding: '0px',
-                                gap: '16px',
-                                width: '792px',
-                                height: '32px'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    padding: '8px',
-                                    gap: '8px',
-                                    width: '32px',
-                                    height: '32px',
-                                    background: '#FDFDFD',
-                                    borderRadius: '800px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '16px',
-                                        height: '16px',
-                                        position: 'relative'
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            left: '6.25%',
-                                            right: '3.11%',
-                                            top: '17.18%',
-                                            bottom: '12.5%',
-                                            background: '#41C9A5'
-                                        }}
-                                    ></div>
+                        <div className="flex items-center gap-4">
+                            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-4 h-4 relative">
+                                    <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                 </div>
                             </div>
-
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '8px',
-                                    width: '744px',
-                                    height: '24px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '744px',
-                                        height: '24px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '16px',
-                                        lineHeight: '24px',
-                                        letterSpacing: '0.15px',
-                                        color: '#021514'
-                                    }}
-                                >
-                                    The team needed a UI that matched the power of the tech
-                                </div>
+                            <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                The team needed a UI that matched the power of the tech
                             </div>
                         </div>
 
                         {/* Challenge 5 */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                padding: '0px',
-                                gap: '16px',
-                                width: '792px',
-                                height: '32px'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    padding: '8px',
-                                    gap: '8px',
-                                    width: '32px',
-                                    height: '32px',
-                                    background: '#FDFDFD',
-                                    borderRadius: '800px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '16px',
-                                        height: '16px',
-                                        position: 'relative'
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            left: '6.25%',
-                                            right: '3.11%',
-                                            top: '17.18%',
-                                            bottom: '12.5%',
-                                            background: '#41C9A5'
-                                        }}
-                                    ></div>
+                        <div className="flex items-center gap-4">
+                            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-4 h-4 relative">
+                                    <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                 </div>
                             </div>
-
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '8px',
-                                    width: '744px',
-                                    height: '24px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '744px',
-                                        height: '24px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '600',
-                                        fontSize: '16px',
-                                        lineHeight: '24px',
-                                        letterSpacing: '0.15px',
-                                        color: '#021514'
-                                    }}
-                                >
-                                    And they needed all of this delivered fast so they could focus on shipping features
-                                </div>
+                            <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                And they needed all of this delivered fast so they could focus on shipping features
                             </div>
                         </div>
                     </div>
@@ -603,445 +228,71 @@ export default function CaseStudy() {
         {/* Section 4 */}
         <div className="w-full h-[921px] bg-[#E5F9E0] relative">
             {/* Green box */}
-            <div
-                style={{
-                    position: 'absolute',
-                    width: '100%',
-                    height: '825px',
-                    left: '0',
-                    top: 'calc(50% - 825px/2 + 6px)',
-                    background: '#A2F7B4',
-                    borderRadius: '16px'
-                }}
-            >
+            <div className="absolute bg-[#A2F7B4] rounded-[16px] left-[45px] right-[45px]" style={{ height: '825px', top: 'calc(50% - 825px/2 + 6px)' }}>
                 {/* Title and description */}
-                <div
-                    style={{
-                        position: 'absolute',
-                        width: '100%',
-                        height: '128px',
-                        left: '57px',
-                        top: '81px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        padding: '0px',
-                        gap: '40px'
-                    }}
-                >
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            padding: '0px',
-                            gap: '16px',
-                            width: '1237px',
-                            height: '128px'
-                        }}
-                    >
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                padding: '0px',
-                                gap: '24px',
-                                width: '1237px',
-                                height: '64px'
-                            }}
-                        >
-                            <h1
-                                style={{
-                                    width: '1237px',
-                                    height: '64px',
-                                    fontFamily: 'PolySans Trial',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    fontSize: '57px',
-                                    lineHeight: '64px',
-                                    letterSpacing: '-0.25px',
-                                    color: '#021514'
-                                }}
-                            >
-                                What we did
-                            </h1>
-                        </div>
+                <div className="absolute left-[57px] right-[57px] top-[81px] flex flex-col gap-4">
+                    <h1 className="font-['PolySans_Trial'] font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#021514]">
+                        What we did
+                    </h1>
 
-                        <p
-                            style={{
-                                width: '1237px',
-                                height: '48px',
-                                fontFamily: 'PolySans Trial',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                fontSize: '16px',
-                                lineHeight: '24px',
-                                letterSpacing: '0.5px',
-                                color: '#365B59'
-                            }}
-                        >
-                            Sprintin AI was building a fast, on-chain AI platform, but their product experience didn’t reflect the speed and intelligence of what was happening under the hood. Their existing interface felt fragmented, unclear, and inconsistent across pages, which made onboarding slow and confused new users.
-                        </p>
-                    </div>
+                    <p className="font-['PolySans_Trial'] font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#365B59]">
+                        Sprintin AI was building a fast, on-chain AI platform, but their product experience didn't reflect the speed and intelligence of what was happening under the hood. Their existing interface felt fragmented, unclear, and inconsistent across pages, which made onboarding slow and confused new users.
+                    </p>
                 </div>
 
                 {/* Cards row */}
-                <div
-                    style={{
-                        position: 'absolute',
-                        width: '100%',
-                        height: '460px',
-                        left: '57px',
-                        top: '250px',
-                        display: 'flex',
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        padding: '0px',
-                        gap: '16px'
-                    }}
-                >
+                <div className="absolute left-[57px] right-[57px] top-[250px] flex flex-row gap-4">
                     {/* Card 1: Discovery & Alignment */}
-                    <div
-                        style={{
-                            boxSizing: 'border-box',
-                            width: '297.25px',
-                            height: '460px',
-                            background: '#E5F9E0',
-                            border: '1px solid #8CA1A0',
-                            borderRadius: '8px',
-                            position: 'relative'
-                        }}
-                    >
-                        {/* Blur rectangle */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                width: '652px',
-                                height: '155px',
-                                left: 'calc(50% - 652px/2 + 93.38px)',
-                                top: '266px',
-                                background: '#E5F9E0',
-                                filter: 'blur(22px)'
-                            }}
-                        ></div>
-
-                        {/* Ellipse blur */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                width: '197px',
-                                height: '162px',
-                                left: '264px',
-                                top: '-203px',
-                                background: '#A2F7B4',
-                                filter: 'blur(122px)'
-                            }}
-                        ></div>
+                    <div className="flex-1 h-[460px] bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-6">
+                        {/* Blur effects */}
+                        <div className="absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
+                        <div className="absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
 
                         {/* Content */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                height: '332px',
-                                left: '25px',
-                                right: '24.25px',
-                                top: '49px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                padding: '0px',
-                                gap: '40px'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '16px',
-                                    width: '248px',
-                                    height: '72px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '248px',
-                                        height: '72px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        fontSize: '28px',
-                                        lineHeight: '36px',
-                                        color: '#2F9C96'
-                                    }}
-                                >
-                                    Discovery & Alignment
-                                </div>
-                            </div>
+                        <div className="relative flex flex-col gap-10 pt-6">
+                            <h3 className="font-['PolySans_Trial'] font-normal text-[28px] leading-[36px] text-[#2F9C96]">
+                                Discovery & Alignment
+                            </h3>
 
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '24px',
-                                    width: '248px',
-                                    height: '220px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '248px',
-                                        height: '20px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        letterSpacing: '0.25px',
-                                        color: '#577674'
-                                    }}
-                                >
+                            <div className="flex flex-col gap-6">
+                                <div className="font-['PolySans_Trial'] font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#577674]">
                                     Deliverables:
                                 </div>
 
-                                <div
-                                    style={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        padding: '0px',
-                                        gap: '24px',
-                                        width: '248px',
-                                        height: '176px'
-                                    }}
-                                >
+                                <div className="flex flex-col gap-6">
                                     {/* Item 1 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '48px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '48px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '48px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                Stakeholder interview notes
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            Stakeholder interview notes
                                         </div>
                                     </div>
 
                                     {/* Item 2 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '32px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '24px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '24px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                UX audit report
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            UX audit report
                                         </div>
                                     </div>
 
                                     {/* Item 3 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '48px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '48px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '48px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                Priority areas for design sprint
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            Priority areas for design sprint
                                         </div>
                                     </div>
                                 </div>
@@ -1050,346 +301,56 @@ export default function CaseStudy() {
                     </div>
 
                     {/* Card 2: UX Design & Flow Optimization */}
-                    <div
-                        style={{
-                            boxSizing: 'border-box',
-                            width: '297.25px',
-                            height: '460px',
-                            background: '#E5F9E0',
-                            border: '1px solid #8CA1A0',
-                            borderRadius: '8px',
-                            position: 'relative'
-                        }}
-                    >
-                        {/* Blur rectangle */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                width: '652px',
-                                height: '155px',
-                                left: 'calc(50% - 652px/2 + 93.38px)',
-                                top: '266px',
-                                background: '#E5F9E0',
-                                filter: 'blur(22px)'
-                            }}
-                        ></div>
-
-                        {/* Ellipse blur */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                width: '197px',
-                                height: '162px',
-                                left: '264px',
-                                top: '-203px',
-                                background: '#A2F7B4',
-                                filter: 'blur(122px)'
-                            }}
-                        ></div>
+                    <div className="flex-1 h-[460px] bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-6">
+                        {/* Blur effects */}
+                        <div className="absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
+                        <div className="absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
 
                         {/* Content */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                height: '332px',
-                                left: '25px',
-                                right: '24.25px',
-                                top: '49px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                padding: '0px',
-                                gap: '40px'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '16px',
-                                    width: '248px',
-                                    height: '72px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '248px',
-                                        height: '72px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        fontSize: '28px',
-                                        lineHeight: '36px',
-                                        color: '#2F9C96'
-                                    }}
-                                >
-                                    UX Design & Flow Optimization
-                                </div>
-                            </div>
+                        <div className="relative flex flex-col gap-10 pt-6">
+                            <h3 className="font-['PolySans_Trial'] font-normal text-[28px] leading-[36px] text-[#2F9C96]">
+                                UX Design & Flow Optimization
+                            </h3>
 
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '24px',
-                                    width: '248px',
-                                    height: '220px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '248px',
-                                        height: '20px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        letterSpacing: '0.25px',
-                                        color: '#577674'
-                                    }}
-                                >
+                            <div className="flex flex-col gap-6">
+                                <div className="font-['PolySans_Trial'] font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#577674]">
                                     Deliverables:
                                 </div>
 
-                                <div
-                                    style={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        padding: '0px',
-                                        gap: '24px',
-                                        width: '248px',
-                                        height: '176px'
-                                    }}
-                                >
+                                <div className="flex flex-col gap-6">
                                     {/* Item 1 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '48px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '48px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '48px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                Wireframes for web and mobile
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            Wireframes for web and mobile
                                         </div>
                                     </div>
 
                                     {/* Item 2 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '48px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '48px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '48px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                Streamlined onboarding flows
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            Streamlined onboarding flows
                                         </div>
                                     </div>
 
                                     {/* Item 3 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '32px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '24px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '24px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                User journey diagrams
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            User journey diagrams
                                         </div>
                                     </div>
                                 </div>
@@ -1398,346 +359,56 @@ export default function CaseStudy() {
                     </div>
 
                     {/* Card 3: UI Design & Branding */}
-                    <div
-                        style={{
-                            boxSizing: 'border-box',
-                            width: '297.25px',
-                            height: '460px',
-                            background: '#E5F9E0',
-                            border: '1px solid #8CA1A0',
-                            borderRadius: '8px',
-                            position: 'relative'
-                        }}
-                    >
-                        {/* Blur rectangle */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                width: '652px',
-                                height: '155px',
-                                left: 'calc(50% - 652px/2 + 93.38px)',
-                                top: '266px',
-                                background: '#E5F9E0',
-                                filter: 'blur(22px)'
-                            }}
-                        ></div>
-
-                        {/* Ellipse blur */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                width: '197px',
-                                height: '162px',
-                                left: '264px',
-                                top: '-203px',
-                                background: '#A2F7B4',
-                                filter: 'blur(122px)'
-                            }}
-                        ></div>
+                    <div className="flex-1 h-[460px] bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-6">
+                        {/* Blur effects */}
+                        <div className="absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
+                        <div className="absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
 
                         {/* Content */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                height: '332px',
-                                left: '25px',
-                                right: '24.25px',
-                                top: '49px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                padding: '0px',
-                                gap: '40px'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '16px',
-                                    width: '248px',
-                                    height: '72px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '248px',
-                                        height: '72px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        fontSize: '28px',
-                                        lineHeight: '36px',
-                                        color: '#2F9C96'
-                                    }}
-                                >
-                                    UI Design & Branding
-                                </div>
-                            </div>
+                        <div className="relative flex flex-col gap-10 pt-6">
+                            <h3 className="font-['PolySans_Trial'] font-normal text-[28px] leading-[36px] text-[#2F9C96]">
+                                UI Design & Branding
+                            </h3>
 
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '24px',
-                                    width: '248px',
-                                    height: '220px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '248px',
-                                        height: '20px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        letterSpacing: '0.25px',
-                                        color: '#577674'
-                                    }}
-                                >
+                            <div className="flex flex-col gap-6">
+                                <div className="font-['PolySans_Trial'] font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#577674]">
                                     Deliverables:
                                 </div>
 
-                                <div
-                                    style={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        padding: '0px',
-                                        gap: '24px',
-                                        width: '248px',
-                                        height: '176px'
-                                    }}
-                                >
+                                <div className="flex flex-col gap-6">
                                     {/* Item 1 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '48px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '48px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '48px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                High-fidelity screens (web + mobile)
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            High-fidelity screens (web + mobile)
                                         </div>
                                     </div>
 
                                     {/* Item 2 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '48px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '48px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '48px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                Component library & design system
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            Component library & design system
                                         </div>
                                     </div>
 
                                     {/* Item 3 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '48px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '48px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '48px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                Branded interactive elements and dashboards
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            Branded interactive elements and dashboards
                                         </div>
                                     </div>
                                 </div>
@@ -1746,346 +417,56 @@ export default function CaseStudy() {
                     </div>
 
                     {/* Card 4: Prototype & Delivery */}
-                    <div
-                        style={{
-                            boxSizing: 'border-box',
-                            width: '297.25px',
-                            height: '460px',
-                            background: '#E5F9E0',
-                            border: '1px solid #8CA1A0',
-                            borderRadius: '8px',
-                            position: 'relative'
-                        }}
-                    >
-                        {/* Blur rectangle */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                width: '652px',
-                                height: '155px',
-                                left: 'calc(50% - 652px/2 + 93.38px)',
-                                top: '266px',
-                                background: '#E5F9E0',
-                                filter: 'blur(22px)'
-                            }}
-                        ></div>
-
-                        {/* Ellipse blur */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                width: '197px',
-                                height: '162px',
-                                left: '264px',
-                                top: '-203px',
-                                background: '#A2F7B4',
-                                filter: 'blur(122px)'
-                            }}
-                        ></div>
+                    <div className="flex-1 h-[460px] bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-6">
+                        {/* Blur effects */}
+                        <div className="absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
+                        <div className="absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
 
                         {/* Content */}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                height: '332px',
-                                left: '25px',
-                                right: '24.25px',
-                                top: '49px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                padding: '0px',
-                                gap: '40px'
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '16px',
-                                    width: '248px',
-                                    height: '72px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '248px',
-                                        height: '72px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        fontSize: '28px',
-                                        lineHeight: '36px',
-                                        color: '#2F9C96'
-                                    }}
-                                >
-                                    Prototype & Delivery
-                                </div>
-                            </div>
+                        <div className="relative flex flex-col gap-10 pt-6">
+                            <h3 className="font-['PolySans_Trial'] font-normal text-[28px] leading-[36px] text-[#2F9C96]">
+                                Prototype & Delivery
+                            </h3>
 
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    padding: '0px',
-                                    gap: '24px',
-                                    width: '248px',
-                                    height: '220px'
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        width: '248px',
-                                        height: '20px',
-                                        fontFamily: 'PolySans Trial',
-                                        fontStyle: 'normal',
-                                        fontWeight: '400',
-                                        fontSize: '14px',
-                                        lineHeight: '20px',
-                                        letterSpacing: '0.25px',
-                                        color: '#577674'
-                                    }}
-                                >
+                            <div className="flex flex-col gap-6">
+                                <div className="font-['PolySans_Trial'] font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#577674]">
                                     Deliverables:
                                 </div>
 
-                                <div
-                                    style={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        padding: '0px',
-                                        gap: '24px',
-                                        width: '248px',
-                                        height: '176px'
-                                    }}
-                                >
+                                <div className="flex flex-col gap-6">
                                     {/* Item 1 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '32px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '24px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '24px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                Clickable prototype
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            Clickable prototype
                                         </div>
                                     </div>
 
                                     {/* Item 2 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '48px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '48px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '48px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                Usability test feedback summary
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            Usability test feedback summary
                                         </div>
                                     </div>
 
                                     {/* Item 3 */}
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            alignItems: 'center',
-                                            padding: '0px',
-                                            gap: '16px',
-                                            width: '248px',
-                                            height: '48px'
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                padding: '8px',
-                                                gap: '8px',
-                                                width: '32px',
-                                                height: '32px',
-                                                background: '#FDFDFD',
-                                                borderRadius: '800px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '16px',
-                                                    height: '16px',
-                                                    position: 'relative'
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        left: '6.25%',
-                                                        right: '3.11%',
-                                                        top: '17.18%',
-                                                        bottom: '12.5%',
-                                                        background: '#41C9A5'
-                                                    }}
-                                                ></div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                                            <div className="w-4 h-4 relative">
+                                                <div className="absolute inset-[1px] bg-[#41C9A5]"></div>
                                             </div>
                                         </div>
-
-                                        <div
-                                            style={{
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-start',
-                                                padding: '0px',
-                                                gap: '8px',
-                                                width: '200px',
-                                                height: '48px'
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    width: '200px',
-                                                    height: '48px',
-                                                    fontFamily: 'PolySans Trial',
-                                                    fontStyle: 'normal',
-                                                    fontWeight: '600',
-                                                    fontSize: '16px',
-                                                    lineHeight: '24px',
-                                                    letterSpacing: '0.15px',
-                                                    color: '#021514'
-                                                }}
-                                            >
-                                                Final assets ready for frontend implementation
-                                            </div>
+                                        <div className="font-['PolySans_Trial'] font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                            Final assets ready for frontend implementation
                                         </div>
                                     </div>
                                 </div>
@@ -2291,313 +672,55 @@ export default function CaseStudy() {
 
         {/* Section 6 */}
         <div className="w-full h-[501px] bg-[#E5F9E0] relative">
-            {/* Frame 254 - Outer Container */}
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    padding: '0px',
-                    gap: '40px',
-                    position: 'absolute',
-                    width: '1439px',
-                    height: '316px',
-                    left: 'calc(50% - 1439px/2 - 0.5px)',
-                    top: '80px'
-                }}
-            >
-                {/* Frame 252 - Row Container */}
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        alignItems: 'flex-start',
-                        padding: '0px',
-                        gap: '321px',
-                        width: 'full',
-                        height: '316px',
-                        flex: 'none',
-                        order: 0,
-                        flexGrow: 0
-                    }}
-                >
-                    {/* Frame 248 - Left Column */}
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            padding: '0px 40px',
-                            gap: '16px',
-                            width: '584px',
-                            height: '316px',
-                            flex: 'none',
-                            order: 0,
-                            flexGrow: 0
-                        }}
-                    >
-                        {/* THE RESULTS */}
-                        <div
-                            style={{
-                                width: '379px',
-                                height: '20px',
-                                fontFamily: 'PolySans Trial',
-                                fontStyle: 'normal',
-                                fontWeight: '600',
-                                fontSize: '14px',
-                                lineHeight: '20px',
-                                letterSpacing: '0.1px',
-                                color: '#858BE3',
-                                flex: 'none',
-                                order: 0,
-                                flexGrow: 0
-                            }}
-                        >
-                            THE RESULTS
-                        </div>
-
-                        {/* Title */}
-                        <h1
-                            style={{
-                                width: '584px',
-                                height: '192px',
-                                fontFamily: 'PolySans Trial',
-                                fontStyle: 'normal',
-                                fontWeight: '400',
-                                fontSize: '57px',
-                                lineHeight: '64px',
-                                letterSpacing: '-0.25px',
-                                color: '#021514',
-                                flex: 'none',
-                                order: 1,
-                                alignSelf: 'stretch',
-                                flexGrow: 0
-                            }}
-                        >
-                            Fast, Clear, and Market-Ready Outcomes.
-                        </h1>
-
-                        {/* Frame 5 - Description Container */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                padding: '0px 40px',
-                                gap: '16px',
-                                width: '584px',
-                                height: '72px',
-                                flex: 'none',
-                                order: 2,
-                                alignSelf: 'stretch',
-                                flexGrow: 0
-                            }}
-                        >
-                            <p
-                                style={{
-                                    width: '584px',
-                                    height: '72px',
-                                    fontFamily: 'PolySans Trial',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    fontSize: '16px',
-                                    lineHeight: '24px',
-                                    letterSpacing: '0.5px',
-                                    color: '#8CA1A0',
-                                    flex: 'none',
-                                    order: 0,
-                                    alignSelf: 'stretch',
-                                    flexGrow: 0
-                                }}
-                            >
-                                Sprinten's sprint delivered tangible improvements that empowered Sprintin AI to ship smarter and faster, building trust with users and showcasing the platform's AI-onchain power.
-                            </p>
-                        </div>
+            <div className="absolute left-[45px] right-[45px] top-[80px] flex justify-between gap-[80px]">
+                {/* Left Column */}
+                <div className="flex flex-col gap-4 w-[584px]">
+                    {/* THE RESULTS */}
+                    <div className="font-['PolySans_Trial'] font-semibold text-[14px] leading-[20px] tracking-[0.1px] text-[#858BE3]">
+                        THE RESULTS
                     </div>
 
-                    {/* Frame 251 - Right Column */}
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            padding: '0px',
-                            gap: '40px',
-                            width: '654px',
-                            height: '312px',
-                            flex: 'none',
-                            order: 1,
-                            flexGrow: 0
-                        }}
-                    >
-                        {/* Frame 249 - Result 1 */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                padding: '0px',
-                                gap: '16px',
-                                width: '654px',
-                                height: '64px',
-                                flex: 'none',
-                                order: 0,
-                                alignSelf: 'stretch',
-                                flexGrow: 0
-                            }}
-                        >
-                            <div
-                                style={{
-                                    width: '654px',
-                                    height: '28px',
-                                    fontFamily: 'PolySans Trial',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    fontSize: '22px',
-                                    lineHeight: '28px',
-                                    color: '#021514',
-                                    flex: 'none',
-                                    order: 0,
-                                    alignSelf: 'stretch',
-                                    flexGrow: 0
-                                }}
-                            >
-                                Smooth Onboarding & Engagement
-                            </div>
+                    {/* Title */}
+                    <h1 className="font-['PolySans_Trial'] font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#021514]">
+                        Fast, Clear, and Market-Ready Outcomes.
+                    </h1>
 
-                            <div
-                                style={{
-                                    width: '654px',
-                                    height: '20px',
-                                    fontFamily: 'PolySans Trial',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    fontSize: '14px',
-                                    lineHeight: '20px',
-                                    letterSpacing: '0.25px',
-                                    color: '#8CA1A0',
-                                    flex: 'none',
-                                    order: 1,
-                                    alignSelf: 'stretch',
-                                    flexGrow: 0
-                                }}
-                            >
-                                New flows reduced friction, helping first-time users quickly understand and adopt the platform.
-                            </div>
-                        </div>
+                    {/* Description */}
+                    <p className="font-['PolySans_Trial'] font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#8CA1A0] mt-4">
+                        Sprinten's sprint delivered tangible improvements that empowered Sprintin AI to ship smarter and faster, building trust with users and showcasing the platform's AI-onchain power.
+                    </p>
+                </div>
 
-                        {/* Frame 250 - Result 2 */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                padding: '0px',
-                                gap: '16px',
-                                width: '654px',
-                                height: '84px',
-                                flex: 'none',
-                                order: 1,
-                                alignSelf: 'stretch',
-                                flexGrow: 0
-                            }}
-                        >
-                            <div
-                                style={{
-                                    width: '654px',
-                                    height: '28px',
-                                    fontFamily: 'PolySans Trial',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    fontSize: '22px',
-                                    lineHeight: '28px',
-                                    color: '#021514',
-                                    flex: 'none',
-                                    order: 0,
-                                    alignSelf: 'stretch',
-                                    flexGrow: 0
-                                }}
-                            >
-                                Cohesive, Premium UI
-                            </div>
+                {/* Right Column */}
+                <div className="flex flex-col gap-10 w-[654px]">
+                    {/* Result 1 */}
+                    <div className="flex flex-col gap-4">
+                        <h3 className="font-['PolySans_Trial'] font-normal text-[22px] leading-[28px] text-[#021514]">
+                            Smooth Onboarding & Engagement
+                        </h3>
+                        <p className="font-['PolySans_Trial'] font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#8CA1A0]">
+                            New flows reduced friction, helping first-time users quickly understand and adopt the platform.
+                        </p>
+                    </div>
 
-                            <div
-                                style={{
-                                    width: '654px',
-                                    height: '40px',
-                                    fontFamily: 'PolySans Trial',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    fontSize: '14px',
-                                    lineHeight: '20px',
-                                    letterSpacing: '0.25px',
-                                    color: '#8CA1A0',
-                                    flex: 'none',
-                                    order: 1,
-                                    alignSelf: 'stretch',
-                                    flexGrow: 0
-                                }}
-                            >
-                                Consistent design and a component library created a scalable, high-quality experience that strengthens trust.
-                            </div>
-                        </div>
+                    {/* Result 2 */}
+                    <div className="flex flex-col gap-4">
+                        <h3 className="font-['PolySans_Trial'] font-normal text-[22px] leading-[28px] text-[#021514]">
+                            Cohesive, Premium UI
+                        </h3>
+                        <p className="font-['PolySans_Trial'] font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#8CA1A0]">
+                            Consistent design and a component library created a scalable, high-quality experience that strengthens trust.
+                        </p>
+                    </div>
 
-                        {/* Frame 251 - Result 3 */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'flex-start',
-                                padding: '0px',
-                                gap: '16px',
-                                width: '654px',
-                                height: '84px',
-                                flex: 'none',
-                                order: 2,
-                                alignSelf: 'stretch',
-                                flexGrow: 0
-                            }}
-                        >
-                            <div
-                                style={{
-                                    width: '654px',
-                                    height: '28px',
-                                    fontFamily: 'PolySans Trial',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    fontSize: '22px',
-                                    lineHeight: '28px',
-                                    color: '#021514',
-                                    flex: 'none',
-                                    order: 0,
-                                    alignSelf: 'stretch',
-                                    flexGrow: 0
-                                }}
-                            >
-                                Measurable Business Impact
-                            </div>
-
-                            <div
-                                style={{
-                                    width: '654px',
-                                    height: '40px',
-                                    fontFamily: 'PolySans Trial',
-                                    fontStyle: 'normal',
-                                    fontWeight: '400',
-                                    fontSize: '14px',
-                                    lineHeight: '20px',
-                                    letterSpacing: '0.25px',
-                                    color: '#8CA1A0',
-                                    flex: 'none',
-                                    order: 1,
-                                    alignSelf: 'stretch',
-                                    flexGrow: 0
-                                }}
-                            >
-                                Faster launch and improved clarity drove higher early adoption, increased engagement, and positioned Sprintin AI as a credible, professional product in the market.
-                            </div>
-                        </div>
+                    {/* Result 3 */}
+                    <div className="flex flex-col gap-4">
+                        <h3 className="font-['PolySans_Trial'] font-normal text-[22px] leading-[28px] text-[#021514]">
+                            Measurable Business Impact
+                        </h3>
+                        <p className="font-['PolySans_Trial'] font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#8CA1A0]">
+                            Faster launch and improved clarity drove higher early adoption, increased engagement, and positioned Sprintin AI as a credible, professional product in the market.
+                        </p>
                     </div>
                 </div>
             </div>
