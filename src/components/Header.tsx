@@ -4,6 +4,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
@@ -22,13 +23,16 @@ export default function Header() {
       >
         {/* Logo */}
         <div className="flex items-center gap-4 text-[#021514] flex-none h-[42px]">
-          <Image
-            src="/headerlogo.png"
-            alt="Sprinten"
-            width={172}
-            height={42}
-            priority
-          />
+          {/* Link leads to home */}
+          <Link href="/" aria-label="Go to home">
+            <Image
+              src="/headerlogo.png"
+              alt="Sprinten"
+              width={172}
+              height={42}
+              priority
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
