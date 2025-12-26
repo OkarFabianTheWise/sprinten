@@ -9,9 +9,8 @@ export default function CaseStudy() {
   return (
     <section className="bg-[#021514] relative overflow-x-hidden">
         {/* Section 1 */}
-        <div className="flex flex-col flex-start w-full h-[986px] bg-[#021514] items-start gap-[80px] px-[40px] relative mb-16">
+        <div className="flex flex-col flex-start w-full min-h-[986px] bg-[#021514] items-start gap-[80px] top-[60px] px-[40px] relative mb-16">
             <div className="flex flex-col justify-center items-start p-0 gap-6 w-full h-[346px]">
-                {/* Changed from items-end to items-start ↑ */}
                 
                 {/* Frame 1618868442 - Logo section */}
                 <div className="flex flex-col items-end p-0 gap-4 w-[395px] h-[94px] self-end">
@@ -132,18 +131,18 @@ export default function CaseStudy() {
         {/* Section 3 */}
         <div className="w-full h-[637px] bg-[#E5F9E0] relative overflow-hidden">
             {/* Sprinten Primary logo (green) - Background */}
-            <div
-                className="absolute right-0"
+            
+            <Image
+                src="/section3-logo.png"
+                alt="Sprinten Primary Logo"
+                width={3600}
+                height={1944}
+                className="absolute object-cover right-[-1350px] opacity-80 w-[3600px] h-[1944px]"
                 style={{
-                    width: '667.67px',
-                    height: '539.62px',
-                    top: 'calc(50% - 539.62px/2 + 31.31px)',
-                    backgroundImage: 'url(/headerlogo.png)',
-                    backgroundSize: 'contain',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center'
+                    top: 'calc(50% - 1944px / 2 + 40px)', // 👈 pushes image DOWN
                 }}
-            ></div>
+            />
+
 
             {/* Content Container */}
             <div className="absolute left-[58px] w-[792px]" style={{ top: 'calc(50% - 472px/2 + 0.5px)' }}>
