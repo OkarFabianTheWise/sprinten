@@ -9,7 +9,7 @@ export default function CaseStudy() {
   return (
     <section className="bg-[#021514] relative overflow-x-hidden">
         {/* Section 1 */}
-        <div className="flex flex-col flex-start w-full min-h-[986px] bg-[#021514] items-start gap-[80px] top-[60px] px-[40px] relative mb-16">
+        <div className="flex flex-col flex-start w-full min-h-[986px] bg-[#021514] items-start gap-[80px] top-[32px] px-[40px] relative mb-16">
             <div className="flex flex-col justify-center items-start p-0 gap-6 w-full h-[346px]">
                 
                 {/* Frame 1618868442 - Logo section */}
