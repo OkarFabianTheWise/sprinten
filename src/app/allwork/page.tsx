@@ -28,32 +28,69 @@ const imageVariants: Variants = {
 export default function AllWorkPage() {
   return (
     <>
-      <div className="absolute h-[64px] w-[792px] gap-[55px] top-[124px] left-[58px] px-4">
-        <h1 
+      <div className="absolute h-[64px] w-[792px] gap-[55px] top-[124px] left-[50px] px-4 flex flex-col">
+        <h1
           className="
-            font-[400]
+            font-normal
             text-[57px]
             leading-[64px]
             tracking-[-0.25px]
             text-[#021514]
             text-start
-            items-start
             w-[792px]
             h-[64px]
           "
-          >
+        >
           Our Work
         </h1>
+
+        {/* Frame 1618868473 */}
+        <div className="flex flex-row items-center gap-4 w-[203px] h-[36px]">
+          
+          {/* Frame 1618868474 – Case Study (Primary) */}
+          <div className="flex justify-center items-center px-4 py-2 gap-2 w-[109px] h-[36px] bg-[#2F9C96] rounded-[8px]">
+            <span
+              className="
+                font-semibold
+                text-[14px]
+                leading-[20px]
+                tracking-[0.1px]
+                text-[#E5F9E0]
+                whitespace-nowrap
+              "
+            >
+              Case Study
+            </span>
+          </div>
+
+          {/* Frame 1618868475 – Gallery (Outlined) */}
+          <div className="flex justify-center items-center px-4 py-2 gap-2 w-[78px] h-[36px] border border-[#A4A4A4] rounded-[8px] box-border">
+            <span
+              className="
+                font-semibold
+                text-[14px]
+                leading-[20px]
+                tracking-[0.1px]
+                text-[#A4A4A4]
+                whitespace-nowrap
+              "
+            >
+              Gallery
+            </span>
+          </div>
+
+        </div>
       </div>
+
       <section
         id="allwork"
         className="
           bg-[#E5F9E0]
-          px-0
+          px-[32px]
           overflow-x-clip
           max-w-full
           gap-[40px]
-          mt-[100.64px]
+          mt-[150.64px]
         "
       >
         <div
