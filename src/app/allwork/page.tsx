@@ -221,6 +221,7 @@ export default function AllWorkPage() {
           {/* Bottom Bar with Navigation */}
           <div 
             className="absolute w-full h-[81px] bottom-0 left-0 bg-[#E5F9E0] flex items-center justify-between px-10"
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Counter - Left */}
             <div className="w-[60px] h-9 flex items-center justify-start">
