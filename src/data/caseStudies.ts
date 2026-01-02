@@ -24,7 +24,7 @@ export const caseStudyData: Record<string, {
             { title: "Higher early adoption", description: "Faster launch and improved clarity drove higher early adoption, increased engagement, and positioned Airbills Pay as a credible, professional product in the market." }
         ]
     },
-    "AI platform": {
+    "Sprint AI": {
         shortDescription: "AI-powered platform for on-chain solutions",
         coreProblem: "interface didn't match the speed and intelligence of the underlying tech",
         industry: "Blockchain/AI",
