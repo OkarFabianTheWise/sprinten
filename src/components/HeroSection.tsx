@@ -44,8 +44,8 @@ export function HeroSection() {
             {/* LEFT */}
             <motion.div
               className="w-full lg:max-w-[420px] space-y-2 text-center lg:text-left"
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
               viewport={{ once: false, amount: 0.5 }}
             >
@@ -56,7 +56,7 @@ export function HeroSection() {
                   leading-tight
                   text-[#A2F7B4]
                 "
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: false, amount: 0.5 }}
@@ -80,9 +80,9 @@ export function HeroSection() {
                 text-white
                 text-center lg:text-left
               "
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
               viewport={{ once: false, amount: 0.5 }}
             >
               <motion.p
@@ -93,9 +93,9 @@ export function HeroSection() {
                   max-w-prose
                   [&_*]:font-normal
                 "
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
                 viewport={{ once: false, amount: 0.5 }}
               >
                 {heroCopy.body}
@@ -103,9 +103,9 @@ export function HeroSection() {
 
               <motion.div
                 className="w-fit"
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
+                transition={{ duration: 0.8, delay: 0.7, ease: 'easeOut' }}
                 viewport={{ once: false, amount: 0.5 }}
               >
                 <HoverScrollText />

@@ -13,7 +13,7 @@ export function CTASection() {
       <div
         className="
           flex flex-col items-center justify-center text-center 
-          w-full max-w-[calc(100%-64px)] 
+          w-full max-w-[calc(100%-90px)] 
           mx-auto 
           rounded-[16px] 
           bg-[#A2F7B4]

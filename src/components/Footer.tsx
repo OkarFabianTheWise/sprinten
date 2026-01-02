@@ -7,7 +7,7 @@ export function Footer() {
     >
       {/* MAIN CONTENT */}
       <div
-        className="flex flex-col md:flex-row justify-between items-start max-w-[1320px] w-full mx-auto gap-10 md:gap-[60px] mb-20 px-5"
+        className="flex flex-col md:flex-row justify-between items-start max-w-[calc(100%-120px)] w-full mx-auto gap-10 md:gap-[60px] mb-20"
         style={{
           padding: "0 20px", // optional: keeps content from touching edges on small screens
         }}

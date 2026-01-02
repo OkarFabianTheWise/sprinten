@@ -79,9 +79,9 @@ export function TestimonialSection() {
                 lineHeight: "172.25px",
                 letterSpacing: "-0.67px",
               }}
-              initial={{ rotate: -90, opacity: 0 }}
-              whileInView={{ rotate: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.5 }}
             >
               "
