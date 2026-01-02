@@ -2,14 +2,39 @@
 "use client";
 
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import CombinedAnimation from "@/animation/CombinedAnimation";
 import { CTASection, Footer, TestimonialSection } from "@/components/sections";
 import hardhat from "../../icons/hardhat.svg";
 import location from "../../icons/location.svg";
 import user from "../../icons/user.svg";
 import mark from "../../icons/mark.svg";
+import clock from "../../icons/clock.svg";
+import { caseStudyData } from "../../data/caseStudies";
 
 export default function CaseStudy() {
+  const searchParams = useSearchParams();
+  const title = searchParams.get('title') || '[Client Name]';
+  const duration = searchParams.get('duration') || '[X] Days';
+  const img = searchParams.get('img') || '/client-handshake.jpg';
+  const icon = searchParams.get('icon') || '/default-icon.svg';
+
+  const data = caseStudyData[title] || {
+    shortDescription: '[short description]',
+    coreProblem: '[core problem]',
+    industry: 'Fintech',
+    location: 'Germany',
+    companySize: '50-100 employees',
+    challengeDescription: 'Sprintin AI was building a fast, on-chain AI platform, but their product experience didn\'t reflect the speed and intelligence of what was happening under the hood. Their existing interface felt fragmented, unclear, and inconsistent across pages, which made onboarding slow and confused new users.',
+    whatWeDidDescription: 'Sprintin AI was building a fast, on-chain AI platform, but their product experience didn\'t reflect the speed and intelligence of what was happening under the hood. Their existing interface felt fragmented, unclear, and inconsistent across pages, which made onboarding slow and confused new users.',
+    resultsDescription: 'Sprinten\'s sprint delivered tangible improvements that empowered the client to ship smarter and faster, building trust with users.',
+    results: [
+      { title: 'Smooth Onboarding & Engagement', description: 'New flows reduced friction, helping first-time users quickly understand and adopt the platform.' },
+      { title: 'Cohesive, Premium UI', description: 'Consistent design and a component library created a scalable, high-quality experience that strengthens trust.' },
+      { title: 'Measurable Business Impact', description: 'Faster launch and improved clarity drove higher early adoption, increased engagement, and positioned the client as a credible, professional product in the market.' }
+    ]
+  };
+
   return (
     <section className="bg-[#021514] relative overflow-x-hidden font-poly-sans">
         {/* Section 1 */}
@@ -21,13 +46,14 @@ export default function CaseStudy() {
                     {/* Added self-end to keep logo on right ↑ */}
                     {/* Logo and completion badge */}
                     <div className="box-border w-[181.43px] h-[50px] bg-white border border-[#A4A4A4] border-[1.42857px] flex items-center justify-center">
-                        <span className="font-normal text-[22.8571px] leading-[34px] tracking-[0.214286px] text-[#7B7B7B]">Logo</span>
+                        <img src={icon} alt={`${title} Logo`} className="w-full h-full object-contain" />
                     </div>
                     <div className="flex flex-row justify-end items-center p-0 gap-2 w-[395px] h-[28px]">
                         <div className="w-6 h-6 relative">
-                            <div className="absolute left-[7.81%] right-[7.81%] top-[7.81%] bottom-[7.81%] bg-[#2F9C96]"></div>
+                            <img src={clock.src}
+                            alt="" />
                         </div>
-                        <span className="w-[224px] h-[28px] font-poly-sans font-normal text-[22px] leading-[28px] text-center text-[#E5F9E0]">Completed in 3 Weeks</span>
+                        <span className="w-[224px] h-[28px] font-poly-sans font-normal text-[22px] leading-[28px] text-center text-[#E5F9E0]">Completed in {duration}</span>
                     </div>
                 </div>
 
@@ -35,8 +61,8 @@ export default function CaseStudy() {
                 <div className="flex flex-col items-start p-0 gap-2 w-[1360px] h-[228px]">
                     <div className="flex flex-col items-start p-0 gap-4 w-[958px] h-[228px]">
                         <span className="w-[379px] h-[20px] font-poly-sans font-semibold text-[14px] leading-[20px] tracking-[0.1px] text-[#858BE3]">Sprinten AI CASE STUDY</span>
-                        <h1 className="w-[958px] h-[128px] font-poly-sans font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#A2F7B4]">How We Helped [Client Name] Achieve [Key Impact] in Just [X] Days</h1>
-                        <p className="w-[958px] h-[48px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#B1BFBF]">A Sprinten design sprint case study for [client industry/product], focused on solving [problem] with clear, fast, and effective execution.</p>
+                        <h1 className="w-[958px] h-[128px] font-poly-sans font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#A2F7B4]">How We Helped {title} Achieve [Key Impact] in Just {duration}</h1>
+                        <p className="w-[958px] h-[48px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#B1BFBF]">A Sprinten design sprint case study for {title}, focused on solving {data.coreProblem} with clear, fast, and effective execution.</p>
                     </div>
                 </div>
             </div>
@@ -56,7 +82,7 @@ export default function CaseStudy() {
                             Client Overview
                         </h1>
                         <p className="font-normal text-sm md:text-base leading-relaxed tracking-[0.5px] text-[#8CA1A0]">
-                            [Client Name] is a [short description: e.g., fintech startup helping SMEs manage cashflow]. They approached Sprinten to solve [core problem].
+                            {title} is a {data.shortDescription}. They approached Sprinten to solve {data.coreProblem}.
                         </p>
                     </div>
 
@@ -79,7 +105,7 @@ export default function CaseStudy() {
                                     Industry
                                 </div>
                                 <div className="font-normal text-xs leading-4 text-[#8CA1A0]">
-                                    Fintech
+                                    {data.industry}
                                 </div>
                             </div>
                         </div>
@@ -100,7 +126,7 @@ export default function CaseStudy() {
                                     Location
                                 </div>
                                 <div className="font-normal text-xs leading-4 text-[#8CA1A0]">
-                                    Germany
+                                    {data.location}
                                 </div>
                             </div>
                         </div>
@@ -121,7 +147,7 @@ export default function CaseStudy() {
                                     Company size
                                 </div>
                                 <div className="font-normal text-xs leading-4 text-[#8CA1A0]">
-                                    1-5 Employee
+                                    {data.companySize}
                                 </div>
                             </div>
                         </div>
@@ -131,7 +157,7 @@ export default function CaseStudy() {
                 {/* Right Column - Image */}
                 <div className="w-full lg:w-[54%] lg:flex-1 self-end">
                     <img 
-                        src="/client-handshake.jpg" 
+                        src={img} 
                         alt="Satisfied client shaking hands" 
                         className="w-full h-auto aspect-[663/477] object-cover rounded-2xl"
                     />
@@ -164,7 +190,7 @@ export default function CaseStudy() {
                         </h1>
 
                         <p className="font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#8CA1A0]">
-                            Sprintin AI was building a fast, on-chain AI platform, but their product experience didn't reflect the speed and intelligence of what was happening under the hood. Their existing interface felt fragmented, unclear, and inconsistent across pages, which made onboarding slow and confused new users.
+                            {data.challengeDescription}
                         </p>
                     </div>
 
@@ -265,7 +291,7 @@ export default function CaseStudy() {
                     </h1>
 
                     <p className="font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#365B59]">
-                        Sprintin AI was building a fast, on-chain AI platform, but their product experience didn't reflect the speed and intelligence of what was happening under the hood. Their existing interface felt fragmented, unclear, and inconsistent across pages, which made onboarding slow and confused new users.
+                        {data.whatWeDidDescription}
                     </p>
                 </div>
 
@@ -763,41 +789,22 @@ export default function CaseStudy() {
 
                     {/* Description */}
                     <p className="font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#8CA1A0] mt-4">
-                        Sprinten's sprint delivered tangible improvements that empowered Sprintin AI to ship smarter and faster, building trust with users and showcasing the platform's AI-onchain power.
+                        {data.resultsDescription}
                     </p>
                 </div>
 
                 {/* Right Column */}
                 <div className="flex flex-col gap-10 w-[654px]">
-                    {/* Result 1 */}
-                    <div className="flex flex-col gap-4">
+                    {data.results.map((result, index) => (
+                      <div key={index} className="flex flex-col gap-4">
                         <h3 className="font-normal text-[22px] leading-[28px] text-[#021514]">
-                            Smooth Onboarding & Engagement
+                          {result.title}
                         </h3>
                         <p className="font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#8CA1A0]">
-                            New flows reduced friction, helping first-time users quickly understand and adopt the platform.
+                          {result.description}
                         </p>
-                    </div>
-
-                    {/* Result 2 */}
-                    <div className="flex flex-col gap-4">
-                        <h3 className="font-normal text-[22px] leading-[28px] text-[#021514]">
-                            Cohesive, Premium UI
-                        </h3>
-                        <p className="font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#8CA1A0]">
-                            Consistent design and a component library created a scalable, high-quality experience that strengthens trust.
-                        </p>
-                    </div>
-
-                    {/* Result 3 */}
-                    <div className="flex flex-col gap-4">
-                        <h3 className="font-normal text-[22px] leading-[28px] text-[#021514]">
-                            Measurable Business Impact
-                        </h3>
-                        <p className="font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#8CA1A0]">
-                            Faster launch and improved clarity drove higher early adoption, increased engagement, and positioned Sprintin AI as a credible, professional product in the market.
-                        </p>
-                    </div>
+                      </div>
+                    ))}
                 </div>
             </div>
         </div>

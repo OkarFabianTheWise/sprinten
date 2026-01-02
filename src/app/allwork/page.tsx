@@ -5,18 +5,19 @@ import { TestimonialSection } from "../../components/TestimonialSection";
 import { CTASection } from "../../components/CTASection";
 import { Footer } from "../../components/Footer";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import arrowl from '../../icons/b-ar-left.svg';
 import arrowr from '../../icons/b-ar-right.svg';
 
 const WORK_ITEMS = [
-  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks" },
-  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks" },
-  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks" },
-  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks" },
-  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks" },
-  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks" },
-  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks" },
-  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks" },
+  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks", icon: "/airbills-icon.svg" },
+  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks", icon: "/aiplatform-icon.svg" },
+  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks", icon: "/airbills-icon.svg" },
+  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks", icon: "/aiplatform-icon.svg" },
+  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks", icon: "/airbills-icon.svg" },
+  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks", icon: "/aiplatform-icon.svg" },
+  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks", icon: "/airbills-icon.svg" },
+  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks", icon: "/aiplatform-icon.svg" },
 ];
 
 const imageVariants: Variants = {
@@ -31,6 +32,7 @@ const imageVariants: Variants = {
 export default function AllWorkPage() {
   const [viewMode, setViewMode] = useState<"case-study" | "gallery">("case-study");
   const [selectedImage, setSelectedImage] = useState<{ title: string; img: string; index: number } | null>(null);
+  const router = useRouter();
 
   return (
     <>
@@ -127,11 +129,13 @@ export default function AllWorkPage() {
               <div
                 key={idx}
                 className={`bg-[#E5F9E0] overflow-hidden rounded-[8px] ${
-                  viewMode === "gallery" ? "cursor-pointer" : ""
+                  viewMode === "gallery" || viewMode === "case-study" ? "cursor-pointer" : ""
                 }`}
                 onClick={() => {
                   if (viewMode === "gallery") {
                     setSelectedImage({ title: item.title, img: item.img, index: idx });
+                  } else if (viewMode === "case-study") {
+                    router.push(`/casestudy?title=${encodeURIComponent(item.title)}&duration=${encodeURIComponent(item.duration)}&img=${encodeURIComponent(item.img)}&icon=${encodeURIComponent(item.icon)}`);
                   }
                 }}
               >
