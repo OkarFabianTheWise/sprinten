@@ -19,113 +19,76 @@ export function TestimonialSection() {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
   return (
-    <section className="w-full bg-[#021514] relative" style={{ height: '598px' }}>
-      
-      {/* Label */}
-      <motion.p
-        className="absolute uppercase tracking-[0.15em] text-[#8B9FFF] text-[12px]"
-        style={{ top: '135px', left: '106px' }}
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: false, amount: 0.5 }}
-      >
-        TESTIMONIAL
-      </motion.p>
+    <section className="w-full bg-[#021514] relative py-12 md:py-20 lg:py-28 overflow-hidden">
 
-      {/* Centered div */}
-      <div className="absolute flex items-start" style={{ top: '195px', left: '106px', width: 'calc(95% - 106px)', height: '268px', justifyContent: 'space-between' }}>
+      {/* Decorative ellipses (background) */}
+      <div className="absolute -left-[1026px] -top-[146px] w-[1846.87px] h-[1284.01px] bg-white rounded-full opacity-5 pointer-events-none" />
+      <div className="absolute left-[201.59px] -top-[168px] w-[1846.87px] h-[1284.01px] bg-white rounded-full opacity-5 pointer-events-none" />
 
-        {/* Main Content */}
-        <div className="flex items-start">
-          
-          {/* LEFT: Quote + Author */}
-          <div className="flex-1 pr-16">
-            <AnimatePresence mode="wait">
-              <motion.blockquote
-                key={currentIndex}
-                className="text-white font-normal tracking-[-0.25px]"
-                style={{
-                  fontSize: "clamp(32px, 4vw, 57px)",
-                  lineHeight: "1.12",
-                }}
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -30, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                {currentTestimonial.quote}
-              </motion.blockquote>
-            </AnimatePresence>
+      {/* Centered testimonial card */}
+      <div className="w-full flex justify-center">
+        <div className="relative">
+          <div className="bg-[#021514] w-full max-w-[440px] h-[592px] md:w-[440px] md:h-[592px] p-6 md:p-8 flex flex-col justify-between">
 
-            {/* Author */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`author-${currentIndex}`}
-                className="mt-[80px]"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -20, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="flex items-center gap-2">
-                  <img
-                    src={currentTestimonial.image}
-                    alt={currentTestimonial.author}
-                    className="w-[23px] h-[24px] rounded-full"
-                  />
-                  <p className="text-white text-[18px] font-medium">
-                    {currentTestimonial.author}
-                  </p>
-                </div>
-                <p className="text-[#8B9FFF] text-[14px] tracking-[0.05em]">
-                  {currentTestimonial.title}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* RIGHT: Quote mark + Arrows */}
-          <div className="flex flex-col items-end gap-[20px]">
-            
-            {/* Quote Mark */}
-            <motion.div
-              className="text-[#2F9C96] font-normal"
-              style={{
-                fontSize: "153.41px",
-                lineHeight: "172.25px",
-                letterSpacing: "-0.67px",
-              }}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            {/* Top label */}
+            <motion.p
+              className="uppercase tracking-[0.1em] text-[#858BE3] text-[14px]"
+              initial={{ y: 8, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
               viewport={{ once: false, amount: 0.5 }}
             >
-              "
-            </motion.div>
+              TESTIMONIAL
+            </motion.p>
 
-            {/* Arrows */}
-            <div className="flex gap-[48px]">
-              <motion.button
-                onClick={prevTestimonial}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                aria-label="Previous testimonial"
-              >
-                <img src={arrowleft.src} width={56} height={56} />
-              </motion.button>
-
-              <motion.button
-                onClick={nextTestimonial}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                aria-label="Next testimonial"
-              >
-                <img src={arrowright.src} width={52} height={52} />
-              </motion.button>
+            {/* Quote area */}
+            <div className="flex-1 flex flex-col justify-center">
+              <AnimatePresence mode="wait">
+                <motion.blockquote
+                  key={currentIndex}
+                  className="text-[#E5F9E0] font-normal tracking-[-0.25px]"
+                  style={{ fontSize: 'clamp(28px, 4.5vw, 45px)', lineHeight: '52px' }}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.45 }}
+                >
+                  {currentTestimonial.quote}
+                </motion.blockquote>
+              </AnimatePresence>
             </div>
-          </div>
 
+            {/* Footer: author + arrows */}
+            <div className="flex items-center justify-between mt-4">
+              <div className="flex flex-col">
+                <p className="text-[#A2F7B4] font-semibold text-[16px]">{currentTestimonial.author}</p>
+                <p className="text-[#8CA1A0] text-[14px]">{currentTestimonial.title}</p>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <motion.button
+                  onClick={prevTestimonial}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label="Previous testimonial"
+                  className="w-10 h-10 rounded-full bg-[#E5F9E0] flex items-center justify-center"
+                >
+                  <img src={arrowleft.src} alt="prev" className="w-4 h-4 transform" />
+                </motion.button>
+
+                <motion.button
+                  onClick={nextTestimonial}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label="Next testimonial"
+                  className="w-10 h-10 rounded-full bg-[#E5F9E0] flex items-center justify-center"
+                >
+                  <img src={arrowright.src} alt="next" className="w-4 h-4" />
+                </motion.button>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>

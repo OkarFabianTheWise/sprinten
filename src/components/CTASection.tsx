@@ -6,19 +6,19 @@ export function CTASection() {
   return (
     <section 
       id="contact"
-      className="relative flex items-center justify-center w-full bg-[#021514]"
-      style={{ height: '510px' }}
+      className="relative flex items-center justify-center w-full bg-[#021514] py-16 md:py-20 lg:py-24"
     >
-      {/* Inner green container - 32px from walls */}
+      {/* Inner green container - responsive margins */}
       <div
         className="
           flex flex-col items-center justify-center text-center 
-          w-full max-w-[calc(100%-90px)] 
+          w-full max-w-[calc(100%-32px)] md:max-w-[calc(100%-64px)] lg:max-w-[calc(100%-90px)]
           mx-auto 
           rounded-[16px] 
           bg-[#A2F7B4]
-          h-[356px]
-          px-4
+          min-h-[300px] md:min-h-[356px]
+          px-4 md:px-6 lg:px-8
+          py-8 md:py-10 lg:py-12
         "
       >
         {/* Heading */}

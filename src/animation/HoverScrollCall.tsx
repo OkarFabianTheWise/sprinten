@@ -70,7 +70,7 @@ export function HoverScrollCall() {
             flex items-center
           "
         >
-          Book a Call
+          Start a Sprint
         </motion.span>
 
         {/* Bottom text */}
@@ -84,7 +84,7 @@ export function HoverScrollCall() {
             flex items-center
           "
         >
-          Book a Call
+          Start a Sprint
         </motion.span>
       </div>
     </a>

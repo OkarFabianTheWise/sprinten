@@ -36,37 +36,36 @@ export default function AllWorkPage() {
 
   return (
     <>
-      <div className="absolute h-[64px] w-[792px] gap-[55px] top-[124px] left-[50px] px-4 flex flex-col">
+      <div className="absolute top-20 md:top-24 lg:top-[124px] left-4 md:left-8 lg:left-[50px] px-4 flex flex-col gap-4 md:gap-6 lg:gap-[55px]">
         <h1
           className="
             font-normal
-            text-[57px]
-            leading-[64px]
+            text-3xl md:text-4xl lg:text-5xl xl:text-[57px]
+            leading-tight md:leading-[64px]
             tracking-[-0.25px]
             text-[#021514]
             text-start
-            w-[792px]
-            h-[64px]
+            w-full max-w-xs md:max-w-md lg:max-w-2xl xl:w-[792px]
           "
         >
           Our Work
         </h1>
 
         {/* Frame 1618868473 */}
-        <div className="flex flex-row items-center gap-4 w-[203px] h-[36px]">
+        <div className="flex flex-row items-center gap-2 md:gap-4 w-full max-w-[203px]">
           
           {/* Frame 1618868474 – Case Study */}
           <button
             onClick={() => setViewMode("case-study")}
             className={`
-              flex justify-center items-center px-4 py-2 gap-2 w-[109px] h-[36px] rounded-[8px]
+              flex justify-center items-center px-3 md:px-4 py-2 gap-2 w-full max-w-[109px] h-9 md:h-[36px] rounded-[8px]
               ${viewMode === "case-study" ? "bg-[#2F9C96]" : "border border-[#A4A4A4]"}
             `}
           >
             <span
               className={`
                 font-semibold
-                text-[14px]
+                text-sm md:text-[14px]
                 leading-[20px]
                 tracking-[0.1px]
                 whitespace-nowrap
@@ -81,14 +80,14 @@ export default function AllWorkPage() {
           <button
             onClick={() => setViewMode("gallery")}
             className={`
-              flex justify-center items-center px-4 py-2 gap-2 w-[78px] h-[36px] rounded-[8px]
+              flex justify-center items-center px-3 md:px-4 py-2 gap-2 w-full max-w-[78px] h-9 md:h-[36px] rounded-[8px]
               ${viewMode === "gallery" ? "bg-[#2F9C96]" : "border border-[#A4A4A4]"}
             `}
           >
             <span
               className={`
                 font-semibold
-                text-[14px]
+                text-sm md:text-[14px]
                 leading-[20px]
                 tracking-[0.1px]
                 whitespace-nowrap
@@ -106,11 +105,11 @@ export default function AllWorkPage() {
         id="allwork"
         className="
           bg-[#E5F9E0]
-          px-[32px]
+          px-4 md:px-8 lg:px-[32px]
           overflow-x-clip
           max-w-full
-          gap-[40px]
-          mt-[150.64px]
+          gap-6 md:gap-8 lg:gap-[40px]
+          mt-32 md:mt-36 lg:mt-[150.64px]
         "
       >
         <div
@@ -118,13 +117,13 @@ export default function AllWorkPage() {
             max-w-[1300px] mx-auto
             px-4 sm:px-6
             lg:max-w-none lg:mx-0 lg:ml-[40px] lg:mr-[40px] lg:px-0
-            py-14 sm:py-16
+            py-8 md:py-12 lg:py-14
           "
         >
           
         
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12">
             {WORK_ITEMS.map((item, idx) => (
               <div
                 key={idx}
@@ -157,14 +156,14 @@ export default function AllWorkPage() {
 
                 {/* Text block - only show in case study mode */}
                 {viewMode === "case-study" && (
-                  <div className="py-3">
-                    <h3 className="text-[16px] leading-[24px] font-semibold tracking-[0.15px] text-[#021514] mb-2">
+                  <div className="py-3 px-2 md:px-3">
+                    <h3 className="text-sm md:text-base lg:text-[16px] leading-tight md:leading-[24px] font-semibold tracking-[0.15px] text-[#021514] mb-2">
                       {item.title}
                     </h3>
 
-                    <div className="flex items-center text-[14px] leading-[24px] text-gray-500">
+                    <div className="flex items-center text-xs md:text-sm lg:text-[14px] leading-tight md:leading-[24px] text-gray-500">
                       <svg
-                        className="w-4 h-4 mr-2 text-teal-500"
+                        className="w-3 h-3 md:w-4 md:h-4 mr-2 text-teal-500 flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -191,8 +190,8 @@ export default function AllWorkPage() {
           {/* Main Modal Card */}
           <div
             className="
-              flex flex-col items-start p-10 gap-2 
-              w-[970.33px] h-[747.75px]
+              flex flex-col items-start p-4 md:p-6 lg:p-10 gap-2 
+              w-full max-w-[970.33px] h-auto max-h-[90vh]
               rounded-lg
               absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
             "
@@ -202,11 +201,11 @@ export default function AllWorkPage() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Image Container */}
-            <div className="flex flex-col items-start p-0 gap-2 w-[890.33px] h-[667.75px] bg-white rounded-lg">
+            <div className="flex flex-col items-start p-0 gap-2 w-full h-auto bg-white rounded-lg overflow-hidden">
               <img
                 src={selectedImage.img}
                 alt={selectedImage.title}
-                className="w-[890.33px] h-[667.75px] object-cover rounded-lg"
+                className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
               />
             </div>
           </div>
@@ -214,9 +213,9 @@ export default function AllWorkPage() {
           {/* Close Button */}
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute w-10 h-10 right-10 top-20 z-10"
+            className="absolute w-8 h-8 md:w-10 md:h-10 right-4 md:right-10 top-16 md:top-20 z-10"
           >
-            <svg className="w-10 h-10 text-[#EBEBEB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-8 h-8 md:w-10 md:h-10 text-[#EBEBEB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" strokeWidth="2" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 9l-6 6M9 9l6 6" />
             </svg>
@@ -224,35 +223,35 @@ export default function AllWorkPage() {
 
           {/* Bottom Bar with Navigation */}
           <div 
-            className="absolute w-full h-[81px] bottom-0 left-0 bg-[#E5F9E0] flex items-center justify-between px-10"
+            className="absolute w-full h-16 md:h-[81px] bottom-0 left-0 bg-[#E5F9E0] flex items-center justify-between px-4 md:px-10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Counter - Left */}
-            <div className="w-[60px] h-9 flex items-center justify-start">
-              <span className="font-normal text-[28px] leading-9 text-[#3A3A3A] text-right">
+            <div className="flex items-center justify-start">
+              <span className="font-normal text-lg md:text-[28px] leading-tight md:leading-9 text-[#3A3A3A]">
                 {selectedImage.index + 1}/{WORK_ITEMS.length}
               </span>
             </div>
 
             {/* Image Title - Center */}
             <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <span className="font-normal text-[28px] leading-9 text-[#3A3A3A]">
+              <span className="font-normal text-lg md:text-[28px] leading-tight md:leading-9 text-[#3A3A3A] text-center max-w-[200px] md:max-w-none truncate">
                 {selectedImage.title}
               </span>
             </div>
 
             {/* Navigation Arrows - Right */}
-            <div className="flex flex-row items-center gap-12">
+            <div className="flex flex-row items-center gap-4 md:gap-12">
               {/* Previous Button */}
               <button
                 onClick={() => {
                   const prevIndex = selectedImage.index > 0 ? selectedImage.index - 1 : WORK_ITEMS.length - 1;
                   setSelectedImage({ ...WORK_ITEMS[prevIndex], index: prevIndex });
                 }}
-                className="w-14 h-14 flex items-center justify-center"
+                className="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center"
               >
                 <img src={arrowl.src}
-                 className="w-14 h-14" />
+                 className="w-10 h-10 md:w-14 md:h-14" />
               </button>
 
               {/* Next Button */}
@@ -261,10 +260,10 @@ export default function AllWorkPage() {
                   const nextIndex = selectedImage.index < WORK_ITEMS.length - 1 ? selectedImage.index + 1 : 0;
                   setSelectedImage({ ...WORK_ITEMS[nextIndex], index: nextIndex });
                 }}
-                className="w-14 h-14 flex items-center justify-center"
+                className="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center"
               >
                 <img src={arrowr.src}
-                className="w-14 h-14" />
+                className="w-10 h-10 md:w-14 md:h-14" />
               </button>
             </div>
           </div>

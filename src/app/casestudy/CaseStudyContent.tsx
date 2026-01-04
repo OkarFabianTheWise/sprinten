@@ -36,31 +36,30 @@ export default function CaseStudyContent() {
   return (
     <section className="bg-[#021514] relative overflow-x-hidden font-poly-sans">
         {/* Section 1 */}
-        <div className="flex flex-col flex-start w-full min-h-[986px] bg-[#021514] items-start gap-[80px] top-[32px] px-[40px] relative mb-16">
-            <div className="flex flex-col justify-center items-start p-0 gap-6 w-full h-[346px]">
+        <div className="flex flex-col w-full min-h-screen bg-[#021514] items-start gap-12 md:gap-16 lg:gap-20 pt-8 pb-16 px-4 md:px-8 lg:px-10 relative">
+            <div className="flex flex-col justify-center items-start p-0 gap-4 md:gap-6 w-full max-w-7xl mx-auto">
                 
                 {/* Frame 1618868442 - Logo section */}
-                <div className="flex flex-col items-end p-0 gap-4 w-[395px] h-[94px] self-end">
-                    {/* Added self-end to keep logo on right ↑ */}
+                <div className="flex flex-col items-start md:items-end p-0 gap-2 md:gap-4 w-full md:w-auto self-start md:self-end">
                     {/* Logo and completion badge */}
-                    <div className="box-border w-[181.43px] h-[50px] bg-white border border-[#A4A4A4] border-[1.42857px] flex items-center justify-center">
+                    <div className="box-border w-32 md:w-40 lg:w-44 h-10 md:h-12 lg:h-14 bg-white border border-[#A4A4A4] border-2 flex items-center justify-center">
                         <img src={icon} alt={`${title} Logo`} className="w-full h-full object-contain" />
                     </div>
-                    <div className="flex flex-row justify-end items-center p-0 gap-2 w-[395px] h-[28px]">
-                        <div className="w-6 h-6 relative">
+                    <div className="flex flex-row justify-start md:justify-end items-center p-0 gap-2 w-full md:w-auto">
+                        <div className="w-5 h-5 md:w-6 md:h-6 relative flex-shrink-0">
                             <img src={clock.src}
                             alt="" />
                         </div>
-                        <span className="w-[224px] h-[28px] font-poly-sans font-normal text-[22px] leading-[28px] text-center text-[#E5F9E0]">Completed in {duration}</span>
+                        <span className="font-poly-sans font-normal text-lg md:text-xl lg:text-2xl leading-tight text-center text-[#E5F9E0]">Completed in {duration}</span>
                     </div>
                 </div>
 
-                {/* Frame 1618868443 - Title section - now aligned to left */}
-                <div className="flex flex-col items-start p-0 gap-2 w-[1360px] h-[228px]">
-                    <div className="flex flex-col items-start p-0 gap-4 w-[958px] h-[228px]">
-                        <span className="w-[379px] h-[20px] font-poly-sans font-semibold text-[14px] leading-[20px] tracking-[0.1px] text-[#858BE3]">Sprinten AI CASE STUDY</span>
-                        <h1 className="w-[958px] h-[128px] font-poly-sans font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#A2F7B4]">How We Helped {title} Achieve [Key Impact] in Just {duration}</h1>
-                        <p className="w-[958px] h-[48px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#B1BFBF]">A Sprinten design sprint case study for {title}, focused on solving {data.coreProblem} with clear, fast, and effective execution.</p>
+                {/* Frame 1618868443 - Title section */}
+                <div className="flex flex-col items-start p-0 gap-2 md:gap-4 w-full">
+                    <div className="flex flex-col items-start p-0 gap-3 md:gap-4 w-full max-w-4xl">
+                        <span className="font-poly-sans font-semibold text-xs md:text-sm leading-tight tracking-wide text-[#858BE3]">Sprinten AI CASE STUDY</span>
+                        <h1 className="font-poly-sans font-normal text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight tracking-tight text-[#A2F7B4]">How We Helped {title} Achieve [Key Impact] in Just {duration}</h1>
+                        <p className="font-poly-sans font-normal text-sm md:text-base leading-relaxed tracking-wide text-[#B1BFBF]">A Sprinten design sprint case study for {title}, focused on solving {data.coreProblem} with clear, fast, and effective execution.</p>
                     </div>
                 </div>
             </div>
@@ -69,11 +68,11 @@ export default function CaseStudyContent() {
         </div>
 
         {/* Section 2 */}
-        <div className="w-full min-h-[637px] bg-[#E5F9E0] relative py-20 px-6 md:px-12 lg:px-[45px]">
+        <div className="w-full bg-[#E5F9E0] relative py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12">
             {/* Content Container */}
-            <div className="w-full mx-auto flex flex-col lg:flex-row gap-8 lg:gap-[55px] items-start">
+            <div className="w-full mx-auto flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 items-start">
                 {/* Left Column - Text Content */}
-                <div className="w-full lg:w-[46%] self-start flex flex-col gap-8 lg:gap-10">
+                <div className="w-full lg:w-[46%] self-start flex flex-col gap-6 md:gap-8 lg:gap-10">
                     {/* Header Section */}
                     <div className="flex flex-col gap-3 lg:gap-4">
                         <h1 className="font-normal text-4xl md:text-5xl lg:text-[57px] leading-tight lg:leading-[64px] tracking-[-0.25px] text-[#021514]">
@@ -154,10 +153,10 @@ export default function CaseStudyContent() {
         </div>
 
         {/* Section 3 - Challenge */}
-        <div className="w-full bg-[#021514] py-20 px-6 md:px-12 lg:px-[45px]">
-            <div className="w-full mx-auto flex flex-col lg:flex-row gap-8 lg:gap-[55px] items-start">
+        <div className="w-full bg-[#021514] py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12">
+            <div className="w-full mx-auto flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 items-start">
                 {/* Left Column - Text */}
-                <div className="w-full lg:w-[46%] flex flex-col gap-8 lg:gap-10">
+                <div className="w-full lg:w-[46%] flex flex-col gap-6 md:gap-8 lg:gap-10">
                     <div className="flex flex-col gap-3 lg:gap-4">
                         <h1 className="font-normal text-4xl md:text-5xl lg:text-[57px] leading-tight lg:leading-[64px] tracking-[-0.25px] text-[#A2F7B4]">
                             The Challenge
@@ -181,8 +180,8 @@ export default function CaseStudyContent() {
         </div>
 
         {/* Section 4 - What We Did */}
-        <div className="w-full bg-[#E5F9E0] py-20 px-6 md:px-12 lg:px-[45px]">
-            <div className="w-full mx-auto flex flex-col lg:flex-row gap-8 lg:gap-[55px] items-start">
+        <div className="w-full bg-[#E5F9E0] py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12">
+            <div className="w-full mx-auto flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 items-start">
                 {/* Left Column - Image */}
                 <div className="w-full lg:w-[54%] order-2 lg:order-1">
                     <div className="w-full h-[400px] lg:h-[500px] relative rounded-lg overflow-hidden bg-[#021514]">
@@ -194,7 +193,7 @@ export default function CaseStudyContent() {
                 </div>
 
                 {/* Right Column - Text */}
-                <div className="w-full lg:w-[46%] order-1 lg:order-2 flex flex-col gap-8 lg:gap-10">
+                <div className="w-full lg:w-[46%] order-1 lg:order-2 flex flex-col gap-6 md:gap-8 lg:gap-10">
                     <div className="flex flex-col gap-3 lg:gap-4">
                         <h1 className="font-normal text-4xl md:text-5xl lg:text-[57px] leading-tight lg:leading-[64px] tracking-[-0.25px] text-[#021514]">
                             What We Did
@@ -208,9 +207,9 @@ export default function CaseStudyContent() {
         </div>
 
         {/* Section 5 - Results */}
-        <div className="w-full bg-[#021514] py-20 px-6 md:px-12 lg:px-[45px]">
+        <div className="w-full bg-[#021514] py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12">
             <div className="w-full mx-auto">
-                <div className="flex flex-col gap-8 lg:gap-10 mb-12 lg:mb-16">
+                <div className="flex flex-col gap-6 md:gap-8 lg:gap-10 mb-8 md:mb-10 lg:mb-12">
                     <h1 className="font-normal text-4xl md:text-5xl lg:text-[57px] leading-tight lg:leading-[64px] tracking-[-0.25px] text-[#A2F7B4]">
                         Results
                     </h1>

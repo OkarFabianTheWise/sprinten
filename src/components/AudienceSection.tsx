@@ -8,11 +8,11 @@ export function AudienceSection() {
   return (
     <section className="w-screen bg-[#E5F9E0] py-16 overflow-x-hidden">
       {/* Shared horizontal gutter */}
-      <div style={{ paddingLeft: '40px', paddingRight: '40px' }}>
+      <div className="px-6 md:px-10">
         {/* Main Content */}
-        <div className="flex gap-10 mb-32 w-full">
+        <div className="flex flex-col md:flex-row gap-10 mb-16 md:mb-32 w-full">
           {/* Left Column */}
-          <div className="w-[50%] flex flex-col gap-4">
+          <div className="w-full md:w-[50%] flex flex-col gap-4">
             <motion.div
               className="flex-1"
               initial={{ opacity: 1 }}
@@ -23,7 +23,7 @@ export function AudienceSection() {
               </p>
 
               <motion.h1
-                className="text-[57px] leading-[72px] tracking-[-0.25px] font-normal text-[#021514] mb-8"
+                className="text-[45px] md:text-[57px] leading-[52px] md:leading-[72px] tracking-[-0.25px] font-normal text-[#021514] mb-8"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{
@@ -41,7 +41,7 @@ export function AudienceSection() {
               </motion.h1>
 
               <motion.p
-                className="text-[#7A9490] text-lg leading-[28px] mb-8 w-[740px] h-[48px]"
+                className="text-[#7A9490] text-sm md:text-lg leading-[20px] md:leading-[28px] mb-8 w-full md:w-[740px]"
                 initial={{ y: 40, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{
@@ -58,7 +58,7 @@ export function AudienceSection() {
             <motion.button
               className="
                 relative flex items-center
-                w-[200px] h-[40px]
+                w-[142px] md:w-[200px] h-[40px]
                 rounded-[8px]
                 gap-[24px]
                 px-[12px]
@@ -69,7 +69,7 @@ export function AudienceSection() {
                 ease-out
                 hover:translate-y-[-1px]
               "
-              aria-label="Book a Call"
+              aria-label="Start a Sprint"
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
@@ -85,7 +85,7 @@ export function AudienceSection() {
           </div>
 
           {/* Right Column */}
-          <div className="w-[50%] grid gap-10">
+          <div className="w-full md:w-[50%] flex flex-col gap-10">
             {[
               {
                 title: "For Developers",
@@ -122,7 +122,7 @@ export function AudienceSection() {
                 viewport={{ once: false, amount: 0.5 }}
               >
                 <motion.h3
-                  className="text-2xl font-normal mb-3 text-[#021514]"
+                  className="text-lg md:text-2xl font-normal mb-3 text-[#021514]"
                   initial={{ y: 8, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.95 + i * 0.12 }}
@@ -132,7 +132,7 @@ export function AudienceSection() {
                 </motion.h3>
 
                 <motion.p
-                  className="text-[#7A9490] leading-[26px]"
+                  className="text-[#7A9490] text-xs md:text-sm leading-[16px] md:leading-[26px]"
                   initial={{ y: 6, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 1.0 + i * 0.12 }}

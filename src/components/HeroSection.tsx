@@ -10,7 +10,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative w-full bg-[#021514] px-4 sm:px-6 lg:px-0"
+      className="relative w-full bg-[#021514] px-6 lg:px-0"
       style={{
         minHeight: '932px',
         paddingTop: '92px' // top: 92px from Figma
@@ -23,12 +23,11 @@ export function HeroSection() {
         className="
           text-primary-100
           flex flex-col
-          max-w-[1300px] sm:mx-auto
+          max-w-[392px] mx-auto
           lg:max-w-none lg:mx-0 lg:ml-[40px] lg:mr-[40px]
-          gap-8
+          gap-4
+          lg:gap-8
           2xl:gap-12
-          top-[196px]
-          height-[788px]
           pb-8
         "
       >
@@ -37,13 +36,13 @@ export function HeroSection() {
           <div className="
             flex flex-col
             lg:flex-row
-            items-start lg:items-center
+            items-center
             justify-between
-            gap-10 xl:gap-16
+            gap-4 lg:gap-10 xl:gap-16
           ">
             {/* LEFT */}
             <motion.div
-              className="w-full lg:max-w-[420px] space-y-2 text-center lg:text-left"
+              className="w-full lg:max-w-[420px] space-y-2 text-center"
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -52,8 +51,8 @@ export function HeroSection() {
               <motion.h1
                 className="
                   font-poly-sans
-                  text-[clamp(2.25rem,5vw,3.5rem)]
-                  leading-tight
+                  text-[45px] leading-[52px]
+                  lg:text-[clamp(2.25rem,5vw,3.5rem)] lg:leading-tight
                   text-[#A2F7B4]
                 "
                 initial={{ y: 50, opacity: 0 }}
@@ -75,10 +74,10 @@ export function HeroSection() {
                 w-full
                 lg:max-w-[480px]
                 flex flex-col
-                items-center lg:items-start
+                items-center
                 gap-4
                 text-white
-                text-center lg:text-left
+                text-center
               "
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -87,8 +86,10 @@ export function HeroSection() {
             >
               <motion.p
                 className="
-                  text-base sm:text-lg
-                  text-[#DFFFE2]
+                  text-[14px] leading-[20px]
+                  lg:text-base lg:text-lg
+                  text-[#B1BFBF]
+                  lg:text-[#DFFFE2]
                   font-poly-sans
                   max-w-prose
                   [&_*]:font-normal

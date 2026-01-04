@@ -37,12 +37,12 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex flex-1 items-center justify-center gap-[40px]">
-          <a
-            href="#work"
+          <Link
+            href="/allwork"
             className="text-[12px] leading-[16px] tracking-[0.5px] font-semibold hover:text-[#2F9C96] transition"
           >
             Work
-          </a>
+          </Link>
           <a
             href="#services"
             className="text-[12px] leading-[16px] tracking-[0.5px] font-semibold hover:text-[#2F9C96] transition"
@@ -104,13 +104,13 @@ export default function Header() {
       {isMenuOpen && (
         <div className="absolute top-[86px] left-0 right-0 bg-white shadow-lg md:hidden border-t">
           <nav className="flex flex-col p-6 gap-4">
-            <a
-              href="#work"
+            <Link
+              href="/allwork"
               className="text-[14px] font-semibold py-2 hover:text-[#2F9C96] transition"
               onClick={() => setIsMenuOpen(false)}
             >
               Work
-            </a>
+            </Link>
             <a
               href="#services"
               className="text-[14px] font-semibold py-2 hover:text-[#2F9C96] transition"
