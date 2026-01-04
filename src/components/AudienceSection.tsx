@@ -51,8 +51,7 @@ export function AudienceSection() {
                 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                Sprinten supports the people building the next generation of Solana products — whether you're writing smart contracts,
-                shaping a new startup, or taking an idea to market.
+                Sprinten supports the people building the next generation of AI and Web3 products; whether you're writing smart contracts, shaping new startups, and taking ideas to market.
               </motion.p>
             </motion.div>
 

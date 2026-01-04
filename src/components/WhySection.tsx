@@ -78,8 +78,7 @@ export function WhySection() {
             transition={{ duration: 0.8, delay: 1.2 }}
             viewport={{ once: false, amount: 0.5 }}
           >
-            Sprinten gives Solana founders and developers the perfect mix of speed,
-            clarity, and execution. No long cycles. No agency fluff.
+            Sprinten delivers an ideal blend of speed, clarity, and flawless execution for Web3 founders and developers without lengthy cycles or unnecessary agency overhead.
           </motion.p>
 
           <motion.div

@@ -139,10 +139,7 @@ export function ServicesSection() {
               transition={{ duration: 0.8, delay: 1.0 }}
               viewport={{ once: false, amount: 0.5 }}
             >
-              Sprinten delivers the core design, frontend, and strategy you need
-              to ship a real product—fast. No bloated packages. No slow
-              handoffs. Just focused execution built for founders and
-              developers.
+              Sprinten delivers the core design, frontend, and strategy you need to ship a real product fast. Focused execution with streamlined packages and seamless handoffs, built for founders and developers.
             </motion.p>
           </div>
 

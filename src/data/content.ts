@@ -4,7 +4,7 @@ export const heroCopy = {
   eyebrow: "Sprinten Studio",
   headline: "Ship Faster. Build Better. Onchain.",
   body:
-    "Sprinten helps Solana founders and developers launch market-ready products in weeks, not months.",
+    "Sprinten helps Web3 founders and developers launch market-ready products in weeks, not months.",
   primaryCta: "Start a sprint",
   secondaryCta: "Book a call",
   metrics: [
@@ -33,11 +33,13 @@ export const pillars = [
       "A sprint workflow paired with a hardened component system lets us ship beautiful product surfaces without ever cutting corners."
   },
   {
-    title: "Complete Ecosystem Approach",
+    title: "A Comprehensive Ecosystem Approach",
     description:
-      "Studio, Creative, Academy, and AI Lab—everything you need to go from idea to market with one aligned team."
+      "Creative studio, Academy, and AI Lab; all the essential components unified in one cohesive team to seamlessly take your idea from concept to market."
   }
 ];
+
+
 
 export const services = [
   {
