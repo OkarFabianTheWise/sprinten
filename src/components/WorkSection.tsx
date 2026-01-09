@@ -2,13 +2,15 @@
 
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import { projects } from "@/data/content";
 
-const WORK_ITEMS = [
-  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks" },
-  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks" },
-  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks" },
-  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks" },
-];
+// Mapping project titles to images
+const PROJECT_IMAGES: Record<string, string> = {
+  "Airbills Pay": "/airbills.png",
+  "Veloo": "/veloo-pc.png",
+  "Nexus Protocol": "/aiplatform.png",
+  "Synapse Dev Kit": "/design.png",
+};
 
 const imageVariants: Variants = {
   hidden: { scale: 1.08, opacity: 0 },
@@ -85,15 +87,15 @@ export function WorkSection() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-12">
-          {WORK_ITEMS.map((item, idx) => (
+          {projects.map((project, idx) => (
             <div
               key={idx}
               className="bg-[#E5F9E0] overflow-hidden rounded-[8px]"
             >
               {/* Image */}
               <motion.img
-                src={item.img}
-                alt={item.title}
+                src={PROJECT_IMAGES[project.title] || "/default-project.png"}
+                alt={project.title}
                 className="
                   w-full
                   aspect-[16/9]
@@ -109,7 +111,7 @@ export function WorkSection() {
               {/* Text block */}
               <div className="py-3">
                 <h3 className="text-[16px] leading-[24px] font-semibold tracking-[0.15px] text-[#021514] mb-2">
-                  {item.title}
+                  {project.title}
                 </h3>
 
                 <div className="flex items-center text-[14px] leading-[24px] text-gray-500">
@@ -122,7 +124,7 @@ export function WorkSection() {
                     <circle cx="12" cy="12" r="10" strokeWidth="2" />
                     <path strokeWidth="2" d="M12 6v6l4 2" />
                   </svg>
-                  <span>{item.duration}</span>
+                  <span>{project.duration}</span>
                 </div>
               </div>
             </div>

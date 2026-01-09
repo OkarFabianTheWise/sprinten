@@ -73,21 +73,21 @@ export const projects = [
     accent: "from-primary-500/20 to-surface-dark/30"
   },
   {
-    title: "Sprinten AI Lab",
-    category: "Ops + Internal Platform",
-    duration: "5 weeks",
+    title: "Veloo",
+    category: "Hyperlocal Service Platform",
+    duration: "4 weeks",
     accent: "from-secondary-500/15 to-primary-500/10"
   },
   {
-    title: "DeFi Command Center",
-    category: "Trading Dashboard",
-    duration: "4 weeks",
+    title: "Nexus Protocol",
+    category: "Trading & Analytics Dashboard",
+    duration: "5 weeks",
     accent: "from-white/10 to-primary-700/30"
   },
   {
-    title: "Founders Hub",
-    category: "Education + LMS",
-    duration: "2 weeks",
+    title: "Synapse Dev Kit",
+    category: "SDK & Developer Tools",
+    duration: "3 weeks",
     accent: "from-primary-100/20 to-secondary-500/10"
   }
 ];
@@ -109,11 +109,4 @@ export const audiences = [
       "A guided path into Solana with clean UX, rapid prototyping, and confident execution for enterprise teams."
   }
 ];
-
-export const testimonial = {
-  quote:
-    "Sprinten delivered our MVP in record time. Clean UX, clean code, zero back-and-forth drama.",
-  author: "Edem Vee",
-  role: "Co-founder, Paykin"
-};
 
