@@ -118,13 +118,24 @@ export default function CaseStudy() {
                 </div>
 
                 {/* Frame 1618868443 - Title section - now aligned to left */}
-                <div className="flex flex-col items-start p-0 gap-2 w-[1360px] h-[228px]">
-                    <div className="flex flex-col items-start p-0 gap-6 w-[958px] h-[228px]">
-                        <span className="w-[379px] h-[20px] font-poly-sans font-semibold text-[14px] leading-[20px] tracking-[0.1px] text-[#858BE3]">Sprinten AI CASE STUDY</span>
-                        <h1 className="w-[958px] h-[128px] font-poly-sans font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#A2F7B4]">How We Helped {title} Achieve {data.keyImpact} in Just {duration}</h1>
-                        <p className="w-[958px] h-[48px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#B1BFBF]">{data.caseStudySubtitle || `A Sprinten design sprint case study for ${title}, focused on solving ${data.coreProblem} with clear, fast, and effective execution.`}</p>
-                    </div>
-                </div>
+<div className="flex flex-col items-start p-0 gap-2 w-[1360px] h-[228px]">
+    <div className="flex flex-col items-start p-0 gap-6 w-[958px] h-[228px]">
+        <span className="w-[379px] h-[20px] font-poly-sans font-semibold text-[14px] leading-[20px] tracking-[0.1px] text-[#858BE3]">
+            Sprinten AI CASE STUDY
+        </span>
+
+        <h1 className="w-[958px] h-[128px] font-poly-sans font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#A2F7B4]">
+            How We Helped {title} Achieve {data.keyImpact} in Just {duration}
+        </h1>
+
+        {/* explicit vertical spacing below h1 */}
+        <p className="mt-12 w-[958px] h-[48px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#B1BFBF]">
+            {data.caseStudySubtitle ||
+                `A Sprinten design sprint case study for ${title}, focused on solving ${data.coreProblem} with clear, fast, and effective execution.`}
+        </p>
+    </div>
+</div>
+
             </div>
 
             {data.media.hero.type === 'image' ? (
