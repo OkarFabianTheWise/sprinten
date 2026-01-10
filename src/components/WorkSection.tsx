@@ -7,7 +7,7 @@ import { projects } from "@/data/content";
 // Mapping project titles to images
 const PROJECT_IMAGES: Record<string, string> = {
   "Airbills Pay": "/airbills.png",
-  "Veloo": "/veloo-pc.png",
+  "Veloo": "/veloo-hero.png",
   "Nexus Protocol": "/aiplatform.png",
   "Synapse Dev Kit": "/design.png",
 };

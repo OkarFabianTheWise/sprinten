@@ -13,6 +13,8 @@ export type CaseStudySection = {
 };
 
 export interface CaseStudyEntry {
+    icon: string;
+    duration: string;
     shortDescription: string;
     coreProblem: string;
     industry: string;
@@ -20,6 +22,10 @@ export interface CaseStudyEntry {
     companySize: string;
     challenge: CaseStudySection;
     whatWeDid: CaseStudySection;
+    keyImpact: string;
+    caseStudySubtitle?: string;
+    whatWeDidSteps: { title: string; bullets: string[] }[];
+    resultsTitle?: string;
     resultsDescription: string;
     results: { title: string; description: string }[];
     media: {
@@ -30,6 +36,8 @@ export interface CaseStudyEntry {
 
 export const caseStudyData: Record<string, CaseStudyEntry> = {
     "Airbills pay": {
+        icon: "/airbills-icon.svg",
+        duration: "3 weeks",
         shortDescription: "fintech startup helping SMEs manage cashflow",
         coreProblem: "inefficient invoice and payment workflows",
         industry: "Fintech",
@@ -61,6 +69,43 @@ export const caseStudyData: Record<string, CaseStudyEntry> = {
                 src: "/case-studies/airbills/what-we-did.jpg",
             },
         },
+        keyImpact: "improved user onboarding and engagement",
+        caseStudySubtitle: "Redesigning Airbills Pay's fintech platform to enhance clarity, speed, and trust for SMEs.",
+        whatWeDidSteps: [
+            {
+                title: "Discovery & Alignment",
+                bullets: [
+                    "Conducted comprehensive UX audit to identify pain points and opportunities",
+                    "Analyzed competitive landscape to understand market positioning",
+                    "Performed user research to validate assumptions and gather insights",
+                ],
+            },
+            {
+                title: "UX Design & Flow Optimization",
+                bullets: [
+                    "Mapped out user journeys to eliminate friction",
+                    "Designed intuitive interfaces for complex workflows",
+                    "Optimized information architecture for better findability",
+                ],
+            },
+            {
+                title: "UI Design & Branding",
+                bullets: [
+                    "Created a cohesive design system with reusable components",
+                    "Developed a visual identity that conveys trust and professionalism",
+                    "Ensured accessibility and inclusive design principles",
+                ],
+            },
+            {
+                title: "Prototype & Delivery",
+                bullets: [
+                    "Built interactive prototypes for user testing",
+                    "Delivered production-ready designs with detailed specifications",
+                    "Provided design handoff documentation for seamless development",
+                ],
+            },
+        ],
+        resultsTitle: "Fast, Clear, and Market-Ready Outcomes.",
         resultsDescription:
             "Sprinten's sprint delivered tangible improvements that empowered Airbills Pay to ship smarter and faster, building trust with users and showcasing their fintech solutions.",
         results: [
@@ -83,15 +128,17 @@ export const caseStudyData: Record<string, CaseStudyEntry> = {
         media: {
             hero: {
                 type: "image",
-                src: "/case-studies/airbills/hero.jpg",
+                src: "/airbills.png",
             },
             clientOverview: {
                 type: "image",
-                src: "/case-studies/airbills/overview.jpg",
+                src: "/client-handshake.jpg",
             },
         },
     },
     Veloo: {
+        icon: "/veloo-icon.svg",
+        duration: "4 weeks",
         shortDescription: "hyperlocal service and delivery platform",
         coreProblem:
             "lack of a unified way to access nearby stores, services, and delivery",
@@ -108,7 +155,7 @@ export const caseStudyData: Record<string, CaseStudyEntry> = {
             ],
             media: {
                 type: "image",
-                src: "/case-studies/veloo/challenge.jpg",
+                src: "/veloo-overview.png",
             },
         },
         whatWeDid: {
@@ -124,33 +171,71 @@ export const caseStudyData: Record<string, CaseStudyEntry> = {
                 src: "/case-studies/veloo/what-we-did.jpg",
             },
         },
+        keyImpact: "Build a Trusted Brand Identity",
+        caseStudySubtitle: "A Sprinten design sprint case study for a hyperlocal commerce and service platform, focused on solving fragmented offline-local experiences with clear, fast, and effective execution.",
+        whatWeDidSteps: [
+            {
+                title: "Discovery & Alignment",
+                bullets: [
+                    "Conducted comprehensive brand strategy analysis",
+                    "Analyzed competitive landscape for positioning",
+                    "Performed user research to understand local needs",
+                ],
+            },
+            {
+                title: "UX Design & Flow Optimization",
+                bullets: [
+                    "Unified user experience across service types",
+                    "Designed intuitive interfaces for local commerce",
+                    "Optimized flows for mobility and delivery",
+                ],
+            },
+            {
+                title: "UI Design & Branding",
+                bullets: [
+                    "Created a cohesive design system for scalability",
+                    "Developed a friendly brand identity that builds trust",
+                    "Ensured consistent visual design across markets",
+                ],
+            },
+            {
+                title: "Prototype & Delivery",
+                bullets: [
+                    "Built interactive prototypes for testing",
+                    "Delivered production-ready designs",
+                    "Provided documentation for rapid replication",
+                ],
+            },
+        ],
+        resultsTitle: "Fast, Clear, and Market-Ready Outcomes.",
         resultsDescription:
-            "Sprinten's sprint delivered tangible improvements that empowered Veloo to ship smarter and faster, building trust with users and showcasing their platform's power.",
+            "The brand identity design positioned Veloo as a trusted, everyday companion for hyperlocal living. It clearly communicates convenience, reliability, and community, making the platform feel familiar to users while still modern and tech forward.",
         results: [
             {
-                title: "Brand Strategy & Positioning",
+                title: "Distinct Brand Identity",
                 description:
-                    "Clear identity and messaging that positioned Veloo as the trusted local platform, differentiating it from competitors.",
+                    "A clear, recognizable identity that differentiates Veloo from generic delivery and ride hailing apps.",
             },
             {
-                title: "Cohesive, Premium UI",
+                title: "Local First Trust Positioning",
                 description:
-                    "Consistent design system and component library created a scalable, high-quality experience that strengthens user trust.",
+                    "Strong local first positioning that builds trust with students, store owners, riders, and service providers.",
             },
             {
-                title: "Measurable Business Impact",
+                title: "Consistent Visual Experience",
                 description:
-                    "Stronger brand foundation drove higher early adoption, increased engagement, and enabled confident expansion into new markets.",
+                    "Visual consistency across app, marketing materials, and partner touchpoints.",
             },
         ],
         media: {
             hero: {
-                type: "image",
-                src: "/case-studies/veloo/hero.jpg",
+                type: "video",
+                src: "/veloo-media.mp4",
+                poster: "/veloo-hero.png",
             },
             clientOverview: {
                 type: "image",
-                src: "/case-studies/veloo/overview.jpg",
+                src: "/veloo-overview.png",
             },
         },
     },

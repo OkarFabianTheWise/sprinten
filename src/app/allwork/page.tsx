@@ -11,14 +11,18 @@ import arrowr from '../../icons/b-ar-right.svg';
 
 const WORK_ITEMS = [
   { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks", icon: "/airbills-icon.svg" },
+  { title: "Veloo", img: "/veloo-hero.png", duration: "4 weeks", icon: "/veloo-icon.svg" },
   { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks", icon: "/aiplatform-icon.svg" },
-  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks", icon: "/airbills-icon.svg" },
-  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks", icon: "/aiplatform-icon.svg" },
-  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks", icon: "/airbills-icon.svg" },
-  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks", icon: "/aiplatform-icon.svg" },
-  { title: "Airbills pay", img: "/airbills.png", duration: "3 weeks", icon: "/airbills-icon.svg" },
-  { title: "AI platform for Sprinten", img: "/aiplatform.png", duration: "3 weeks", icon: "/aiplatform-icon.svg" },
+  { title: "DeFi Protocol", img: "/aiplatform.png", duration: "5 weeks", icon: "/defi-icon.svg" },
+  { title: "NFT Marketplace", img: "/design.png", duration: "4 weeks", icon: "/nft-icon.svg" },
+  { title: "Blockchain Analytics", img: "/aiplatform.png", duration: "6 weeks", icon: "/analytics-icon.svg" },
+  { title: "Crypto Wallet", img: "/airbills.png", duration: "3 weeks", icon: "/wallet-icon.svg" },
+  { title: "Smart Contract Tool", img: "/strategy.png", duration: "2 weeks", icon: "/contract-icon.svg" },
 ];
+
+const getCaseStudyUrl = (title: string) => {
+  return `/casestudy?title=${encodeURIComponent(title)}`;
+};
 
 const imageVariants: Variants = {
   hidden: { scale: 1.08, opacity: 0 },
@@ -134,7 +138,7 @@ export default function AllWorkPage() {
                   if (viewMode === "gallery") {
                     setSelectedImage({ title: item.title, img: item.img, index: idx });
                   } else if (viewMode === "case-study") {
-                    router.push(`/casestudy?title=${encodeURIComponent(item.title)}&duration=${encodeURIComponent(item.duration)}&img=${encodeURIComponent(item.img)}&icon=${encodeURIComponent(item.icon)}`);
+                    router.push(getCaseStudyUrl(item.title));
                   }
                 }}
               >
