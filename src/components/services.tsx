@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 export interface ServiceCardProps {
   img: string;
@@ -34,10 +35,11 @@ export function ServiceCard({ img, title, description }: ServiceCardProps) {
     <div className="w-full border border-[#C9E8CC] bg-[#F5FFF2] shadow-sm rounded-[18px] overflow-hidden">
       {/* Image */}
       <div className="relative h-[220px] sm:h-[240px] md:h-[260px] m-4 rounded-[14px] border-4 border-white bg-white overflow-hidden">
-        <img
+        <Image
           src={img}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover rounded-[10px]"
+          fill
+          className="object-cover rounded-[10px]"
         />
         <div className="absolute bottom-0 inset-x-0 h-[25%] bg-gradient-to-t from-[#F5FFF2] to-transparent" />
       </div>

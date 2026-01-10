@@ -5,6 +5,7 @@ import { useState } from "react";
 import arrowleft from "../icons/arrowleft.png";
 import arrowright from "../icons/arrowright.png";
 import { testimonials } from "../data/testimonials";
+import Image from 'next/image';
 
 export function TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -69,10 +70,12 @@ export function TestimonialSection() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="flex items-center gap-2">
-                  <img
+                  <Image
                     src={currentTestimonial.image}
                     alt={currentTestimonial.author}
-                    className="w-[23px] h-[24px] rounded-full"
+                    width={23}
+                    height={24}
+                    className="rounded-full"
                   />
                   <p className="text-white text-[18px] font-medium">
                     {currentTestimonial.author}
@@ -112,7 +115,7 @@ export function TestimonialSection() {
                 whileTap={{ scale: 0.9 }}
                 aria-label="Previous testimonial"
               >
-                <img src={arrowleft.src} width={56} height={56} />
+                <Image src={arrowleft} width={56} height={56} alt="" />
               </motion.button>
 
               <motion.button
@@ -121,7 +124,7 @@ export function TestimonialSection() {
                 whileTap={{ scale: 0.9 }}
                 aria-label="Next testimonial"
               >
-                <img src={arrowright.src} width={52} height={52} />
+                <Image src={arrowright} width={52} height={52} alt="" />
               </motion.button>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { CaseStudyMedia } from "@/data/caseStudies";
+import Image from 'next/image';
 
 export function MediaBlock({
   media,
@@ -23,5 +24,5 @@ export function MediaBlock({
     );
   }
 
-  return <img src={media.src} alt={alt || "Media"} className={className} />;
+  return <Image src={media.src} alt={alt || "Media"} fill className={className} />;
 }

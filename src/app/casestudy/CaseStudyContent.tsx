@@ -3,7 +3,6 @@
 
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import CombinedAnimation from "@/animation/CombinedAnimation";
 import { CTASection, Footer, TestimonialSection } from "@/components/sections";
 import hardhat from "../../icons/hardhat.svg";
 import location from "../../icons/location.svg";
