@@ -256,14 +256,14 @@ export default function CaseStudy() {
         </div>
  
         {/* Section 3 */}
-        <div className="w-full h-[637px] bg-[#E5F9E0] relative overflow-hidden">
+        <div className="w-full py-12 md:py-16 lg:py-20 bg-[#E5F9E0] relative overflow-hidden">
             {/* Sprinten Primary logo (green) - Background */}
             <Image
                 src="/section3-logo.png"
                 alt="Sprinten Primary Logo"
                 width={3600}
                 height={1944}
-                className="absolute object-cover right-[-1350px] opacity-80 w-[3600px] h-[1944px]"
+                className="absolute object-cover right-[-1350px] opacity-80 w-[3600px] h-[1944px] hidden lg:block"
                 style={{
                     top: 'calc(50% - 1944px / 2 + 40px)', // 👈 pushes image DOWN
                 }}
@@ -271,25 +271,25 @@ export default function CaseStudy() {
 
 
             {/* Content Container */}
-            <div className="absolute left-[58px] w-[792px]" style={{ top: 'calc(50% - 472px/2 + 0.5px)' }}>
-                <div className="flex flex-col gap-10">
+            <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-12 lg:ml-[58px] lg:max-w-[792px]">
+                <div className="flex flex-col gap-8 md:gap-10">
                     {/* Header Section */}
                     <div className="flex flex-col gap-4">
-                        <h1 className="font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#021514]">
+                        <h1 className="font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[57px] leading-tight lg:leading-[64px] tracking-[-0.25px] text-[#021514]">
                             The Challenge
                         </h1>
 
-                        <p className="font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#8CA1A0]">
+                        <p className="font-normal text-sm md:text-base leading-relaxed tracking-[0.5px] text-[#8CA1A0]">
                             {data.challenge?.summary}
                         </p>
                     </div>
 
                     {/* Challenges List */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-4 md:gap-6">
                         {data.challenge?.bullets?.map((bullet, index) => (
-                            <div key={index} className="flex items-center gap-4">
-                                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                    <div className="w-4 h-4 relative">
+                            <div key={index} className="flex items-start gap-3 md:gap-4">
+                                <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                         <img
                                             src={mark.src}
                                             alt="Mark icon"
@@ -297,7 +297,7 @@ export default function CaseStudy() {
                                         />
                                     </div>
                                 </div>
-                                <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                     {bullet}
                                 </div>
                             </div>
@@ -308,44 +308,44 @@ export default function CaseStudy() {
         </div>
 
         {/* Section 4 */}
-        <div className="w-full h-[921px] bg-[#E5F9E0] relative">
+        <div className="w-full py-12 md:py-16 lg:py-20 bg-[#E5F9E0] relative">
             {/* Green box */}
-            <div className="absolute bg-[#A2F7B4] rounded-[16px] left-[45px] right-[45px]" style={{ height: '825px', top: 'calc(50% - 825px/2 + 6px)' }}>
+            <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-12 bg-[#A2F7B4] rounded-[16px] p-6 md:p-8 lg:p-12">
                 {/* Title and description */}
-                <div className="absolute left-[57px] right-[57px] top-[81px] flex flex-col gap-4">
-                    <h1 className="font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#021514]">
+                <div className="flex flex-col gap-4 mb-8 md:mb-12">
+                    <h1 className="font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[57px] leading-tight lg:leading-[64px] tracking-[-0.25px] text-[#021514]">
                         What we did
                     </h1>
 
-                    <p className="font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#365B59]">
+                    <p className="font-normal text-sm md:text-base leading-relaxed tracking-[0.5px] text-[#365B59]">
                         {data.whatWeDid?.summary}
                     </p>
                 </div>
 
                 {/* Cards row */}
-                <div className="absolute left-[57px] right-[57px] top-[250px] flex flex-row gap-4">
+                <div className="flex flex-col md:flex-row gap-6 md:gap-4">
                     {/* Card 1: Discovery & Alignment */}
-                    <div className="flex-1 h-[520px] bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-6">
-                        {/* Blur effects */}
-                        <div className="absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
-                        <div className="absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
+                    <div className="flex-1 bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-4 md:p-6">
+                        {/* Blur effects - hidden on mobile */}
+                        <div className="hidden md:block absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
+                        <div className="hidden md:block absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
 
                         {/* Content */}
-                        <div className="relative flex flex-col gap-10 pt-6">
-                            <h3 className="font-normal text-[28px] leading-[36px] text-[#2F9C96]">
+                        <div className="relative flex flex-col gap-6 md:gap-10 pt-4 md:pt-6">
+                            <h3 className="font-normal text-xl md:text-2xl lg:text-[28px] leading-tight lg:leading-[36px] text-[#2F9C96]">
                                 {data.whatWeDidSteps?.[0]?.title || 'Discovery & Alignment'}
                             </h3>
 
-                            <div className="flex flex-col gap-6">
-                                <div className="font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#577674]">
+                            <div className="flex flex-col gap-4 md:gap-6">
+                                <div className="font-normal text-sm md:text-[14px] leading-relaxed md:leading-[20px] tracking-[0.25px] text-[#577674]">
                                     Deliverables:
                                 </div>
 
-                                <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-4 md:gap-6">
                                     {/* Item 1 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -353,15 +353,15 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[0]?.bullets?.[0] || 'Conducted comprehensive brand strategy analysis'}
                                         </div>
                                     </div>
 
                                     {/* Item 2 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -369,15 +369,15 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[0]?.bullets?.[1] || 'Analyzed competitive landscape for positioning'}
                                         </div>
                                     </div>
 
                                     {/* Item 3 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -385,7 +385,7 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[0]?.bullets?.[2] || 'Performed user research to understand local needs'}
                                         </div>
                                     </div>
@@ -395,27 +395,27 @@ export default function CaseStudy() {
                     </div>
 
                     {/* Card 2: UX Design & Flow Optimization */}
-                    <div className="flex-1 h-[520px] bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-6">
-                        {/* Blur effects */}
-                        <div className="absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
-                        <div className="absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
+                    <div className="flex-1 bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-4 md:p-6">
+                        {/* Blur effects - hidden on mobile */}
+                        <div className="hidden md:block absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
+                        <div className="hidden md:block absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
 
                         {/* Content */}
-                        <div className="relative flex flex-col gap-10 pt-6">
-                            <h3 className="font-normal text-[28px] leading-[36px] text-[#2F9C96]">
+                        <div className="relative flex flex-col gap-6 md:gap-10 pt-4 md:pt-6">
+                            <h3 className="font-normal text-xl md:text-2xl lg:text-[28px] leading-tight lg:leading-[36px] text-[#2F9C96]">
                                 {data.whatWeDidSteps?.[1]?.title || 'UX Design & Flow Optimization'}
                             </h3>
 
-                            <div className="flex flex-col gap-6">
-                                <div className="font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#577674]">
+                            <div className="flex flex-col gap-4 md:gap-6">
+                                <div className="font-normal text-sm md:text-[14px] leading-relaxed md:leading-[20px] tracking-[0.25px] text-[#577674]">
                                     Deliverables:
                                 </div>
 
-                                <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-4 md:gap-6">
                                     {/* Item 1 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -423,15 +423,15 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[1]?.bullets?.[0] || 'Unified user experience across service types'}
                                         </div>
                                     </div>
 
                                     {/* Item 2 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -439,15 +439,15 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[1]?.bullets?.[1] || 'Designed intuitive interfaces for local commerce'}
                                         </div>
                                     </div>
 
                                     {/* Item 3 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -455,7 +455,7 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[1]?.bullets?.[2] || 'Optimized flows for mobility and delivery'}
                                         </div>
                                     </div>
@@ -465,27 +465,27 @@ export default function CaseStudy() {
                     </div>
 
                     {/* Card 3: UI Design & Branding */}
-                    <div className="flex-1 h-[520px] bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-6">
-                        {/* Blur effects */}
-                        <div className="absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
-                        <div className="absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
+                    <div className="flex-1 bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-4 md:p-6">
+                        {/* Blur effects - hidden on mobile */}
+                        <div className="hidden md:block absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
+                        <div className="hidden md:block absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
 
                         {/* Content */}
-                        <div className="relative flex flex-col gap-10 pt-6">
-                            <h3 className="font-normal text-[28px] leading-[36px] text-[#2F9C96]">
+                        <div className="relative flex flex-col gap-6 md:gap-10 pt-4 md:pt-6">
+                            <h3 className="font-normal text-xl md:text-2xl lg:text-[28px] leading-tight lg:leading-[36px] text-[#2F9C96]">
                                 {data.whatWeDidSteps?.[2]?.title || 'UI Design & Branding'}
                             </h3>
 
-                            <div className="flex flex-col gap-6">
-                                <div className="font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#577674]">
+                            <div className="flex flex-col gap-4 md:gap-6">
+                                <div className="font-normal text-sm md:text-[14px] leading-relaxed md:leading-[20px] tracking-[0.25px] text-[#577674]">
                                     Deliverables:
                                 </div>
 
-                                <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-4 md:gap-6">
                                     {/* Item 1 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -493,15 +493,15 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[2]?.bullets?.[0] || 'Created a cohesive design system for scalability'}
                                         </div>
                                     </div>
 
                                     {/* Item 2 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -509,15 +509,15 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[2]?.bullets?.[1] || 'Developed a friendly brand identity that builds trust'}
                                         </div>
                                     </div>
 
                                     {/* Item 3 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -525,7 +525,7 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[2]?.bullets?.[2] || 'Ensured consistent visual design across markets'}
                                         </div>
                                     </div>
@@ -535,27 +535,27 @@ export default function CaseStudy() {
                     </div>
 
                     {/* Card 4: Prototype & Delivery */}
-                    <div className="flex-1 h-[520px] bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-6">
-                        {/* Blur effects */}
-                        <div className="absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
-                        <div className="absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
+                    <div className="flex-1 bg-[#E5F9E0] border border-[#8CA1A0] rounded-lg relative p-4 md:p-6">
+                        {/* Blur effects - hidden on mobile */}
+                        <div className="hidden md:block absolute w-[652px] h-[155px] left-1/2 -translate-x-1/2 translate-x-[93px] top-[266px] bg-[#E5F9E0] blur-[22px] pointer-events-none"></div>
+                        <div className="hidden md:block absolute w-[197px] h-[162px] left-[264px] -top-[203px] bg-[#A2F7B4] blur-[122px] pointer-events-none"></div>
 
                         {/* Content */}
-                        <div className="relative flex flex-col gap-10 pt-6">
-                            <h3 className="font-normal text-[28px] leading-[36px] text-[#2F9C96]">
+                        <div className="relative flex flex-col gap-6 md:gap-10 pt-4 md:pt-6">
+                            <h3 className="font-normal text-xl md:text-2xl lg:text-[28px] leading-tight lg:leading-[36px] text-[#2F9C96]">
                                 {data.whatWeDidSteps?.[3]?.title || 'Prototype & Delivery'}
                             </h3>
 
-                            <div className="flex flex-col gap-6">
-                                <div className="font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#577674]">
+                            <div className="flex flex-col gap-4 md:gap-6">
+                                <div className="font-normal text-sm md:text-[14px] leading-relaxed md:leading-[20px] tracking-[0.25px] text-[#577674]">
                                     Deliverables:
                                 </div>
 
-                                <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-4 md:gap-6">
                                     {/* Item 1 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -563,15 +563,15 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[3]?.bullets?.[0] || 'Built interactive prototypes for testing'}
                                         </div>
                                     </div>
 
                                     {/* Item 2 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -579,15 +579,15 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[3]?.bullets?.[1] || 'Delivered production-ready designs'}
                                         </div>
                                     </div>
 
                                     {/* Item 3 */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                                            <div className="w-4 h-4 relative">
+                                    <div className="flex items-start gap-3 md:gap-4">
+                                        <div className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <div className="w-3 h-3 md:w-4 md:h-4 relative">
                                                 <img
                                                     src={mark.src}
                                                     alt="Mark icon"
@@ -595,7 +595,7 @@ export default function CaseStudy() {
                                                 />
                                             </div>
                                         </div>
-                                        <div className="font-semibold text-[16px] leading-[24px] tracking-[0.15px] text-[#021514]">
+                                        <div className="font-semibold text-sm md:text-[16px] leading-relaxed md:leading-[24px] tracking-[0.15px] text-[#021514]">
                                             {data.whatWeDidSteps?.[3]?.bullets?.[2] || 'Provided documentation for rapid replication'}
                                         </div>
                                     </div>
@@ -655,14 +655,15 @@ export default function CaseStudy() {
                     position: 'absolute',
                     width: '2004px',
                     height: '707px',
-                    left: '58px',
-                    top: '168px'
+                    left: '50%',
+                    top: '168px',
+                    transform: 'translateX(-50%)'
                 }}
             >
                 {/* Screen 1 - Frame 1618868450 */}
                 <div
                     style={{
-                        width: '489px',
+                        width: '657px',
                         height: '707px',
                         background: '#FFFFFF',
                         flex: 'none',
@@ -694,7 +695,7 @@ export default function CaseStudy() {
                         alignItems: 'flex-start',
                         padding: '0px',
                         gap: '16px',
-                        width: '489px',
+                        width: '657px',
                         height: '707px',
                         flex: 'none',
                         order: 1,
@@ -705,7 +706,7 @@ export default function CaseStudy() {
                     {/* Top half - Frame 1618868451 */}
                     <div
                         style={{
-                            width: '489px',
+                            width: '657px',
                             height: '395px',
                             background: '#FFFFFF',
                             flex: 'none',
@@ -719,12 +720,12 @@ export default function CaseStudy() {
                         <div
                             style={{
                                 position: 'absolute',
-                                width: '1114px',
+                                width: '1485px',
                                 height: '805px',
-                                left: 'calc(50% - 1114px/2 + 0px)',
+                                left: 'calc(50% - 1485px/2 + 0px)',
                                 top: 'calc(50% - 805px/2 - 0px)',
                                 backgroundImage: 'url(/screen2-split-top.jpg)',
-                                backgroundSize: '55%',
+                                backgroundSize: '45%',
                                 backgroundRepeat: 'no-repeat',
                                 backgroundPosition: 'center'
                             }}
@@ -734,7 +735,7 @@ export default function CaseStudy() {
                     {/* Bottom half - Frame 1618868452 */}
                     <div
                         style={{
-                            width: '489px',
+                            width: '657px',
                             height: '296px',
                             background: '#246BFD',
                             flex: 'none',
@@ -748,9 +749,9 @@ export default function CaseStudy() {
                         <div
                             style={{
                                 position: 'absolute',
-                                width: '1440px',
+                                width: '1920px',
                                 height: '296px',
-                                left: 'calc(50% - 1440px/2 + 0px)',
+                                left: 'calc(50% - 1920px/2 + 0px)',
                                 top: 'calc(50% - 296px/2 + 0px)',
                                 backgroundImage: 'url(/buttom-half.png)',
                                 backgroundRepeat: 'no-repeat',
@@ -764,7 +765,7 @@ export default function CaseStudy() {
                 {/* Screen 3 - Frame 1618868455 */}
                 <div
                     style={{
-                        width: '489px',
+                        width: '657px',
                         height: '707px',
                         background: '#FFFFFF',
                         flex: 'none',
@@ -777,9 +778,9 @@ export default function CaseStudy() {
                     <div
                         style={{
                             position: 'absolute',
-                            width: '713px',
+                            width: '950px',
                             height: '713px',
-                            left: 'calc(50% - 713px/2 - 0px)',
+                            left: 'calc(50% - 950px/2 - 0px)',
                             top: 'calc(50% - 713px/2 - 3px)',
                             backgroundImage: 'url(/lastimage.png)',
                             backgroundRepeat: 'no-repeat',
@@ -788,65 +789,38 @@ export default function CaseStudy() {
                         }}
                     ></div>
                 </div>
-
-                {/* Screen 4 - Frame 1618868454 */}
-                <div
-                    style={{
-                        width: '489px',
-                        height: '707px',
-                        background: '#FFFFFF',
-                        flex: 'none',
-                        order: 3,
-                        flexGrow: 0,
-                        position: 'relative',
-                        overflow: 'hidden'
-                    }}
-                >
-                    <div
-                        style={{
-                            position: 'absolute',
-                            width: '1440px',
-                            height: '1041px',
-                            left: 'calc(50% - 1440px/2 + 435.5px)',
-                            top: 'calc(50% - 1041px/2 - 57px)',
-                            backgroundImage: 'url(/lastimage.png)',
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center'
-                        }}
-                    ></div>
-                </div>
             </div>
         </div>
 
         {/* Section 6 */}
-        <div className="w-full h-[501px] bg-[#E5F9E0] relative">
-            <div className="absolute left-[45px] right-[45px] top-[80px] flex justify-between gap-[80px]">
+        <div className="w-full py-12 md:py-16 lg:py-20 bg-[#E5F9E0] relative">
+            <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-12 flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-[80px]">
                 {/* Left Column */}
-                <div className="flex flex-col gap-4 w-[584px]">
+                <div className="flex flex-col gap-4 lg:w-[584px]">
                     {/* THE RESULTS */}
-                    <div className="font-semibold text-[14px] leading-[20px] tracking-[0.1px] text-[#858BE3]">
+                    <div className="font-semibold text-sm md:text-[14px] leading-relaxed md:leading-[20px] tracking-[0.1px] text-[#858BE3]">
                         THE RESULTS
                     </div>
 
                     {/* Title */}
-                    <h1 className="font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#021514]">
+                    <h1 className="font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[57px] leading-tight lg:leading-[64px] tracking-[-0.25px] text-[#021514]">
                         {data.resultsTitle || 'Fast, Clear, and Market-Ready Outcomes.'}
                     </h1>
 
                     {/* Description */}
-                    <p className="font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#8CA1A0] mt-4">
+                    <p className="font-normal text-sm md:text-base leading-relaxed md:leading-[24px] tracking-[0.5px] text-[#8CA1A0] mt-4">
                         {data.resultsDescription}
                     </p>
                 </div>
 
                 {/* Right Column */}
-                <div className="flex flex-col gap-10 w-[654px]">
+                <div className="flex flex-col gap-6 md:gap-8 lg:gap-10 lg:w-[654px]">
                     {data.results.map((result, index) => (
-                      <div key={index} className="flex flex-col gap-4">
-                        <h3 className="font-normal text-[22px] leading-[28px] text-[#021514]">
+                      <div key={index} className="flex flex-col gap-3 md:gap-4">
+                        <h3 className="font-normal text-lg md:text-xl lg:text-[22px] leading-tight lg:leading-[28px] text-[#021514]">
                           {result.title}
                         </h3>
-                        <p className="font-normal text-[14px] leading-[20px] tracking-[0.25px] text-[#8CA1A0]">
+                        <p className="font-normal text-sm md:text-[14px] leading-relaxed md:leading-[20px] tracking-[0.25px] text-[#8CA1A0]">
                           {result.description}
                         </p>
                       </div>

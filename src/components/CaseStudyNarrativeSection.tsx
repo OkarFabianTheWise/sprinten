@@ -20,17 +20,17 @@ export function CaseStudyNarrativeSection({
   const bgColor = isDark ? "bg-[#021514]" : "bg-[#E5F9E0]";
 
   return (
-    <div className={`w-full py-12 md:py-16 lg:py-20 px-4 md:px-8 lg:px-12 ${bgColor}`}>
-      <div className="w-full mx-auto flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 items-start">
+    <div className={`w-full py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12 ${bgColor}`}>
+      <div className="w-full mx-auto flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-start">
         {/* Text Column */}
         <div
-          className={`w-full lg:w-[46%] flex flex-col gap-6 md:gap-8 lg:gap-10 ${
+          className={`w-full lg:w-[46%] flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10 ${
             imagePosition === "right" ? "order-1" : "order-2 lg:order-1"
           }`}
         >
           <div className="flex flex-col gap-3 lg:gap-4">
             <h2
-              className={`font-normal text-4xl md:text-5xl lg:text-[57px] leading-tight lg:leading-[64px] tracking-[-0.25px] ${headingColor}`}
+              className={`font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[57px] leading-tight lg:leading-[64px] tracking-[-0.25px] ${headingColor}`}
             >
               {title}
             </h2>
@@ -60,7 +60,7 @@ export function CaseStudyNarrativeSection({
               imagePosition === "right" ? "order-2 lg:order-2" : "order-1 lg:order-2"
             }`}
           >
-            <div className="w-full h-[400px] lg:h-[500px] relative rounded-lg overflow-hidden">
+            <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px] relative rounded-lg overflow-hidden">
               <MediaBlock media={section.media} alt={title} />
             </div>
           </div>
