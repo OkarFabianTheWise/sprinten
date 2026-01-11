@@ -6,9 +6,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="w-full bg-white h-[86px] flex items-center sticky top-0 z-50">
@@ -44,13 +46,13 @@ export default function Header() {
             Work
           </Link>
           <a
-            href="#services"
+            href={pathname === '/' ? '#services' : '/#services'}
             className="text-[12px] leading-[16px] tracking-[0.5px] font-semibold hover:text-[#2F9C96] transition"
           >
             Services
           </a>
           <a
-            href="#about"
+            href={pathname === '/' ? '#about' : '/#about'}
             className="text-[12px] leading-[16px] tracking-[0.5px] font-semibold hover:text-[#2F9C96] transition"
           >
             About
@@ -112,14 +114,14 @@ export default function Header() {
               Work
             </Link>
             <a
-              href="#services"
+              href={pathname === '/' ? '#services' : '/#services'}
               className="text-[14px] font-semibold py-2 hover:text-[#2F9C96] transition"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
             </a>
             <a
-              href="#about"
+              href={pathname === '/' ? '#about' : '/#about'}
               className="text-[14px] font-semibold py-2 hover:text-[#2F9C96] transition"
               onClick={() => setIsMenuOpen(false)}
             >

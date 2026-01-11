@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 import { projects } from "@/data/content";
 
 // Mapping project titles to images
@@ -12,100 +13,52 @@ const PROJECT_IMAGES: Record<string, string> = {
   "Synapse Dev Kit": "/design.png",
 };
 
-const imageVariants: Variants = {
-  hidden: { scale: 1.08, opacity: 0 },
-  Variant4: {
-    scale: 1,
-    opacity: 1,
-    transition: { duration: 0.8, ease: [0.33, 0.01, 0.68, 0.99] },
-  },
-};
-
 export function WorkSection() {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const openGallery = (index: number) => setSelectedIndex(index);
+  const closeGallery = () => setSelectedIndex(null);
+
+  const nextProject = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % projects.length);
+    }
+  };
+
+  const prevProject = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + projects.length) % projects.length);
+    }
+  };
+
   return (
-    <section
-      id="work"
-      className="
-        relative
-        bg-[#E5F9E0]
-        px-0
-        overflow-x-clip
-      "
-    >
-      <div
-        className="
-          max-w-[1300px] mx-auto
-          px-4 sm:px-6
-          lg:max-w-none lg:mx-0 lg:ml-[40px] lg:mr-[40px] lg:px-0
-          py-14 sm:py-16
-        "
-      >
+    <section id="work" className="relative bg-[#E5F9E0] px-0 overflow-x-clip">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:max-w-none lg:mx-0 lg:ml-[40px] lg:mr-[40px] lg:px-0 py-14 sm:py-16">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-[#858BE3] text-sm font-medium tracking-[0.2em] mb-4 uppercase">
             OUR WORK
           </p>
 
-          <motion.h1
-            className="
-              font-[400]
-              text-[clamp(2.25rem,5vw,3.5rem)]
-              leading-[1.15]
-              tracking-[-0.25px]
-              text-[#021514]
-              overflow-hidden
-            "
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: false, amount: 0.5 }}
-          >
+          <h1 className="font-[400] text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.15] tracking-[-0.25px] text-[#021514] overflow-hidden">
             Products We've Shipped, Fast.
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            className="
-              mt-4
-              font-[400]
-              text-base
-              leading-6
-              tracking-[0.5px]
-              text-[#8CA1A0]
-              max-w-3xl
-              mx-auto
-              overflow-hidden
-            "
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: false, amount: 0.5 }}
-          >
+          <p className="mt-4 font-[400] text-base leading-6 tracking-[0.5px] text-[#8CA1A0] max-w-3xl mx-auto overflow-hidden">
             A look at the real products, MVPs, dashboards, and frontends we've
             delivered for founders and developers across the Solana ecosystem.
-          </motion.p>
+          </p>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-12">
           {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="bg-[#E5F9E0] overflow-hidden rounded-[8px]"
-            >
+            <div key={idx} className="bg-[#E5F9E0] overflow-hidden rounded-[8px] cursor-pointer hover:shadow-lg transition-shadow" onClick={() => openGallery(idx)}>
               {/* Image */}
-              <motion.img
+              <img
                 src={PROJECT_IMAGES[project.title] || "/default-project.png"}
                 alt={project.title}
-                className="
-                  w-full
-                  aspect-[16/9]
-                  object-cover
-                  bg-gray-100
-                "
-                variants={imageVariants}
-                initial="hidden"
-                whileInView="Variant4"
-                viewport={{ once: false, amount: 0.5 }}
+                className="w-full aspect-[16/9] object-cover bg-gray-100"
               />
 
               {/* Text block */}
@@ -115,12 +68,7 @@ export function WorkSection() {
                 </h3>
 
                 <div className="flex items-center text-[14px] leading-[24px] text-gray-500">
-                  <svg
-                    className="w-4 h-4 mr-2 text-teal-500"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg className="w-4 h-4 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" strokeWidth="2" />
                     <path strokeWidth="2" d="M12 6v6l4 2" />
                   </svg>
@@ -140,6 +88,60 @@ export function WorkSection() {
           </Link>
         </div>
       </div>
+
+      {/* Gallery Modal */}
+      {selectedIndex !== null && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={closeGallery}>
+          <div className="relative max-w-4xl mx-4" onClick={(e) => e.stopPropagation()}>
+            {/* Close button */}
+            <button
+              onClick={closeGallery}
+              className="absolute top-4 right-4 text-white text-2xl z-10"
+            >
+              ×
+            </button>
+
+            {/* Prev button */}
+            <button
+              onClick={prevProject}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-10"
+            >
+              ‹
+            </button>
+
+            {/* Next button */}
+            <button
+              onClick={nextProject}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-10"
+            >
+              ›
+            </button>
+
+            {/* Image */}
+            <motion.img
+              src={PROJECT_IMAGES[projects[selectedIndex].title] || "/default-project.png"}
+              alt={projects[selectedIndex].title}
+              className="w-full max-h-[80vh] object-contain"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            />
+
+            {/* Info */}
+            <div className="bg-white p-4">
+              <h3 className="text-xl font-semibold text-[#021514]">{projects[selectedIndex].title}</h3>
+              <p className="text-gray-600">{projects[selectedIndex].category}</p>
+              <p className="text-sm text-gray-500 flex items-center mt-2">
+                <svg className="w-4 h-4 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                  <path strokeWidth="2" d="M12 6v6l4 2" />
+                </svg>
+                {projects[selectedIndex].duration}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

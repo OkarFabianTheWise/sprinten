@@ -1,6 +1,9 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
 export function Footer() {
+  const pathname = usePathname();
   return (
     <footer
       className="w-screen mx-[calc(50%-50vw)] bg-[#021C1A]"
@@ -62,7 +65,7 @@ export function Footer() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               <li style={{ marginBottom: "12px" }}>
                 <a
-                  href="#home"
+                  href={pathname === '/' ? '#home' : '/#home'}
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
@@ -75,7 +78,7 @@ export function Footer() {
               </li>
               <li style={{ marginBottom: "12px" }}>
                 <a
-                  href="#services"
+                  href={pathname === '/' ? '#services' : '/#services'}
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
@@ -88,7 +91,7 @@ export function Footer() {
               </li>
               <li style={{ marginBottom: "12px" }}>
                 <a
-                  href="#work"
+                  href="/allwork"
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",
@@ -214,7 +217,7 @@ export function Footer() {
               </li>
               <li style={{ marginBottom: "12px" }}>
                 <a
-                  href="#work"
+                  href="/allwork"
                   style={{
                     fontSize: "14px",
                     color: "#A8B5B3",

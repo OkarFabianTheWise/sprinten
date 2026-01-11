@@ -779,11 +779,11 @@ export default function CaseStudy() {
                             position: 'absolute',
                             width: '713px',
                             height: '713px',
-                            left: 'calc(50% - 713px/2 - 112px)',
+                            left: 'calc(50% - 713px/2 - 0px)',
                             top: 'calc(50% - 713px/2 - 3px)',
                             backgroundImage: 'url(/lastimage.png)',
                             backgroundRepeat: 'no-repeat',
-                            backgroundSize: '9-%',
+                            backgroundSize: 'contain',
                             backgroundPosition: 'center'
                         }}
                     ></div>
