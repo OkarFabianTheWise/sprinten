@@ -41,8 +41,8 @@ export const caseStudyData: Record<string, CaseStudyEntry> = {
         shortDescription: "fintech startup helping SMEs manage cashflow",
         coreProblem: "inefficient invoice and payment workflows",
         industry: "Fintech",
-        location: "Germany",
-        companySize: "50–100 employees",
+        location: "Nigeria",
+        companySize: "5–10 employees",
         challenge: {
             summary:
                 "Airbills Pay faced usability and clarity issues that slowed onboarding and reduced user confidence in their fintech platform.",

@@ -21,27 +21,24 @@ export function TestimonialSection() {
   };
   
   return (
-    <section className="w-full bg-[#021514] relative py-10 md:py-0" style={{ minHeight: '598px', height: 'auto' }}>
+    <section className="w-full bg-[#021514] relative py-10 md:py-0" style={{ minHeight: '598px', height: 'auto', paddingBottom: '46px' }}>
       
       {/* Label */}
-      <motion.p
+      <div
         className="uppercase tracking-[0.15em] text-[#8B9FFF] text-[12px] px-6 md:px-0 md:absolute"
         style={{ 
           top: 'clamp(40px, 10vw, 135px)',
           left: 'clamp(24px, 7vw, 106px)'
         }}
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: false, amount: 0.5 }}
       >
         TESTIMONIAL
-      </motion.p>
+      </div>
 
       {/* Centered div */}
       <div 
         className="px-6 md:px-0 md:absolute flex flex-col md:flex-row items-start gap-8 md:gap-0"
         style={{ 
+          marginTop: '44px',
           top: 'clamp(80px, 15vw, 195px)',
           left: 'clamp(24px, 7vw, 106px)',
           width: 'calc(100% - 48px)',
@@ -54,7 +51,7 @@ export function TestimonialSection() {
         <div className="flex flex-col md:flex-row items-start w-full gap-8 md:gap-0">
           
           {/* LEFT: Quote + Author */}
-          <div className="flex-1 md:pr-8 lg:pr-16 w-full">
+          <div className="flex-1 md:pr-8 lg:pr-16 w-full pr-6 md:pr-0">
             <AnimatePresence mode="wait">
               <motion.blockquote
                 key={currentIndex}
@@ -76,7 +73,7 @@ export function TestimonialSection() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={`author-${currentIndex}`}
-                className="mt-8 md:mt-12 lg:mt-[80px]"
+                className="mt-4 md:mt-6 lg:mt-8"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
@@ -102,7 +99,7 @@ export function TestimonialSection() {
           </div>
 
           {/* RIGHT: Quote mark + Arrows */}
-          <div className="flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-[20px] w-full md:w-auto justify-end md:justify-start">
+          <div className="absolute bottom-8 md:bottom-auto right-6 md:right-auto md:static flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-[20px] w-auto md:w-auto justify-end md:justify-start">
             
             {/* Quote Mark - Hidden on mobile */}
             <motion.div
@@ -155,7 +152,6 @@ export function TestimonialSection() {
               </motion.button>
             </div>
           </div>
-
         </div>
       </div>
     </section>

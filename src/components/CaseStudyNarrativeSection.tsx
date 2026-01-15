@@ -60,7 +60,7 @@ export function CaseStudyNarrativeSection({
               imagePosition === "right" ? "order-2 lg:order-2" : "order-1 lg:order-2"
             }`}
           >
-            <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px] relative rounded-lg overflow-hidden">
+            <div className="w-full relative rounded-lg overflow-hidden sm:h-[400px] lg:h-[500px]" style={{ paddingBottom: 'clamp(300px, 100vw, 500px)' }}>
               <MediaBlock media={section.media} alt={title} />
             </div>
           </div>

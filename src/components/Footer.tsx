@@ -14,7 +14,7 @@ export function Footer() {
           <img
             src="/logo.png"
             alt="Sprinten"
-            className="w-[140px] h-[100px] sm:w-[160px] sm:h-[60px] md:w-[175px] md:h-[68px] mb-4"
+            className="w-[140px] sm:w-[160px] md:w-[175px] h-auto mb-4"
           />
           <p className="text-sm md:text-base text-[#A8B5B3] leading-relaxed">
             Ship Faster. Build Better. Onchain.

@@ -10,50 +10,50 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative w-full bg-[#021514] px-4 sm:px-6 lg:px-0"
-      style={{
-        minHeight: '932px',
-        paddingTop: '92px' // top: 92px from Figma
-      }}
+      className="
+        relative w-full bg-[#021514]
+        px-4 sm:px-6 lg:px-0
+        pt-[92px]
+        min-h-screen sm:min-h-[932px]
+      "
     >
-      {/* Content wrapper matching Figma: width 1360, left 40px, top 196px */}
-      {/* move to the top */}
+      {/* Main content */}
       <div
         id="main-content"
         className="
           text-primary-100
           flex flex-col
-          max-w-[1300px] sm:mx-auto
+          max-w-[392px] mx-auto
+          sm:max-w-[1300px] sm:mx-auto
           lg:max-w-none lg:mx-0 lg:ml-[40px] lg:mr-[40px]
-          gap-8
-          2xl:gap-12
-          top-[196px]
-          height-[788px]
-          pb-8
+          gap-[84px] sm:gap-8 2xl:gap-12
+          pb-0
         "
       >
-        {/* Text content area */}
+        {/* Text content */}
         <div className="w-full">
-          <div className="
-            flex flex-col
-            lg:flex-row
-            items-start lg:items-center
-            justify-between
-            gap-10 xl:gap-16
-          ">
+          <div
+            className="
+              flex flex-col
+              lg:flex-row
+              items-start lg:items-center
+              justify-between
+              gap-6 sm:gap-10 xl:gap-16
+            "
+          >
             {/* LEFT */}
             <motion.div
-              className="w-full lg:max-w-[420px] space-y-2 text-center lg:text-left"
+              className="w-full lg:max-w-[420px] space-y-2 text-left"
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.5 }}
             >
               <motion.h1
                 className="
                   font-poly-sans
-                  text-[clamp(2.25rem,5vw,3.5rem)]
-                  leading-tight
+                  text-[45px] leading-[52px]
+                  sm:text-[clamp(2.25rem,5vw,3.5rem)] sm:leading-tight
                   text-[#A2F7B4]
                 "
                 initial={{ y: 50, opacity: 0 }}
@@ -61,11 +61,7 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: false, amount: 0.5 }}
               >
-                Ship Faster.
-                <br />
-                Build Better.
-                <br />
-                Onchain.
+                Ship Faster. Build Better. Onchain.
               </motion.h1>
             </motion.div>
 
@@ -75,19 +71,20 @@ export function HeroSection() {
                 w-full
                 lg:max-w-[480px]
                 flex flex-col
-                items-center lg:items-start
+                items-start
                 gap-4
                 text-white
-                text-center lg:text-left
+                text-left
               "
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.5 }}
             >
               <motion.p
                 className="
-                  text-base sm:text-lg
+                  text-[14px] leading-[20px]
+                  sm:text-lg
                   text-[#DFFFE2]
                   font-poly-sans
                   max-w-prose
@@ -95,7 +92,7 @@ export function HeroSection() {
                 "
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+                transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
                 viewport={{ once: false, amount: 0.5 }}
               >
                 {heroCopy.body}
@@ -105,7 +102,7 @@ export function HeroSection() {
                 className="w-fit"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.7, ease: 'easeOut' }}
+                transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
                 viewport={{ once: false, amount: 0.5 }}
               >
                 <HoverScrollText />
