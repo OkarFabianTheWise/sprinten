@@ -7,17 +7,44 @@ import arrowright from "../icons/arrowright.png";
 import { testimonials } from "../data/testimonials";
 import Image from 'next/image';
 
+const WORD_LIMIT = 17;
+
+const countWords = (text: string): number => {
+  return text.trim().split(/\s+/).length;
+};
+
+const truncateQuote = (text: string): string => {
+  const words = text.trim().split(/\s+/);
+  if (words.length > WORD_LIMIT) {
+    return words.slice(0, WORD_LIMIT).join(" ") + "...";
+  }
+  return text;
+};
+
+const shouldShowViewMore = (text: string): boolean => {
+  return countWords(text) > WORD_LIMIT;
+};
+
 export function TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const currentTestimonial = testimonials[currentIndex];
+  const isExpanded = expandedIndex === currentIndex;
+  const hasMoreText = shouldShowViewMore(currentTestimonial.quote);
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setExpandedIndex(null);
   };
 
   const prevTestimonial = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setExpandedIndex(null);
+  };
+
+  const toggleExpanded = () => {
+    setExpandedIndex(isExpanded ? null : currentIndex);
   };
   
   return (
@@ -65,9 +92,22 @@ export function TestimonialSection() {
                 exit={{ y: -30, opacity: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                {currentTestimonial.quote}
+                {isExpanded ? currentTestimonial.quote : truncateQuote(currentTestimonial.quote)}
               </motion.blockquote>
             </AnimatePresence>
+
+            {/* View More Button */}
+            {hasMoreText && (
+              <motion.button
+                onClick={toggleExpanded}
+                className="text-[#2F9C96] text-[14px] md:text-[16px] font-medium mt-3 md:mt-4 hover:opacity-80 transition-opacity"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                {isExpanded ? "View Less" : "View More"}
+              </motion.button>
+            )}
 
             {/* Author */}
             <AnimatePresence mode="wait">

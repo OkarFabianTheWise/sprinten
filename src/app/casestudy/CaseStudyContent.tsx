@@ -94,11 +94,11 @@ export default function CaseStudy() {
   return (
     <section className="bg-[#021514] relative overflow-x-hidden font-poly-sans">
         {/* Section 1 */}
-        <div className="flex flex-col flex-start w-full min-h-[986px] bg-[#021514] items-start gap-[80px] top-[32px] px-[40px] relative mb-16">
-            <div className="flex flex-col justify-center items-start p-0 gap-6 w-full h-[346px]">
+        <div className="flex flex-col flex-start w-full min-h-[986px] bg-[#021514] items-start gap-[80px] top-[80px] px-4 sm:px-6 md:px-8 lg:px-[40px] relative mb-12 sm:mb-16 lg:mb-32">
+            <div className="flex flex-col justify-center items-start p-0 gap-6 w-full h-auto lg:h-[346px]">
                 
                 {/* Frame 1618868442 - Logo section */}
-                <div className="flex flex-col items-end p-0 gap-4 w-[395px] h-[94px] self-end">
+                <div className="flex flex-col items-end p-0 gap-4 w-auto sm:w-[395px] h-auto self-end">
                     {/* Added self-end to keep logo on right ↑ */}
                     {/* Logo and completion badge */}
                     <div className="box-border w-[181.43px] h-[50px] flex items-center justify-end overflow-hidden">
@@ -108,28 +108,28 @@ export default function CaseStudy() {
                         className="h-full object-contain"
                       />
                     </div>
-                    <div className="flex flex-row justify-end items-center p-0 gap-2 w-[395px] h-[28px]">
+                    <div className="flex flex-row justify-end items-center p-0 gap-2 w-auto sm:w-[395px] h-auto">
                         <div className="w-6 h-6 relative">
                             <img src={clock.src}
                             alt="" />
                         </div>
-                        <span className="w-[224px] h-[28px] font-poly-sans font-normal text-[22px] leading-[28px] text-center text-[#E5F9E0]">Completed in {duration}</span>
+                        <span className="h-auto font-poly-sans font-normal text-sm sm:text-[22px] leading-tight sm:leading-[28px] text-center text-[#E5F9E0]">Completed in {duration}</span>
                     </div>
                 </div>
 
                 {/* Frame 1618868443 - Title section - now aligned to left */}
-                <div className="flex flex-col items-start p-0 gap-2 w-[1360px] h-[228px]">
-                    <div className="flex flex-col items-start p-0 gap-6 w-[958px] h-[228px]">
-                        <span className="w-[379px] h-[20px] font-poly-sans font-semibold text-[14px] leading-[20px] tracking-[0.1px] text-[#858BE3]">
+                <div className="flex flex-col items-start p-0 gap-2 w-full lg:w-[1360px] h-auto">
+                    <div className="flex flex-col items-start p-0 gap-6 w-full lg:w-[958px] h-auto">
+                        <span className="w-auto h-auto font-poly-sans font-semibold text-xs sm:text-[14px] leading-tight sm:leading-[20px] tracking-[0.1px] text-[#858BE3]">
                             Sprinten AI CASE STUDY
                         </span>
 
-                        <h1 className="w-[958px] h-[128px] font-poly-sans font-normal text-[57px] leading-[64px] tracking-[-0.25px] text-[#A2F7B4]">
+                        <h1 className="w-full lg:w-[958px] h-auto font-poly-sans font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[57px] leading-tight sm:leading-[48px] md:leading-[56px] lg:leading-[64px] tracking-[-0.25px] text-[#A2F7B4]">
                             How We Helped {title} Achieve {data.keyImpact} in Just {duration}
                         </h1>
 
                         {/* explicit vertical spacing below h1 */}
-                        <p className="mt-12 w-[958px] h-[48px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#B1BFBF]">
+                        <p className="mt-8 sm:mt-12 w-full lg:w-[958px] h-auto font-poly-sans font-normal text-sm sm:text-[16px] leading-relaxed sm:leading-[24px] tracking-[0.5px] text-[#B1BFBF]">
                             {data.caseStudySubtitle ||
                                 `A Sprinten design sprint case study for ${title}, focused on solving ${data.coreProblem} with clear, fast, and effective execution.`}
                         </p>
@@ -143,7 +143,7 @@ export default function CaseStudy() {
                 alt={`${title} Hero Image`}
                 width={1920}
                 height={1080}
-                className="w-full h-auto object-cover rounded-2xl"
+                className="w-full h-[400px] sm:h-[500px] md:h-[600px] object-cover rounded-2xl"
                 priority
               />
             ) : data.media.hero.type === 'video' ? (
@@ -153,7 +153,7 @@ export default function CaseStudy() {
                 autoPlay
                 muted
                 loop
-                className="w-full h-auto object-cover rounded-2xl"
+                className="w-full h-[400px] sm:h-[500px] md:h-[600px] object-cover rounded-2xl"
               >
                 Your browser does not support the video tag.
               </video>

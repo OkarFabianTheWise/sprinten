@@ -6,10 +6,10 @@ export const testimonials = [
         image: "/segun.jpeg"
     },
     {
-        quote: "Amazing work by the Sprinten team. They transformed our vision into a polished product quickly and efficiently.",
-        author: "0xpsolite",
-        title: "Founder – AirbillsPay",
-        image: "/psolite.jpg"
+        quote: "Working with Sprinten was an amazing experience. They guided us at Airbills every step of the way, patiently explaining design choices and helping us make the right decisions. The creativity and professionalism made a huge difference.",
+        author: "Chiemelie",
+        title: "Founder of Airbills",
+        image: "/psolite.jpeg"
     },
     {
         quote: "Sprinten's design sprint approach saved us months of development time. Highly recommend!",
