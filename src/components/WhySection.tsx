@@ -24,6 +24,7 @@ export function WhySection() {
           py-16
           grid
           gap-12
+          lg:gap-[198px]
           lg:grid-cols-[1.1fr_0.9fr]
           relative
           z-10
@@ -78,7 +79,7 @@ export function WhySection() {
             transition={{ duration: 0.8, delay: 1.2 }}
             viewport={{ once: false, amount: 0.5 }}
           >
-            Sprinten delivers an ideal blend of speed, clarity, and flawless execution for Web3 founders and developers without lengthy cycles or unnecessary agency overhead.
+            Sprinten gives Solana founders and developers the perfect mix of speed, clarity, and execution. No long cycles. No agency fluff. Just fast, high-quality product design and frontend shipping built for real users.
           </motion.p>
 
           <motion.div
@@ -102,7 +103,6 @@ export function WhySection() {
                   text-lg sm:text-xl
                   leading-7
                   text-[#021514]
-                  max-w-[36rem]
                 "
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -119,7 +119,6 @@ export function WhySection() {
                   text-base
                   leading-6
                   text-[#6C837F]
-                  max-w-[36rem]
                 "
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -134,20 +133,22 @@ export function WhySection() {
       </div>
 
       {/* BACKGROUND OUTLINE TEXT */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 overflow-hidden">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 lg:bottom-10 overflow-hidden w-full">
         <span
           className="
             block
-            mx-auto
+            w-full
             text-center
+            px-8
             font-poly-sans
-            text-[clamp(6rem,18vw,12.5rem)]
-            leading-none
-            tracking-[-0.88px]
             whitespace-nowrap
           "
           style={{
+            fontSize: 'clamp(100px, 15vw, 200.14px)',
+            lineHeight: '1.12',
+            letterSpacing: '-0.88px',
             color: "transparent",
+            transform: 'scaleX(1.3)',
             WebkitTextStroke: "0.97px #A2F7B4",
             paintOrder: "stroke",
           }}
