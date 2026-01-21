@@ -36,20 +36,20 @@ export function CTASection() {
         </motion.p>
 
         {/* Buttons */}
-        <div className="flex gap-4 w-full max-w-[calc(100%-16px)] px-4">
+        <div className="flex gap-4 w-full max-w-[calc(100%-16px)] px-4 md:gap-3 md:justify-center md:max-w-none">
           {/* BOOK A CALL */}
-          <a href="https://cal.com/sprinten/introcall" target="_blank" rel="noopener noreferrer" className="flex-1">
+          <a href="https://cal.com/sprinten/introcall" target="_blank" rel="noopener noreferrer" className="flex-1 md:flex-none">
             <button 
-              className="h-[52px] w-full rounded-[8px] border-none bg-[#2E8B7D] text-white font-normal transition-all hover:opacity-90"
+              className="h-[52px] w-full md:h-[44px] md:w-[140px] rounded-[8px] border-none bg-[#2E8B7D] text-white font-normal transition-all hover:opacity-90"
             >
               Book a call
             </button>
           </a>
 
           {/* START A SPRINT */}
-          <a href="https://nifty-possum-71c.notion.site/6650f5b8165e431a9926bec2eaf3bed7" target="_blank" rel="noopener noreferrer" className="flex-1">
+          <a href="https://nifty-possum-71c.notion.site/6650f5b8165e431a9926bec2eaf3bed7" target="_blank" rel="noopener noreferrer" className="flex-1 md:flex-none">
             <button 
-              className="h-[52px] w-full rounded-[8px] border-2 border-[#2E8B7D] bg-transparent text-[#2E8B7D] font-normal transition-all hover:bg-white/10"
+              className="h-[52px] w-full md:h-[44px] md:w-[140px] rounded-[8px] border-2 border-[#2E8B7D] bg-transparent text-[#2E8B7D] font-normal transition-all hover:bg-white/10"
             >
               Start a sprint
             </button>
