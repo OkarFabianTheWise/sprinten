@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description:
     "Sprinten helps Solana founders & developers ship market-ready products in weeks, recreating the Figma experience on the web.",
   icons: {
-    icon: "/logo.png"
+    icon: "/sp-logo.png"
   }
 };
 
