@@ -44,27 +44,27 @@ export default function PrivacyPage() {
         <div className="absolute w-[384px] h-[684px] top-[59px] left-[62px] border-r border-[#B1BFBF]">
           <div className="absolute w-[348px] h-[560px] left-[18px] top-[38px] flex flex-col gap-[16px]">
             <div className="flex flex-row items-center p-[16px] gap-[8px] w-[348px] h-[56px] bg-[#2F9C96]/10 border-l-4 border-[#2F9C96]">
-              <span className="w-[228px] h-[24px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#2F9C96]">
+              <span className="w-[228px] h-[24px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-[#2F9C96] whitespace-nowrap">
                 1. Information We May Collect
               </span>
             </div>
             <div className="flex flex-row items-center p-[16px] gap-[8px] w-[348px] h-[56px]">
-              <span className="w-[286px] h-[24px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-black">
+              <span className="w-[286px] h-[24px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-black whitespace-nowrap">
                 2. How We May Use Your Information
               </span>
             </div>
             <div className="flex flex-row items-center p-[16px] gap-[8px] w-[348px] h-[56px]">
-              <span className="w-[316px] h-[24px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-black">
+              <span className="w-[316px] h-[24px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-black whitespace-nowrap">
                 3. When We May Share Your Information
               </span>
             </div>
             <div className="flex flex-row items-center p-[16px] gap-[8px] w-[348px] h-[56px]">
-              <span className="w-[126px] h-[24px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-black">
+              <span className="w-[126px] h-[24px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-black whitespace-nowrap">
                 4. Data Security
               </span>
             </div>
             <div className="flex flex-row items-center p-[16px] gap-[8px] w-[348px] h-[56px]">
-              <span className="w-[194px] h-[24px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-black">
+              <span className="w-[194px] h-[24px] font-poly-sans font-normal text-[16px] leading-[24px] tracking-[0.5px] text-black whitespace-nowrap">
                 5. Your Choices & Rights
               </span>
             </div>
