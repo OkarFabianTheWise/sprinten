@@ -28,7 +28,10 @@ const plex = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Sprinten Studio",
   description:
-    "Sprinten helps Solana founders & developers ship market-ready products in weeks, recreating the Figma experience on the web."
+    "Sprinten helps Solana founders & developers ship market-ready products in weeks, recreating the Figma experience on the web.",
+  icons: {
+    icon: "/logo.png"
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -12,12 +12,12 @@ export function CTASection() {
       <div
         className="
           flex flex-col items-center justify-center text-center 
-          w-full max-w-[calc(100%-32px)] md:max-w-[calc(100%-64px)] lg:max-w-[calc(100%-90px)]
+          w-full max-w-[calc(100%-24px)] sm:max-w-[calc(100%-32px)] md:max-w-[calc(100%-64px)] lg:max-w-[calc(100%-90px)]
           mx-auto 
           rounded-[16px] 
           bg-[#A2F7B4]
           min-h-[300px] md:min-h-[356px]
-          px-4 md:px-6 lg:px-8
+          px-3 sm:px-4 md:px-6 lg:px-8
           py-8 md:py-10 lg:py-12
         "
       >
@@ -36,20 +36,20 @@ export function CTASection() {
         </motion.p>
 
         {/* Buttons */}
-        <div className="flex gap-4">
+        <div className="flex gap-4 w-full max-w-[calc(100%-16px)] px-4">
           {/* BOOK A CALL */}
-          <a href="https://cal.com/sprinten/introcall" target="_blank" rel="noopener noreferrer">
+          <a href="https://cal.com/sprinten/introcall" target="_blank" rel="noopener noreferrer" className="flex-1">
             <button 
-              className="h-[52px] w-[175px] rounded-[8px] border-none bg-[#2E8B7D] text-white font-normal transition-all hover:opacity-90"
+              className="h-[52px] w-full rounded-[8px] border-none bg-[#2E8B7D] text-white font-normal transition-all hover:opacity-90"
             >
               Book a call
             </button>
           </a>
 
           {/* START A SPRINT */}
-          <a href="https://nifty-possum-71c.notion.site/6650f5b8165e431a9926bec2eaf3bed7" target="_blank" rel="noopener noreferrer">
+          <a href="https://nifty-possum-71c.notion.site/6650f5b8165e431a9926bec2eaf3bed7" target="_blank" rel="noopener noreferrer" className="flex-1">
             <button 
-              className="h-[52px] w-[175px] rounded-[8px] border-2 border-[#2E8B7D] bg-transparent text-[#2E8B7D] font-normal transition-all hover:bg-white/10"
+              className="h-[52px] w-full rounded-[8px] border-2 border-[#2E8B7D] bg-transparent text-[#2E8B7D] font-normal transition-all hover:bg-white/10"
             >
               Start a sprint
             </button>
