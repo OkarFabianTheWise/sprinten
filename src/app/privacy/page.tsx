@@ -29,7 +29,7 @@ export default function PrivacyPage() {
                 </div>
                 {/* right */}
                 <Image 
-                  src="/clients.png" 
+                  src="/conference.png" 
                   alt="Privacy Illustration" 
                   width={663} 
                   height={477} 
