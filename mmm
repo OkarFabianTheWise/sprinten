@@ -1,88 +1,337 @@
-// src/animation/CombinedAnimation.tsx
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import AnimationTwo from "./AnimationTwo";
-import AnimationOne from "./AnimationOne";
+"use client";
 
-const CombinedAnimation: React.FC = () => {
-  const [current, setCurrent] = useState<"one" | "two">("one");
-  const [scale, setScale] = useState({ x: 1, y: 1 });
-  const containerRef = useRef<HTMLDivElement>(null);
+import { CTASection } from "../../components/CTASection";
+import { Footer } from "../../components/Footer";
+import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 
-  const handleFinished = () => {
-    setCurrent((prev) => (prev === "one" ? "two" : "one"));
+export default function PrivacyPage() {
+  const [activeSection, setActiveSection] = useState("section-1");
+  const contentAreaRef = useRef < HTMLDivElement > (null);
+
+  const sections = [
+    { id: "section-1", label: "1. Information We May Collect" },
+    { id: "section-2", label: "2. How We May Use Your Information" },
+    { id: "section-3", label: "3. When We May Share Your Information" },
+    { id: "section-4", label: "4. Data Security" },
+    { id: "section-5", label: "5. Your Choices & Rights" },
+    { id: "section-6", label: "6. Cookies & Tracking Technologies" },
+    { id: "section-7", label: "7. Updates to This Privacy Policy" },
+    { id: "section-8", label: "8. Contact Us" },
+  ];
+
+  const handleNavClick = (sectionId: string) => {
+    setActiveSection(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   useEffect(() => {
-    const updateScale = () => {
-      if (containerRef.current) {
-        const containerWidth = containerRef.current.offsetWidth;
-        const containerHeight = containerRef.current.offsetHeight;
-        
-        const scaleX = containerWidth / 1360;
-        const scaleY = containerHeight / 560;
-        
-        setScale({ x: scaleX, y: scaleY });
-      }
+    const handleScroll = () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 200 && rect.bottom > 200) {
+            setActiveSection(section.id);
+          }
+        }
+      });
     };
 
-    updateScale();
-    window.addEventListener('resize', updateScale);
-    const timer = setTimeout(updateScale, 100);
-    
-    return () => {
-      window.removeEventListener('resize', updateScale);
-      clearTimeout(timer);
-    };
-  }, []);
+    const scrollContainer = contentAreaRef.current;
+    if (scrollContainer) {
+      scrollContainer.addEventListener("scroll", handleScroll);
+      return () => scrollContainer.removeEventListener("scroll", handleScroll);
+    }
+  }, [sections]);
 
   return (
-    <div 
-      ref={containerRef}
-      className="hero-logo-card relative w-full rounded-[16px] bg-white text-[#1F8E87] shadow-inner overflow-hidden lg:mb-10"
-      style={{ paddingBottom: '41.18%' }}
-    >
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div 
-          className="relative"
-          style={{
-            width: '1360px',
-            height: '560px',
-            transform: `scaleX(${scale.x}) scaleY(${scale.y})`,
-            transformOrigin: 'center center',
-          }}
-        >
-          <AnimatePresence>
-            {current === "one" && (
-              <motion.div
-                key="one"
-                className="absolute inset-0"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-              >
-                <AnimationOne onFinished={handleFinished} />
-              </motion.div>
-            )}
-
-            {current === "two" && (
-              <motion.div
-                key="two"
-                className="absolute inset-0"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-              >
-                <AnimationTwo onFinished={handleFinished} />
-              </motion.div>
-            )}
-          </AnimatePresence>
+    <div className="w-full">
+      {/* Hero Section */}
+      <div className="w-full bg-[#E5F9E0] relative">
+        <div className="max-w-7xl mx-auto px-16 py-20 flex gap-14 items-center">
+          <div className="flex-1 flex flex-col gap-10">
+            <div className="flex flex-col gap-4">
+              <h1 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "57px", lineHeight: "64px" }} className="font-normal tracking-tight text-[#021514]">
+                Privacy Policy
+              </h1>
+              <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "24px", letterSpacing: "0.5px" }} className="font-normal text-[#8CA1A0]">
+                At Sprinten, we take your privacy seriously. Whether you're exploring our website, contacting us, or working with us on a project, we want you to understand how your information is handled. This page explains the types of data we may collect, why we collect it, and how we keep it safe. It's a straightforward overview designed to match our transparent and human-focused approach.
+              </p>
+              <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "24px", letterSpacing: "0.5px" }} className="font-normal text-[#2F9C96]">
+                Last Updated December, 2025
+              </p>
+            </div>
+          </div>
+          <div className="flex-1">
+            <Image
+              src="/conference.png"
+              alt="Privacy Illustration"
+              width={663}
+              height={477}
+              className="w-full h-auto rounded-4xl"
+            />
+          </div>
         </div>
       </div>
+
+      {/* Main Content with Sticky Sidebar */}
+      <div className="flex w-full bg-[#E5F9E0] min-h-screen">
+        {/* Left sticky sidebar */}
+        <div className="sticky top-0 h-screen w-96 overflow-y-auto flex-shrink-0 mt-[56px] relative" style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ position: "absolute", right: 0, top: 0, width: "1px", height: "500px", backgroundColor: "#B1BFBF" }}></div>
+          <nav className="flex flex-col gap-4 pt-8 pl-6" style={{ flex: 1 }}>
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => handleNavClick(section.id)}
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  padding: "16px",
+                  gap: "8px",
+                  width: "348px",
+                  height: "56px",
+                  background: activeSection === section.id ? "rgba(47, 156, 150, 0.1)" : "transparent",
+                  borderLeft: activeSection === section.id ? "4px solid #2F9C96" : "4px solid transparent",
+                  fontFamily: "'PolySans Trial', sans-serif",
+                  fontSize: "16px",
+                  lineHeight: "24px",
+                  letterSpacing: "0.5px",
+                  fontWeight: 400,
+                  color: activeSection === section.id ? "#2F9C96" : "#000000",
+                  whiteSpace: "nowrap",
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                }}
+                onMouseEnter={(e) => {
+                  if (activeSection !== section.id) {
+                    e.currentTarget.style.background = "rgba(47, 156, 150, 0.05)";
+                    e.currentTarget.style.color = "#2F9C96";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (activeSection !== section.id) {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.color = "#000000";
+                  }
+                }}
+              >
+                {section.label}
+              </button>
+            ))}
+          </nav>
+        </div>
+
+        {/* Right content area */}
+        <div ref={contentAreaRef} className="flex-1 overflow-y-auto" style={{ display: "flex", flexDirection: "column", gap: "80px", padding: "59px 62px 80px 62px", maxHeight: "100vh" }}>
+          {/* Information We May Collect */}
+          <section id="section-1" style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+                <h2 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "45px", lineHeight: "52px", color: "#021514", fontWeight: 400 }}>
+                  Information We May Collect
+                </h2>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "24px", letterSpacing: "0.5px", color: "#8CA1A0", fontWeight: 400 }}>
+                  (The categories below are examples of what we typically handle.)
+                </p>
+              </div>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  Contact Details
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  Your name, email address, phone number, and business information when you inquire, request a quote, or book a call.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  Communication Records
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  Details shared through emails, contact forms, chats, or project discussions
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  Website Usage Data
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  General analytics such as IP address, browser type, time spent on pages, and pages viewed. This helps us understand performance and improve user experience.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  Project Assets & Client Files
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  Any brand materials, documents, or content you share with us for your project. These are treated with strict confidentiality and used solely for delivering your work.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* How We May Use Your Information */}
+          <section id="section-2" style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+                <h2 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "45px", lineHeight: "52px", color: "#021514", fontWeight: 400 }}>
+                  How We May Use Your Information
+                </h2>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "24px", letterSpacing: "0.5px", color: "#8CA1A0", fontWeight: 400 }}>
+                  (Examples of how your information supports our services.)
+                </p>
+              </div>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  To Deliver Our Services
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  Responding to inquiries, providing consultations, carrying out design or development work, and managing ongoing projects.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  To Improve Our Platform & Process
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  Analyzing how visitors use our website, refining user experience, and enhancing service quality.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  To Communicate With You
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  Sharing updates, proposals, invoices, newsletters (if subscribed), or important messages related to your project.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  For Security & Legal Compliance
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  Keeping our systems secure, preventing fraud, and meeting applicable legal requirements
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* When We May Share Your Information */}
+          <section id="section-3" style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+                <h2 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "45px", lineHeight: "52px", color: "#021514", fontWeight: 400 }}>
+                  When We May Share Your Information
+                </h2>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "24px", letterSpacing: "0.5px", color: "#8CA1A0", fontWeight: 400 }}>
+                  We keep sharing minimal and only when necessary.
+                </p>
+              </div>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  Trusted Service Providers
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  Hosting companies, analytics partners, payment processors, and other platforms that support our operations. They are required to protect your data.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  Legal Disclosures
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  If we are required by law to provide certain information to authorities.
+                </p>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <h3 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "22px", lineHeight: "28px", color: "#021514", fontWeight: 400 }}>
+                  Business Transitions
+                </h3>
+                <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "14px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                  If Sprinten is ever involved in a merger or acquisition, relevant data may transfer as part of the business assets
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Data Security */}
+          <section id="section-4" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <h2 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "45px", lineHeight: "52px", color: "#021514", fontWeight: 400 }}>
+                Data Security
+              </h2>
+              <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "24px", letterSpacing: "0.5px", color: "#8CA1A0", fontWeight: 400 }}>
+                We apply reasonable technical and organizational safeguards to protect your data from unauthorized access, alteration, or misuse. While no digital system is invincible, we continuously update our security practices to keep your information safe.
+              </p>
+            </div>
+          </section>
+
+          {/* Your Choices & Rights */}
+          <section id="section-5" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <h2 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "45px", lineHeight: "52px", color: "#021514", fontWeight: 400 }}>
+                Your Choices & Rights
+              </h2>
+              <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "24px", letterSpacing: "0.5px", color: "#8CA1A0", fontWeight: 400 }}>
+                Depending on where you live, you may have rights such as accessing, updating, or requesting deletion of your personal data. You can also opt out of marketing communications at any time. Just reach us at: sprintenagency@gmail.com
+              </p>
+            </div>
+          </section>
+
+          {/* Cookies & Tracking Technologies */}
+          <section id="section-6" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <h2 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "45px", lineHeight: "52px", color: "#021514", fontWeight: 400 }}>
+                Cookies & Tracking Technologies
+              </h2>
+              <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "24px", letterSpacing: "0.5px", color: "#8CA1A0", fontWeight: 400 }}>
+                Our website may use cookies or similar technologies to enhance browsing, understand site performance, and support our marketing efforts. You can disable cookies in your browser settings if you prefer.
+              </p>
+            </div>
+          </section>
+
+          {/* Updates to This Privacy Policy */}
+          <section id="section-7" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <h2 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "45px", lineHeight: "52px", color: "#021514", fontWeight: 400 }}>
+                Updates to This Privacy Policy
+              </h2>
+              <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "24px", letterSpacing: "0.5px", color: "#8CA1A0", fontWeight: 400 }}>
+                This policy may be updated occasionally to reflect improvements to our services or changes in legal requirements. Any updates will be posted on this page with a new date.
+              </p>
+            </div>
+          </section>
+
+          {/* Contact Us */}
+          <section id="section-8" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <h2 style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "45px", lineHeight: "52px", color: "#021514", fontWeight: 400 }}>
+                Contact Us
+              </h2>
+              <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                If you have questions about this Privacy Policy or how we handle data, contact us at: sprintenagency@gmail.com
+              </p>
+              <p style={{ fontFamily: "'PolySans Trial', sans-serif", fontSize: "16px", lineHeight: "20px", letterSpacing: "0.25px", color: "#8CA1A0", fontWeight: 400 }}>
+                Telegram: @callme_TOC
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+      <CTASection />
+      <Footer />
     </div>
   );
-};
-
-export default CombinedAnimation;
+}
